@@ -25,15 +25,25 @@ function ThemeContextProvider({ children }) {
     ? "bg-gray-800 transition-colors"
     : "bg-slate-50 transition-colors";
 
+  const btnTrans = darkTheme
+    ? "text-white bg-transparent rounded-md border-slate-900 border py-2 hover:bg-slate-900 hover:text-white px-8"
+    : "text-black bg-transparent rounded-md border-slate-900 border py-2 hover:bg-slate-900 hover:text-white px-8";
+
+  const btnFilled = darkTheme
+    ? "text-white bg-slate-900 py-2 rounded-md hover:bg-transparent border border-slate-900 hover:text-white px-8"
+    : "text-white bg-slate-900 rounded-md border-slate-900 border py-2 hover:bg-transparent-900 hover:text-white px-8";
+
   const themeClasses = {
     text,
     subText,
     lightDarkBg,
     darkBg,
+    btnTrans,
+    btnFilled,
   };
 
   return (
-    <ThemeContext.Provider value={{ toggleDarkTheme, themeClasses }}>
+    <ThemeContext.Provider value={{ toggleDarkTheme, themeClasses, darkTheme }}>
       {children}
     </ThemeContext.Provider>
   );

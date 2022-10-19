@@ -20,7 +20,7 @@ export default function Layout({ children, pageTitle }) {
         className={`min-h-screen ${themeCtx.themeClasses.darkBg}`}
         id={"main"}
       >
-        <div className="max-w-7xl mx-auto" id={"container"}>
+        <div className="mx-auto" id={"container"}>
           {children}
         </div>
       </main>

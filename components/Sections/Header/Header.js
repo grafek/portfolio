@@ -37,24 +37,20 @@ export default function Header() {
     );
 
   return (
-    <header
-      className={`${themeCtx.themeClasses.lightDarkBg} w-screen h-20 fixed  opacity-95 shadow-md z-10`}
-    >
+    <header className={`w-screen h-20 fixed opacity-95  z-10`}>
       <nav className="h-20 md:px-10 md:max-w-7xl md:mx-auto md:justify-between">
         <div className="md:hidden absolute p-7 z-20">{navMobileButtons}</div>
         <div
           className={`flex-1 justify-self-center justify-between md:block md:h-full ${
-            themeCtx.themeClasses.lightDarkBg
-          } ${
             isNavShown === "SHOW"
-              ? "animate-slideIn"
+              ? `animate-slideIn  ${themeCtx.themeClasses.lightDarkBg}`
               : isNavShown === "HIDE"
               ? "animate-slideOut"
               : "hidden"
           }`}
         >
           <ul
-            className={`items-center justify-center h-screen flex flex-col gap-10 md:h-full md:flex-row md:gap-20 ${
+            className={`items-center justify-center h-screen  flex flex-col gap-10 md:h-full md:flex-row md:gap-20 ${
               isNavShown === "HIDE"
                 ? "md:translate-x-full md:translate-y-0"
                 : ""
