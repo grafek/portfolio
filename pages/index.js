@@ -1,12 +1,12 @@
-import AboutMe from "../components/AboutMe";
 import Layout from "../components/Sections/Layout";
 import Projects from "../components/Projects";
 import Qualities from "../components/Qualities";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
     <Layout pageTitle="Jacek Grafender - Portfolio">
-      <AboutMe />
+      <Hero />
       <Projects />
       <Qualities />
     </Layout>
