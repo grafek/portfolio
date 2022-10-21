@@ -9,14 +9,14 @@ export default function SocialLinks({ className }) {
   return (
     <div className={classes}>
       <a href={"https://github.com/grafek"} rel="noreferrer" target={"_blank"}>
-        <BsGithub className="text-3xl" />
+        <BsGithub className="text-3xl hover:scale-110 duration-300" />
       </a>
       <a
         href={"https://www.linkedin.com/in/jacek-grafender/"}
         rel="noreferrer"
         target={"_blank"}
       >
-        <BsLinkedin className="text-3xl" />
+        <BsLinkedin className="text-3xl hover:scale-110 duration-300" />
       </a>
     </div>
   );

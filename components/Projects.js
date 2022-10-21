@@ -45,7 +45,7 @@ export default function Projects() {
   return (
     <>
       <SectionHeading title={"My Projects"} />
-      <section className="mx-auto grid grid-flow-row auto-cols-auto  md:grid-cols-2 lg:grid-cols-3">
+      <section className="mx-auto grid grid-flow-row auto-cols-auto py-10 gap-14 xl:grid-cols-2 ">
         {content}
       </section>
     </>
