@@ -29,6 +29,11 @@ module.exports = {
         slideOut: "slideOut 0.5s forwards",
         slideIn: "slideIn 0.5s forwards",
       },
+      backgroundColor: {
+        gray: {
+          750: "#2C3441",
+        },
+      },
     },
   },
   plugins: [],
