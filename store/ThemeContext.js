@@ -14,24 +14,24 @@ function ThemeContextProvider({ children }) {
     : "text-inherit transition-colors";
 
   const subText = darkTheme
-    ? "text-slate-400 transition-colors"
+    ? "text-slate-300 transition-colors"
     : "text-inherit transition-colors";
 
   const lightDarkBg = darkTheme
-    ? "bg-slate-800 transition-colors"
+    ? "bg-slate-700 transition-colors"
     : "bg-slate-100 transition-colors";
 
   const darkBg = darkTheme
     ? "bg-gray-800 transition-colors"
-    : "bg-slate-50 transition-colors";
+    : "bg-slate-200 transition-colors";
 
   const btnTrans = darkTheme
-    ? "text-white bg-transparent rounded-md border-slate-900 border py-2 hover:bg-slate-900 hover:text-white px-8"
-    : "text-black bg-transparent rounded-md border-slate-900 border py-2 hover:bg-slate-900 hover:text-white px-8";
+    ? "text-white bg-transparent rounded-md border-indigo-700 border py-2 hover:bg-indigo-700 hover:text-white px-8"
+    : "text-black bg-transparent rounded-md border-indigo-700 border py-2 hover:bg-indigo-700 hover:text-white px-8";
 
   const btnFilled = darkTheme
-    ? "text-white bg-slate-900 py-2 rounded-md hover:bg-transparent border border-slate-900 hover:text-white px-8"
-    : "text-white bg-slate-900 rounded-md border-slate-900 border py-2 hover:bg-transparent-900 hover:text-white px-8";
+    ? "text-white bg-indigo-700 py-2 rounded-md hover:bg-transparent border border-indigo-700 hover:text-white px-8"
+    : "text-white bg-indigo-700 rounded-md border-indigo-700 border py-2 hover:bg-transparent hover:text-black px-8";
 
   const themeClasses = {
     text,

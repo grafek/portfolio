@@ -2,9 +2,8 @@ import Image from "next/image";
 import { useContext } from "react";
 import profileImg from "../public/my-pic1.png";
 import { ThemeContext } from "../store/ThemeContext";
-import SocialLinks from "./UI/SocialLinks";
 
-export default function AboutMe() {
+export default function Hero() {
   const themeCtx = useContext(ThemeContext);
 
   return (
@@ -25,11 +24,13 @@ export default function AboutMe() {
           </p>
           <div className="flex flex-col gap-6 md:flex-row md:justify-center mt-20 w-1/2 md:w-full mx-auto">
             <button
-              className={`${themeCtx.themeClasses.btnFilled} animate-bounce`}
+              className={`${themeCtx.themeClasses.btnFilled} animate-bounce font-semibold`}
             >
               Hire me!
             </button>
-            <button className={`${themeCtx.themeClasses.btnTrans}`}>
+            <button
+              className={`${themeCtx.themeClasses.btnTrans} font-semibold`}
+            >
               Resume
             </button>
           </div>
