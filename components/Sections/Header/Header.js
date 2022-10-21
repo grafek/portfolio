@@ -12,9 +12,7 @@ export default function Header() {
   const themeCtx = useContext(ThemeContext);
 
   const hideNavHandler = () => {
-    if (window !== undefined && window.innerWidth <= 768) {
-      setIsNavShown("HIDE");
-    }
+    setIsNavShown("HIDE");
   };
 
   const toggleNavHandler = () => {
@@ -37,24 +35,20 @@ export default function Header() {
     );
 
   return (
-    <header className={`w-screen h-20 fixed opacity-95  z-10`}>
-      <nav className="h-20 md:px-10 md:max-w-7xl md:mx-auto md:justify-between">
-        <div className="md:hidden absolute p-7 z-20">{navMobileButtons}</div>
+    <header className={`w-screen h-20 fixed opacity-95  z-40`}>
+      <div className="absolute p-7 z-20">{navMobileButtons}</div>
+      <nav className="h-20">
         <div
-          className={`flex-1 justify-self-center justify-between md:block md:h-full ${
+          className={`${
             isNavShown === "SHOW"
-              ? `animate-slideIn  ${themeCtx.themeClasses.lightDarkBg}`
+              ? `animate-slideIn`
               : isNavShown === "HIDE"
               ? "animate-slideOut"
               : "hidden"
-          }`}
+          } ${themeCtx.themeClasses.lightDarkBg}`}
         >
           <ul
-            className={`items-center justify-center h-screen  flex flex-col gap-10 md:h-full md:flex-row md:gap-20 ${
-              isNavShown === "HIDE"
-                ? "md:translate-x-full md:translate-y-0"
-                : ""
-            } `}
+            className={`items-center justify-center h-screen flex flex-col gap-10`}
           >
             <NavItem content="about" href={"#main"} onClick={hideNavHandler} />
             <NavItem

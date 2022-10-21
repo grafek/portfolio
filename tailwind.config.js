@@ -26,8 +26,8 @@ module.exports = {
         },
       },
       animation: {
-        slideOut: "slideOut 0.5s forwards",
-        slideIn: "slideIn 0.5s forwards",
+        slideOut: "slideOut 0.8s forwards",
+        slideIn: "slideIn 0.8s forwards",
       },
       backgroundColor: {
         gray: {

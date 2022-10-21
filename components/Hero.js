@@ -10,19 +10,23 @@ export default function Hero() {
     <section className="md:pt-0 h-screen">
       <div className="flex  flex-col px-4 2xl:px-0 justify-center content-center md:justify-start max-w-screen-2xl md:flex-wrap lg:mx-auto md:flex-row text-center w-full h-full lg:h-screen">
         <div className="md:w-1/2 md:flex-auto md:flex md:flex-col justify-evenly md:justify-center ">
-          <h1
-            className={`${themeCtx.themeClasses.text} text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold`}
-          >
-            Hi, I&apos;m Jacek
-          </h1>
-          <h3 className={`${themeCtx.themeClasses.text} italic py-5 text-2xl`}>
-            IT Technician and Developer
-          </h3>
-          <p className={`${themeCtx.themeClasses.subText} leading-8 `}>
-            As of now working as a L2 Support Specialist. Aspiring to get the
-            first job as a front-end developer.
-          </p>
-          <div className="flex flex-col gap-6 md:flex-row md:justify-center mt-20 w-1/2 md:w-full mx-auto">
+          <div>
+            <h1
+              className={`${themeCtx.themeClasses.text} text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold`}
+            >
+              Hi, I&apos;m Jacek
+            </h1>
+            <h3
+              className={`${themeCtx.themeClasses.text} italic py-5 text-2xl`}
+            >
+              IT Technician and Developer
+            </h3>
+            <p className={`${themeCtx.themeClasses.subText} leading-8 `}>
+              As of now working as a L2 Support Specialist. Aspiring to get the
+              first job as a front-end developer.
+            </p>
+          </div>
+          <div className="flex flex-col gap-6 md:flex-row md:justify-center w-1/2 h-full md:h-auto md:mt-20 justify-end md:w-full mx-auto">
             <button
               className={`${themeCtx.themeClasses.btnFilled} animate-bounce font-semibold`}
             >
