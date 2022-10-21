@@ -72,7 +72,7 @@ export default function Header() {
         <div className="flex absolute top-7 right-7">
           <BsMoonFill
             onClick={themeCtx.toggleDarkTheme}
-            className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 hover:scale-110 transition duration-300`}
+            className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 hover:scale-110 transition-all duration-300`}
           />
           <SocialLinks />
         </div>

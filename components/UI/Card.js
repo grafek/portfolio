@@ -38,7 +38,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   if (img && hasBackdrop) {
     imgContent = (
       <div
-        className="h-60 lg:h-80 relative rounded-t hover:scale-105 duration-150"
+        className="h-60 lg:h-80 relative rounded-t hover:scale-105 duration-300"
         title={title}
       >
         <a href={url} rel="noreferrer" target="_blank">
