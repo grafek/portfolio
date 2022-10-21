@@ -1,13 +1,13 @@
 TODO: 
 
-- Start creating branches and pushing small commits xD
-- Smooth scrolling to certain id's
+- Start creating branches and pushing small commits ✔️
+- Smooth scrolling to certain id's ✔️
 - Add proper text content
 - Probably add 'My current stack' section
 - Create Contact form
 
 
-Explaining 'big commit': 
+'big commit': 
 
 - Used mobile first approach
 - Added React Icons
