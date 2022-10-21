@@ -24,14 +24,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   if (img) {
     imgContent = (
       <div className="h-60 lg:h-80 relative rounded-t" title={title}>
-        <Image
-          layout="fill"
-          objectFit="cover"
-          height={"100%"}
-          width={"100%"}
-          alt={title}
-          src={img}
-        />
+        <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
     );
   }
@@ -48,14 +41,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
             </h2>
           </div>
           <div className="h-full w-full bg-black opacity-60 z-20 relative flex justify-center"></div>
-          <Image
-            layout="fill"
-            objectFit="cover"
-            height={"100%"}
-            width={"100%"}
-            alt={title}
-            src={img}
-          />
+          <Image layout="fill" objectFit="cover" alt={title} src={img} />
         </a>
       </div>
     );

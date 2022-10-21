@@ -25,12 +25,12 @@ export default function Header() {
     isNavShown === "SHOW" ? (
       <CgClose
         onClick={toggleNavHandler}
-        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer transform transition duration-300 hover:scale-110`}
+        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer duration-300 hover:scale-110`}
       />
     ) : (
       <GiHamburgerMenu
         onClick={toggleNavHandler}
-        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer transform transition duration-300 hover:scale-110`}
+        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer duration-300 hover:scale-110`}
       />
     );
 
@@ -66,7 +66,7 @@ export default function Header() {
         <div className="flex absolute top-7 right-7">
           <BsMoonFill
             onClick={themeCtx.toggleDarkTheme}
-            className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 transform transition duration-300 hover:scale-110`}
+            className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 duration-300 hover:scale-110`}
           />
           <SocialLinks />
         </div>
