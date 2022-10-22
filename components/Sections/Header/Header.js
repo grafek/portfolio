@@ -68,7 +68,7 @@ export default function Header() {
             onClick={themeCtx.toggleDarkTheme}
             className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 duration-300 hover:scale-110`}
           />
-          <SocialLinks />
+          <SocialLinks iconsSize={"text-3xl"} />
         </div>
       </nav>
     </header>
