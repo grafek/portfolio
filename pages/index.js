@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <Layout pageTitle="Jacek Grafender - Portfolio">
       <Hero />
-      <Projects />
       <Resume />
+      <Projects />
     </Layout>
   );
 }

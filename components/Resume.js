@@ -25,7 +25,7 @@ export default function Resume() {
     return (
       <span
         key={skill}
-        className={`${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} mb-2 mr-2 inline-block rounded-full px-3 py-1 text-sm font-semibold`}
+        className={`${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} mb-2 mr-2 rounded-full px-3 py-1 text-sm font-semibold`}
       >
         {skill}
       </span>
@@ -33,11 +33,11 @@ export default function Resume() {
   });
 
   return (
-    <section id={`resume`} className="pb-10">
+    <section id={`resume`} className="pb-10 h-screen pt-2">
       <div
-        className={`${themeCtx.themeClasses.lightDarkBg} flex gap-8 flex-col md:flex-row min-h-screen p-4 rounded-md mx-auto w-11/12`}
+        className={`${themeCtx.themeClasses.lightDarkBg} flex gap-8 flex-col md:flex-row p-4 rounded-md mx-auto w-11/12`}
       >
-        <div className="shadow-2xl flex flex-col  md:w-1/2 lg:w-1/2 xl:w-1/3 p-4">
+        <div className="shadow-lg rounded-md flex flex-col  md:w-1/2 lg:w-1/2 xl:w-1/3 p-4">
           <div className="relative h-28 w-28 my-4 overflow-hidden rounded-full mx-auto">
             <div className="h-full w-full bg-gradient-to-t from-gray-900 to-gray-700 opacity-60 relative z-10"></div>{" "}
             <Image
@@ -49,7 +49,7 @@ export default function Resume() {
           </div>
           <div className="flex flex-col justify-center gap-4">
             <h2
-              className={`${themeCtx.themeClasses.text} text-center text-3xl font-bold`}
+              className={`${themeCtx.themeClasses.text} text-center text-3xl lg:text-3xl font-bold`}
             >
               Jacek Grafender
             </h2>
@@ -64,7 +64,7 @@ export default function Resume() {
           <div className="flex flex-col gap-4 justify-center">
             <div className="mx-auto">
               <h2
-                className={`${themeCtx.themeClasses.text} w-fit mt-4 text-center text-2xl font-semibold border-b border-indigo-500`}
+                className={`${themeCtx.themeClasses.text} mt-4 text-2xl lg:text-3xl font-semibold border-b border-indigo-500`}
               >
                 About
               </h2>
@@ -85,21 +85,106 @@ export default function Resume() {
           <div className="flex flex-col gap-4 mb-2">
             <div className="mx-auto">
               <h2
-                className={`${themeCtx.themeClasses.text} w-fit mt-4 text-center text-2xl font-semibold border-b border-indigo-500`}
+                className={`${themeCtx.themeClasses.text} mt-4 text-2xl lg:text-3xl font-semibold border-b border-indigo-500`}
               >
                 Skills
               </h2>
             </div>
-            <div>
+            <div className="flex flex-wrap">
               {/* Pills for now, will maybe switch to progress bar or sth elese */}
               {skillsContent}
             </div>
           </div>
         </div>
-        <div className="flex md:w-1/2 lg:w-2/3 shadow-2xl">
-          <div clas>s</div>
-          <div clas>s</div>
-          <div clas>s</div>
+        <div className="flex flex-col gap-10 md:w-1/2 lg:w-2/3">
+          <div className=" flex flex-col shadow-lg rounded-md p-4">
+            <div className="mx-auto">
+              <h2
+                className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
+              >
+                Experience
+              </h2>
+            </div>
+            <div>
+              <ul
+                className={`${themeCtx.themeClasses.subText} flex flex-col gap-2`}
+              >
+                <li>19/09/2022 - now L2 Resmote Specialist at Hemmersbach</li>
+                <li>
+                  07/2020 - 08/2020 & 09/2020-2020 School apprenticeship at
+                  Foxysoft - took a part of developing new website for my high
+                  school
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col shadow-lg rounded-md p-4">
+            <div className="mx-auto">
+              <h2
+                className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
+              >
+                Education
+              </h2>
+            </div>
+            <div>
+              <ul
+                className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
+              >
+                <li>
+                  09/2017-05/2021 IT Technician degree ICT and Electronic School
+                  Complex
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row shadow-lg rounded-md p-4">
+            <div className="w-full lg:w-1/2 flex flex-col">
+              <div className="mx-auto">
+                <h2
+                  className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
+                >
+                  Languages
+                </h2>
+              </div>
+              <div>
+                <ul
+                  className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
+                >
+                  <li>Polish - native</li>
+                  <li>
+                    English - intermediate (
+                    <span className="italic">B2/C1</span>)
+                  </li>
+                  <li>German - basics</li>
+                  <li>
+                    Spanish - basics (
+                    <span className="italic">currently learning</span>)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col">
+              <div className="mx-auto">
+                <h2
+                  className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
+                >
+                  Interests
+                </h2>
+              </div>
+              <div>
+                <ul
+                  className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
+                >
+                  <li>
+                    Sports (
+                    <span className="italic">Running and Skateboarding</span>)
+                  </li>
+                  <li>Learning and self-development</li>
+                  <li>DJ-ing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
