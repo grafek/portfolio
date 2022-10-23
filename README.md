@@ -8,7 +8,7 @@ TODO:
 - Option to download resume as pdf
 - Style changes in resume section
 - Think of exact action to call on 'hire me' button and implement it
-- Add phone and mail icons to SocialLinks component
+- Add phone and mail icons to SocialLinks component ✔️ (creates seperate comp)
 - Outsource repeating things to components eg. pill span(?)
 
 
