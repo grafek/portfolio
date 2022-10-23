@@ -38,7 +38,8 @@ export default function Resume() {
         className={`${themeCtx.themeClasses.lightDarkBg} flex gap-8 flex-col md:flex-row min-h-screen p-4 rounded-md mx-auto w-11/12`}
       >
         <div className="shadow-2xl flex flex-col  md:w-1/2 lg:w-1/2 xl:w-1/3 p-4">
-          <div className="relative h-28 w-28 mt-4 bg-gradient-to-tr mb-4 overflow-hidden max-w-screen-sm rounded-full mx-auto">
+          <div className="relative h-28 w-28 my-4 overflow-hidden rounded-full mx-auto">
+            <div className="h-full w-full bg-gradient-to-t from-gray-900 to-gray-700 opacity-60 relative z-10"></div>{" "}
             <Image
               src={"/ja_ca.jpg"}
               layout="fill"
