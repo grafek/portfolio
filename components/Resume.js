@@ -33,9 +33,12 @@ export default function Resume() {
   });
 
   return (
-    <section id={`resume`} className="pb-10 h-screen pt-2">
+    <section
+      id={`resume`}
+      className="h-fit flex my-10 md:mb-14 lg:mb-0 xl:h-screen"
+    >
       <div
-        className={`${themeCtx.themeClasses.lightDarkBg} flex gap-8 flex-col md:flex-row p-4 rounded-md mx-auto w-11/12`}
+        className={`${themeCtx.themeClasses.lightDarkBg} h-fit flex gap-8 flex-col md:flex-row p-4 rounded-md m-auto w-11/12`}
       >
         <div className="shadow-lg rounded-md flex flex-col  md:w-1/2 lg:w-1/2 xl:w-1/3 p-4">
           <div className="relative h-28 w-28 my-4 overflow-hidden rounded-full mx-auto">
@@ -53,7 +56,7 @@ export default function Resume() {
             >
               Jacek Grafender
             </h2>
-            <span className="mx-auto italic text-indigo-500 font-medium">
+            <span className="mx-auto italic text-center text-indigo-500 font-medium">
               IT Technician & Front-end Developer
             </span>
             <span>
@@ -73,7 +76,10 @@ export default function Resume() {
               I am a graduate of ICT & Electronic school with IT technician
               degree. Currently I am working as a L2 Remote Specialist at
               Hemmersbach. After hours I am working on my &nbsp;
-              <a href="#projects" className="border-b italic border-indigo-500">
+              <a
+                href="#projects"
+                className="border-b italic font-semibold border-indigo-500"
+              >
                 projects
               </a>
               &nbsp; and constantly learning about web development. I know how
@@ -184,6 +190,14 @@ export default function Resume() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="flex justify-center md:justify-end h-full mb-2">
+            <a
+              href="#"
+              className={`${themeCtx.themeClasses.btnFilled} font-semibold mt-auto`}
+            >
+              Download resume
+            </a>
           </div>
         </div>
       </div>
