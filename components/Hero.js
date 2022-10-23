@@ -26,17 +26,18 @@ export default function Hero() {
               first job as a front-end developer.
             </p>
           </div>
-          <div className="flex flex-col gap-6 md:flex-row md:justify-center w-1/2 h-full md:h-auto md:mt-20 justify-end md:w-full mx-auto">
-            <button
+          <div className="flex flex-col gap-6 md:flex-row justify-center w-1/2 h-full md:h-auto md:mt-20 md:w-full mx-auto">
+            <a
               className={`${themeCtx.themeClasses.btnFilled} animate-bounce font-semibold`}
             >
               Hire me!
-            </button>
-            <button
+            </a>
+            <a
               className={`${themeCtx.themeClasses.btnTrans} font-semibold`}
+              href={`#resume`}
             >
               Resume
-            </button>
+            </a>
           </div>
         </div>
         <div className="hidden md:w-1/3 md:flex md:m-auto ">
