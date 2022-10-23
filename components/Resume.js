@@ -35,7 +35,7 @@ export default function Resume() {
   return (
     <section
       id={`resume`}
-      className="h-fit flex my-10 md:mb-14 lg:mb-0 xl:h-screen"
+      className="h-fit flex my-10 md:mb-14 mb-0"
     >
       <div
         className={`${themeCtx.themeClasses.lightDarkBg} h-fit flex gap-8 flex-col md:flex-row p-4 rounded-md m-auto w-11/12`}

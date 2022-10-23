@@ -36,7 +36,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
       >
         <a href={url} rel="noreferrer" target="_blank">
           <div className="z-30 absolute flex justify-center h-full w-full">
-            <h2 className="text-slate-200 font-bold italic text-3xl md:text-4xl l my-auto">
+            <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
               {title}
             </h2>
           </div>
