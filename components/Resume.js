@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ThemeContext } from "../store/ThemeContext";
 import { useContext } from "react";
 import SocialLinks from "./UI/SocialLinks";
+import Contact from "./UI/Contact";
 
 export default function Resume() {
   const themeCtx = useContext(ThemeContext);
@@ -33,10 +34,7 @@ export default function Resume() {
   });
 
   return (
-    <section
-      id={`resume`}
-      className="h-fit flex my-10 md:mb-14 mb-0"
-    >
+    <section id={`resume`} className="h-fit flex my-10 md:mb-14 mb-0">
       <div
         className={`${themeCtx.themeClasses.lightDarkBg} h-fit flex gap-8 flex-col md:flex-row p-4 rounded-md m-auto w-11/12`}
       >
@@ -59,10 +57,7 @@ export default function Resume() {
             <span className="mx-auto italic text-center text-indigo-500 font-medium">
               IT Technician & Front-end Developer
             </span>
-            <span>
-              <SocialLinks iconsSize={"text-2xl"} />
-              {/* add mail and call option */}
-            </span>
+            <Contact iconsSize={"text-2xl"} />
           </div>
           <div className="flex flex-col gap-4 justify-center">
             <div className="mx-auto">

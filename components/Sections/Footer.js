@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { BsArrowUp } from "react-icons/bs";
 import { ThemeContext } from "../../store/ThemeContext";
+import Contact from "../UI/Contact";
 import SocialLinks from "../UI/SocialLinks";
 
 export default function Footer() {
@@ -21,7 +22,10 @@ export default function Footer() {
         </a>
       </div>
       <div>
-        <SocialLinks iconsSize={"text-3xl"} />
+        <div className="flex gap-8 justify-center">
+          <SocialLinks iconsSize={"text-2xl"} />
+          <Contact iconsSize={"text-2xl"} />
+        </div>
         <p className={`text-gray-500 text-center my-2`}>
           ©{currYear} Jacek Grafender
         </p>
