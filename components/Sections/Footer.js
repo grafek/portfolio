@@ -13,7 +13,7 @@ export default function Footer() {
       id={"footer"}
       className={`${themeCtx.themeClasses.lightDarkBg} w-100 min-h-fit flex flex-col justify-center gap-8 shadow-xl p-8 pb-1`}
     >
-      <div>
+      <div className="flex justify-center">
         <a href="#">
           <BsArrowUp
             className={`${themeCtx.themeClasses.text} mx-auto text-3xl`}
