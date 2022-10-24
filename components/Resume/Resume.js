@@ -3,6 +3,7 @@ import { useContext } from "react";
 import ResumeLeft from "./ResumeLeft";
 import ResumeRight from "./ResumeRight";
 import ResumeRightSection from "./ResumeRightSection";
+import Timestamp from "../UI/Timestamp";
 
 const languages = [
   "Polish - native",
@@ -38,65 +39,35 @@ export default function Resume() {
         <ResumeLeft />
         <ResumeRight>
           <ResumeRightSection title={"Experience"}>
-            <ul
-              className={`${themeCtx.themeClasses.subText} flex flex-col gap-2`}
-            >
-              <li>19/09/2022 - now L2 Resmote Specialist at Hemmersbach</li>
-              <li>
-                07/2020 - 08/2020 & 09/2020-2020 School apprenticeship at
-                Foxysoft - took a part of developing new website for my high
-                school
-              </li>
-            </ul>
+            <Timestamp dates={"19/09/2022 - now"}>
+              L2 Resmote Specialist at Hemmersbach
+            </Timestamp>
+            <Timestamp dates={"07/2020 - 08/2020 & 09/2020-2020"}>
+              School apprenticeship at Foxysoft - took a part of developing new
+              website for my high school
+            </Timestamp>
           </ResumeRightSection>
           <ResumeRightSection title={"Education"}>
-            <ul
-              className={`${themeCtx.themeClasses.subText} flex flex-col gap-2`}
-            >
-              <li>19/09/2022 - now L2 Resmote Specialist at Hemmersbach</li>
-              <li>
-                07/2020 - 08/2020 & 09/2020-2020 School apprenticeship at
-                Foxysoft - took a part of developing new website for my high
-                school
-              </li>
-            </ul>
+            <Timestamp dates={"09/2017-05/2021"}>
+              IT Technician degree ICT and Electronic School Complex
+            </Timestamp>
           </ResumeRightSection>
-          <ResumeRightSection>
-            <div className="flex flex-col lg:flex-row">
-              <div className="w-full lg:w-1/2 flex flex-col">
-                <div className="mx-auto">
-                  <h2
-                    className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
-                  >
-                    Languages
-                  </h2>
-                </div>
-                <div>
-                  <ul
-                    className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
-                  >
-                    {languagesContent}
-                  </ul>
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2 flex flex-col">
-                <div className="mx-auto">
-                  <h2
-                    className={`${themeCtx.themeClasses.text} text-2xl lg:text-3xl font-semibold border-b border-indigo-500 my-4`}
-                  >
-                    Interests
-                  </h2>
-                </div>
-                <div>
-                  <ul
-                    className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
-                  >
-                    {interestsContent}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ResumeRightSection>
+          <div className="flex flex-col lg:flex-row">
+            <ResumeRightSection className={"flex-1"} title={"Languages"}>
+              <ul
+                className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
+              >
+                {languagesContent}
+              </ul>
+            </ResumeRightSection>
+            <ResumeRightSection className={"flex-1"} title={"Interests"}>
+              <ul
+                className={`${themeCtx.themeClasses.subText} list-disc mx-4 flex flex-col gap-2`}
+              >
+                {interestsContent}
+              </ul>
+            </ResumeRightSection>
+          </div>
         </ResumeRight>
       </div>
     </section>
