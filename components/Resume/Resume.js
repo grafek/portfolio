@@ -32,15 +32,15 @@ export default function Resume() {
   const themeCtx = useContext(ThemeContext);
 
   return (
-    <section id={`resume`} className="h-fit flex my-10">
+    <section id={`resume`} className="h-fit min-h-screen py-10 flex">
       <div
-        className={`${themeCtx.themeClasses.lightDarkBg} h-fit flex gap-8 flex-col md:flex-row p-4 rounded-md m-auto w-11/12`}
+        className={`${themeCtx.themeClasses.lightDarkBg} flex gap-8 flex-col md:flex-row p-4 rounded-md m-auto w-11/12`}
       >
         <ResumeLeft />
         <ResumeRight>
           <ResumeRightSection title={"Experience"}>
             <Timestamp dates={"19/09/2022 - now"}>
-              L2 Resmote Specialist at Hemmersbach
+              L2 Remote Specialist at Hemmersbach
             </Timestamp>
             <Timestamp dates={"07/2020 - 08/2020 & 09/2020-2020"}>
               School apprenticeship at Foxysoft - took a part of developing new
@@ -67,6 +67,15 @@ export default function Resume() {
                 {interestsContent}
               </ul>
             </ResumeRightSection>
+          </div>
+          <div className="flex justify-center md:justify-end h-full mb-2">
+            <a
+              href="/Resume_Jacek_Grafender.pdf"
+              download={"Resume_Jacek_Grafender.pdf"}
+              className={`${themeCtx.themeClasses.btnFilled} font-semibold mt-auto`}
+            >
+              Download resume
+            </a>
           </div>
         </ResumeRight>
       </div>
