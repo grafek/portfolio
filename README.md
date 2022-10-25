@@ -5,10 +5,10 @@ TODO:
 - Add proper text content ✔️
 - Probably add 'My current stack' section ✔️ (as skills in resume)
 - Create Contact form ❌ decided to not include that to let footer be clean
-- Option to download resume as pdf
+- Option to download resume as pdf ✔️
 - Style changes in resume section
 - Think of exact action to call on 'hire me' button and implement it
-- Add phone and mail icons to SocialLinks component ✔️ (creates seperate comp)
+- Add phone and mail icons to SocialLinks component ✔️ (created seperate comp)
 - Outsource repeating things to components eg. pill span(?)
 
 
