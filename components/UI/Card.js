@@ -11,9 +11,13 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   let alternateTitle;
 
   if (tags && tags.length >= 1) {
-    tagsContent = tags.map((tag, i) => {
-      return <Pill key={i}>{tag}</Pill>;
-    });
+    tagsContent = (
+      <div className="pt-4">
+        {tags.map((tag, i) => {
+          return <Pill key={i}>{tag}</Pill>;
+        })}
+      </div>
+    );
   }
   if (img) {
     imgContent = (
@@ -44,7 +48,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   !hasBackdrop && !img
     ? (alternateTitle = (
         <h2
-          className={`${themeCtx.themeClasses.text} mb-2 text-center text-xl font-bold lg:text-left`}
+          className={`${themeCtx.themeClasses.text} mb-4 text-center text-2xl font-bold lg:text-left`}
         >
           {title}
         </h2>
@@ -52,14 +56,14 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
     : null;
 
   return (
-    <div className="w-5/6 mx-auto shadow-md shadow-[#ffffff3d]">
+    <div
+      className={`${themeCtx.themeClasses.lightDarkBg} w-5/6 mx-auto shadow-md shadow-[#ffffff3d]`}
+    >
       {imgContent}
-      <div className={`${themeCtx.themeClasses.lightDarkBg} p-4`}>
-        <div className="mb-8">
-          {alternateTitle}
-          <p className={`${themeCtx.themeClasses.subText}`}>{children}</p>
-        </div>
-        <div className="pt-4">{tagsContent}</div>
+      <div className={`p-4`}>
+        {alternateTitle}
+        <p className={`${themeCtx.themeClasses.subText}`}>{children}</p>
+        {tagsContent}
       </div>
     </div>
   );

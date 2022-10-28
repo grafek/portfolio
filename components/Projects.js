@@ -125,8 +125,8 @@ export default function Projects() {
 
   return (
     <section id={"projects"}>
-      <SectionHeading title={"Projects"} />
-      <div className="grid grid-cols-1 xl:grid-cols-2 py-10 gap-10 ">
+      <SectionHeading>Projects</SectionHeading>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 ">
         {content}
       </div>
     </section>
