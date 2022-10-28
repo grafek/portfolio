@@ -11,6 +11,7 @@ export default function Card({
   img,
   hasBackdrop,
   className,
+  icon,
 }) {
   const themeCtx = useContext(ThemeContext);
 
@@ -56,8 +57,9 @@ export default function Card({
   !hasBackdrop && !img
     ? (alternateTitle = (
         <h2
-          className={`${themeCtx.themeClasses.text} mb-4 text-center text-2xl font-bold lg:text-left`}
+          className={`${themeCtx.themeClasses.text} mb-4 text-2xl font-bold `}
         >
+          {icon}
           {title}
         </h2>
       ))
@@ -65,7 +67,9 @@ export default function Card({
 
   return (
     <div
-      className={`${themeCtx.themeClasses.lightDarkBg} ${className} w-5/6 mx-auto shadow-md shadow-[#ffffff3d]`}
+      className={`${themeCtx.themeClasses.lightDarkBg} ${
+        className ? className : ""
+      } ${themeCtx.themeClasses.shadow} w-5/6 mx-auto rounded-md shadow-md`}
     >
       {imgContent}
       <div className={`p-4`}>

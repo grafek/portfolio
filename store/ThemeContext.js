@@ -9,21 +9,23 @@ function ThemeContextProvider({ children }) {
     setDarkTheme((prev) => !prev);
   };
 
+  const shadow = darkTheme ? "shadow-[#ffffff15]" : "shadow-[#00000025]";
+
   const text = darkTheme
-    ? "text-slate-200 transition-all"
+    ? "text-gray-100 transition-all"
     : "text-inherit transition-all";
 
   const subText = darkTheme
-    ? "text-slate-200 transition-all"
+    ? "text-gray-100 transition-all"
     : "text-inherit transition-all";
 
   const lightDarkBg = darkTheme
     ? "bg-gray-900 transition-all"
-    : "bg-slate-100 transition-all";
+    : "bg-gray-50 transition-all";
 
   const darkBg = darkTheme
     ? "bg-darkBg transition-all"
-    : "bg-slate-200 transition-all";
+    : "bg-gray-100 transition-all";
 
   const btnTrans = darkTheme
     ? "text-white bg-transparent rounded-md border-indigo-700 border py-2 hover:bg-indigo-700 hover:text-white px-8 duration-300"
@@ -40,6 +42,7 @@ function ThemeContextProvider({ children }) {
     darkBg,
     btnTrans,
     btnFilled,
+    shadow,
   };
 
   return (
