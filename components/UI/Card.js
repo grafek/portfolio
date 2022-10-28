@@ -3,7 +3,15 @@ import { useContext } from "react";
 import { ThemeContext } from "../../store/ThemeContext";
 import Pill from "./Pill";
 
-export default function Card({ title, children, tags, url, img, hasBackdrop }) {
+export default function Card({
+  title,
+  children,
+  tags,
+  url,
+  img,
+  hasBackdrop,
+  className,
+}) {
   const themeCtx = useContext(ThemeContext);
 
   let tagsContent;
@@ -57,7 +65,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
 
   return (
     <div
-      className={`${themeCtx.themeClasses.lightDarkBg} w-5/6 mx-auto shadow-md shadow-[#ffffff3d]`}
+      className={`${themeCtx.themeClasses.lightDarkBg} ${className} w-5/6 mx-auto shadow-md shadow-[#ffffff3d]`}
     >
       {imgContent}
       <div className={`p-4`}>
