@@ -18,11 +18,11 @@ function ThemeContextProvider({ children }) {
     : "text-inherit transition-all";
 
   const lightDarkBg = darkTheme
-    ? "bg-gray-750 transition-all"
+    ? "bg-gray-900 transition-all"
     : "bg-slate-100 transition-all";
 
   const darkBg = darkTheme
-    ? "bg-gray-800 transition-all"
+    ? "bg-darkBg transition-all"
     : "bg-slate-200 transition-all";
 
   const btnTrans = darkTheme

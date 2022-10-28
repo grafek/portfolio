@@ -58,7 +58,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
     : null;
 
   return (
-    <div className="w-11/12 xl:w-5/6 mx-auto">
+    <div className="w-5/6 mx-auto">
       {imgContent}
       <div className={`${themeCtx.themeClasses.lightDarkBg} p-4`}>
         <div className="mb-8">

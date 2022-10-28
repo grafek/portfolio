@@ -17,10 +17,10 @@ export default function Layout({ children, pageTitle }) {
       </Head>
       <Header />
       <main
-        className={`${themeCtx.themeClasses.darkBg}`}
+        className={`${themeCtx.themeClasses.darkBg} `}
         id={"main"}
       >
-        <div className="mx-auto max-w-screen-2xl" id={"container"}>
+        <div className="mx-auto container">
           {children}
         </div>
       </main>

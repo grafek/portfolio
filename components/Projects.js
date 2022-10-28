@@ -125,8 +125,8 @@ export default function Projects() {
 
   return (
     <section id={"projects"}>
-      <SectionHeading title={"My Projects"} />
-      <div className="mx-auto grid grid-flow-row auto-cols-auto py-10 gap-14 xl:grid-cols-2 ">
+      <SectionHeading title={"Projects"} />
+      <div className="grid grid-cols-1 xl:grid-cols-2 py-10 gap-10 ">
         {content}
       </div>
     </section>
