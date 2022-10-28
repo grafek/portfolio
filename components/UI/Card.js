@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "../../store/ThemeContext";
+import Pill from "./Pill";
 
 export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   const themeCtx = useContext(ThemeContext);
@@ -10,20 +11,13 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   let alternateTitle;
 
   if (tags && tags.length >= 1) {
-    tagsContent = tags.map((tag) => {
-      return (
-        <span
-          key={tag}
-          className={`${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} mb-2 mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700`}
-        >
-          {tag}
-        </span>
-      );
+    tagsContent = tags.map((tag, i) => {
+      return <Pill key={i}>{tag}</Pill>;
     });
   }
   if (img) {
     imgContent = (
-      <div className="h-60 lg:h-80 relative rounded-t" title={title}>
+      <div className="h-60 lg:h-80 relative" title={title}>
         <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
     );
@@ -31,7 +25,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   if (img && hasBackdrop) {
     imgContent = (
       <div
-        className="h-60 lg:h-80 relative rounded-t hover:scale-105 duration-300"
+        className="h-60 lg:h-80 relative hover:scale-105 duration-300"
         title={title}
       >
         <a href={url} rel="noreferrer" target="_blank">
@@ -58,7 +52,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
     : null;
 
   return (
-    <div className="w-5/6 mx-auto">
+    <div className="w-5/6 mx-auto shadow-md shadow-[#ffffff3d]">
       {imgContent}
       <div className={`${themeCtx.themeClasses.lightDarkBg} p-4`}>
         <div className="mb-8">
