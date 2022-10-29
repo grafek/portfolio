@@ -33,6 +33,7 @@ module.exports = {
         gray: {
           750: "#2C3441",
         },
+        'darkBg': "#0F1624",
       },
     },
   },

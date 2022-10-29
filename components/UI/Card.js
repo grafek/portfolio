@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "../../store/ThemeContext";
+import Pill from "./Pill";
 
-export default function Card({ title, children, tags, url, img, hasBackdrop }) {
+export default function Card({
+  title,
+  children,
+  tags,
+  url,
+  img,
+  hasBackdrop,
+  className,
+  icon,
+}) {
   const themeCtx = useContext(ThemeContext);
 
   let tagsContent;
@@ -10,20 +20,17 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   let alternateTitle;
 
   if (tags && tags.length >= 1) {
-    tagsContent = tags.map((tag) => {
-      return (
-        <span
-          key={tag}
-          className={`${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} mb-2 mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700`}
-        >
-          {tag}
-        </span>
-      );
-    });
+    tagsContent = (
+      <div className="pt-4">
+        {tags.map((tag, i) => {
+          return <Pill key={i}>{tag}</Pill>;
+        })}
+      </div>
+    );
   }
   if (img) {
     imgContent = (
-      <div className="h-60 lg:h-80 relative rounded-t" title={title}>
+      <div className="h-60 lg:h-80 relative" title={title}>
         <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
     );
@@ -31,7 +38,7 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   if (img && hasBackdrop) {
     imgContent = (
       <div
-        className="h-60 lg:h-80 relative rounded-t hover:scale-105 duration-300"
+        className="h-60 lg:h-80 relative hover:scale-105 duration-300"
         title={title}
       >
         <a href={url} rel="noreferrer" target="_blank">
@@ -50,22 +57,25 @@ export default function Card({ title, children, tags, url, img, hasBackdrop }) {
   !hasBackdrop && !img
     ? (alternateTitle = (
         <h2
-          className={`${themeCtx.themeClasses.text} mb-2 text-center text-xl font-bold lg:text-left`}
+          className={`${themeCtx.themeClasses.text} mb-4 text-2xl font-bold `}
         >
+          {icon}
           {title}
         </h2>
       ))
     : null;
 
   return (
-    <div className="w-11/12 xl:w-5/6 mx-auto">
+    <div
+      className={`${themeCtx.themeClasses.lightDarkBg} ${
+        className ? className : ""
+      } ${themeCtx.themeClasses.shadow} w-5/6 mx-auto rounded-md shadow-md`}
+    >
       {imgContent}
-      <div className={`${themeCtx.themeClasses.lightDarkBg} p-4`}>
-        <div className="mb-8">
-          {alternateTitle}
-          <p className={`${themeCtx.themeClasses.subText}`}>{children}</p>
-        </div>
-        <div className="pt-4">{tagsContent}</div>
+      <div className={`p-4`}>
+        {alternateTitle}
+        <p className={`${themeCtx.themeClasses.subText}`}>{children}</p>
+        {tagsContent}
       </div>
     </div>
   );
