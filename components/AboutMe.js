@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useContext } from "react";
 import { ThemeContext } from "../store/ThemeContext";
+import Timeline from "./Timeline";
 import SectionHeading from "./UI/SectionHeading";
 
 const AboutMe = () => {
@@ -29,12 +30,13 @@ const AboutMe = () => {
           >
             projects
           </a>
-          &nbsp; and learning about web apps and its development. I know how to efficiently
-          find information, I am fluent in english and communication is not a
-          problem for me. I am looking for an opportunity to broaden my
+          &nbsp; and learning about web apps and its development. I know how to
+          efficiently find information, I am fluent in english and communication
+          is not a problem for me. I am looking for an opportunity to broaden my
           knowledge in the web industry and to work in a team.
         </p>
       </div>
+      <Timeline />
     </section>
   );
 };
