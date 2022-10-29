@@ -8,7 +8,7 @@ export default function Projects() {
       name: "Restaurant landing page",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/pizza.jpg",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -18,7 +18,7 @@ export default function Projects() {
       name: "running blog",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/run.jpg",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -28,7 +28,7 @@ export default function Projects() {
       name: "E-commerce store",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/ecommerce.png",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -38,7 +38,7 @@ export default function Projects() {
       name: "Dj landing page",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/dj.jpg",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -48,7 +48,7 @@ export default function Projects() {
       name: "Expenses list",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/expenses.jpg",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -58,7 +58,7 @@ export default function Projects() {
       name: "Chatting app",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/chat.webp",
       tags: ["#react", "#next", "#tailwindcss"],
@@ -68,7 +68,7 @@ export default function Projects() {
       name: "TODO list",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-      url: "https://stackoverflow.com/",
+      url: "#",
       hasBackdrop: true,
       img: "/todo.jpg",
       tags: ["#react", "#next", "#tailwindcss"],

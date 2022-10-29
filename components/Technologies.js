@@ -1,8 +1,8 @@
 import Card from "../components/UI/Card";
 import Pill from "./UI/Pill";
 import SectionHeading from "./UI/SectionHeading";
-import { DiNodejs, DiReact } from "react-icons/di";
-import { SiPrisma } from "react-icons/si";
+import { DiReact } from "react-icons/di";
+import { SiPrisma, SiNextdotjs } from "react-icons/si";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
 function listSkillsContent(skillsArr) {
@@ -43,7 +43,7 @@ const Technologies = () => {
   return (
     <section id={"stack"}>
       <SectionHeading>Current Stack</SectionHeading>
-      <div className="mx-auto grid lg:grid-cols-2 gap-10">
+      <div className="mx-auto grid lg:grid-cols-2 2xl:grid-cols-4 gap-10">
         <Card
           icon={<DiReact className={iconsInlineClasses} />}
           title={"Front-end"}
@@ -52,7 +52,7 @@ const Technologies = () => {
         </Card>
         <Card
           title={"Back-end"}
-          icon={<DiNodejs className={iconsInlineClasses} />}
+          icon={<SiNextdotjs className={iconsInlineClasses} />}
         >
           {listSkillsContent(backEndSkills)}
         </Card>
