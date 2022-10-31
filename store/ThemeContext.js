@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
 
 const ThemeContext = React.createContext();
 
@@ -8,6 +9,18 @@ function ThemeContextProvider({ children }) {
   const toggleDarkTheme = () => {
     setDarkTheme((prev) => !prev);
   };
+
+  const changeThemeBtn = darkTheme ? (
+    <BsSunFill
+      onClick={toggleDarkTheme}
+      className="text-slate-200 text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110"
+    />
+  ) : (
+    <BsMoonFill
+      onClick={toggleDarkTheme}
+      className={`text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
+    />
+  );
 
   const shadow = darkTheme ? "shadow-[#ffffff15]" : "shadow-[#00000025]";
 
@@ -46,7 +59,9 @@ function ThemeContextProvider({ children }) {
   };
 
   return (
-    <ThemeContext.Provider value={{ toggleDarkTheme, themeClasses, darkTheme }}>
+    <ThemeContext.Provider
+      value={{ toggleDarkTheme, themeClasses, darkTheme, changeThemeBtn }}
+    >
       {children}
     </ThemeContext.Provider>
   );
