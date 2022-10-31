@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import emailjs from "emailjs-com";
 import { ThemeContext } from "../store/ThemeContext";
 
 export default function ContactForm() {
@@ -7,17 +8,29 @@ export default function ContactForm() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  //   Form validation
-  const [errors, setErrors] = useState({});
+  const form = useRef();
 
-  //   Setting button text
-  const [buttonText, setButtonText] = useState("Send");
+  // add validation
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    const data = await emailjs.sendForm(
+      "portfolio-contact",
+      "template_tra4ay3",
+      form.current,
+      "pvd-8fUHrfBMag2xW"
+    );
+    console.log(data);
+  };
 
   const themeCtx = useContext(ThemeContext);
 
   return (
     <form
       id="contact"
+      ref={form}
+      onSubmit={sendEmail}
       className={` ${themeCtx.themeClasses.text} flex flex-col mx-auto w-full pb-4 max-w-7xl`}
     >
       <h2 className="text-2xl font-bold">Send me a message!</h2>
