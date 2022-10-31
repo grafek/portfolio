@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "../../store/ThemeContext";
+import { listItems } from "../functions";
 import Pill from "./Pill";
 
 export default function Card({
@@ -20,13 +21,7 @@ export default function Card({
   let alternateTitle;
 
   if (tags && tags.length >= 1) {
-    tagsContent = (
-      <div className="pt-4">
-        {tags.map((tag, i) => {
-          return <Pill key={i}>{tag}</Pill>;
-        })}
-      </div>
-    );
+    tagsContent = <div className="pt-4">{listItems(tags, Pill)}</div>;
   }
   if (img) {
     imgContent = (

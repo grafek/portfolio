@@ -4,386 +4,99 @@ import { ThemeContext } from "../store/ThemeContext";
 const BackgroundAnimation = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <div>
-      <svg
-        className="BgAnimation__svg"
-        viewBox="0 0 602 602"
-        fill="none"
-        xmlns="http://www.w3.org/#FFF/svg"
-      >
-        <g opacity=".1">
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M201.337 87.437C193.474 79.5738 180.725 79.5738 172.862 87.437L87.437 172.862C79.5739 180.725 79.5739 193.474 87.437 201.337L400.663 514.563C408.526 522.426 421.275 522.426 429.138 514.563L514.563 429.138C522.426 421.275 522.426 408.526 514.563 400.663L201.337 87.437ZM30.4869 115.912C-8.82897 155.228 -8.82897 218.972 30.4869 258.287L343.713 571.513C383.028 610.829 446.772 610.829 486.088 571.513L571.513 486.088C610.829 446.772 610.829 383.028 571.513 343.713L258.287 30.4869C218.972 -8.82896 155.228 -8.82896 115.912 30.4869L30.4869 115.912Z"
-            stroke="url(#paint0_radial)"
-            id="path_0"
-          />
-          <path
-            d="M514.563 201.337C522.426 193.474 522.426 180.725 514.563 172.862L429.138 87.437C421.275 79.5738 408.526 79.5739 400.663 87.437L358.098 130.002L301.148 73.0516L343.713 30.4869C383.028 -8.82896 446.772 -8.82896 486.088 30.4869L571.513 115.912C610.829 155.228 610.829 218.972 571.513 258.287L357.802 471.999L300.852 415.049L514.563 201.337Z"
-            stroke="url(#paint1_radial)"
-            id="path_1"
-          />
-          <path
-            d="M243.901 471.999L201.337 514.563C193.474 522.426 180.725 522.426 172.862 514.563L87.437 429.138C79.5739 421.275 79.5739 408.526 87.437 400.663L301.148 186.952L244.198 130.002L30.4869 343.713C-8.82897 383.028 -8.82897 446.772 30.4869 486.088L115.912 571.513C155.228 610.829 218.972 610.829 258.287 571.513L300.852 528.949L243.901 471.999Z"
-            stroke="url(#paint2_radial)"
-            id="path_2"
-          />
-        </g>
-        <ellipse
-          cx="295.027"
-          cy="193.118"
-          transform="translate(-295.027 -193.118)"
-          rx="1.07306"
-          ry="1.07433"
-          fill="#945DD6"
-        >
-          <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#path_2" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M294.685 193.474L268.932 219.258"
-          transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-          stroke="url(#paint3_linear)"
-        >
-          <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#path_2" />
-          </animateMotion>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="1000"
+      preserveAspectRatio="xMidYMid"
+      viewBox="0 0 1920 903"
+    >
+      <g transform="translate(960,451.5) scale(1,1) translate(-960,-451.5)">
+        <linearGradient id="lg-0.8324277718715198" x1="0" x2="1" y1="0" y2="0">
+          <stop
+            stop-color={themeCtx.darkTheme ? "#0F1624" : "#d1d5db"}
+            className={"transition-all"}
+            offset="0"
+          ></stop>
+          <stop
+            stop-color={themeCtx.darkTheme ? "#312e81" : "#c7d2fe"}
+            className={"transition-all"}
+            offset="1"
+          ></stop>
+        </linearGradient>
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
+            repeatCount="indefinite"
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="0s"
+            values="M0 0L 0 892.9311051057672Q 160 818.799257435173  320 776.7955808225096T 640 746.4114916146049T 960 664.2561904316472T 1280 647.9389632688471T 1600 550.2501425250363T 1920 498.5452684520941L 1920 0 Z;M0 0L 0 913.6735091996378Q 160 843.1622082805354  320 796.072073360622T 640 705.2220587800803T 960 632.993848092507T 1280 620.1589971391849T 1600 497.75293984490054T 1920 479.2210475223862L 1920 0 Z;M0 0L 0 858.0492035954486Q 160 838.403326230037  320 799.1139913248273T 640 734.1674121600203T 960 631.6286165333622T 1280 576.6485782086452T 1600 449.4868973578643T 1920 374.89700868205995L 1920 0 Z;M0 0L 0 892.9311051057672Q 160 818.799257435173  320 776.7955808225096T 640 746.4114916146049T 960 664.2561904316472T 1280 647.9389632688471T 1600 550.2501425250363T 1920 498.5452684520941L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="295.027"
-          cy="193.118"
-          transform="translate(-295.027 -193.118)"
-          rx="1.07306"
-          ry="1.07433"
-          fill="#46737"
-        >
-          <animateMotion
-            dur="5s"
-            begin="1"
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
             repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_2" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M294.685 193.474L268.932 219.258"
-          transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-          stroke="url(#paint7_linear)"
-        >
-          <animateMotion
-            dur="5s"
-            begin="1"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_2" />
-          </animateMotion>
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="-8.333333333333334s"
+            values="M0 0L 0 862.7030387863362Q 160 852.9376108313571  320 833.6395185350602T 640 708.0467182714134T 960 688.9570821991335T 1280 581.9264322559466T 1600 485.8143624777197T 1920 468.39203022042767L 1920 0 Z;M0 0L 0 910.9165038653829Q 160 827.2652269237973  320 808.8155208737846T 640 669.442846863003T 960 627.6523304554356T 1280 596.8831048970612T 1600 478.82900277205465T 1920 372.5046206897147L 1920 0 Z;M0 0L 0 836.2708114957398Q 160 826.0968384259767  320 807.8360102131452T 640 767.6733623660755T 960 693.2191484132342T 1280 586.7108351632475T 1600 518.8681807955177T 1920 469.1920916934018L 1920 0 Z;M0 0L 0 862.7030387863362Q 160 852.9376108313571  320 833.6395185350602T 640 708.0467182714134T 960 688.9570821991335T 1280 581.9264322559466T 1600 485.8143624777197T 1920 468.39203022042767L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="476.525"
-          cy="363.313"
-          rx="1.07433"
-          ry="1.07306"
-          transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-          fill="#945DD6"
-        >
-          <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M476.171 362.952L450.417 337.168"
-          transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-          stroke="url(#paint4_linear)"
-        >
-          <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
+            repeatCount="indefinite"
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="-16.666666666666668s"
+            values="M0 0L 0 924.0098640429902Q 160 813.308041272928  320 764.0290275443931T 640 773.688663615663T 960 707.6229543173548T 1280 628.5763831318131T 1600 571.2689667467371T 1920 458.0404678062458L 1920 0 Z;M0 0L 0 827.049182325709Q 160 828.1127272717745  320 792.0854692258603T 640 694.3187457854065T 960 659.5476855651109T 1280 551.3618886085421T 1600 536.1856874853424T 1920 395.9850575209489L 1920 0 Z;M0 0L 0 832.2851122433883Q 160 795.8683632560949  320 778.8619786893067T 640 697.5133394179749T 960 653.1679887396957T 1280 538.133053035365T 1600 444.4632831523907T 1920 384.3748712284691L 1920 0 Z;M0 0L 0 924.0098640429902Q 160 813.308041272928  320 764.0290275443931T 640 773.688663615663T 960 707.6229543173548T 1280 628.5763831318131T 1600 571.2689667467371T 1920 458.0404678062458L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="382.164"
-          cy="155.029"
-          rx="1.07433"
-          ry="1.07306"
-          transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
-          fill="#F46737"
-        >
-          <animateMotion
-            dur="10s"
-            begin="1"
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
             repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M381.81 154.669L356.057 128.885"
-          transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
-          stroke="url(#paint5_linear)"
-        >
-          <animateMotion
-            dur="10s"
-            begin="1"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="-25s"
+            values="M0 0L 0 912.2847235508353Q 160 881.5732821834326  320 843.4459708464217T 640 755.2576161233476T 960 617.0709589138735T 1280 517.222118743319T 1600 441.5183360391876T 1920 434.2003854121974L 1920 0 Z;M0 0L 0 841.9588049864251Q 160 855.2621848776577  320 832.0815890431102T 640 724.0415172657874T 960 620.6042394070696T 1280 606.8604063693108T 1600 543.3737985122734T 1920 379.8565385806193L 1920 0 Z;M0 0L 0 879.9050882337744Q 160 798.2225673316823  320 773.1129847795376T 640 754.2511943993043T 960 634.3447170388115T 1280 610.7881853217393T 1600 545.5318150564251T 1920 440.8724935480988L 1920 0 Z;M0 0L 0 912.2847235508353Q 160 881.5732821834326  320 843.4459708464217T 640 755.2576161233476T 960 617.0709589138735T 1280 517.222118743319T 1600 441.5183360391876T 1920 434.2003854121974L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="333.324"
-          cy="382.691"
-          rx="1.07306"
-          ry="1.07433"
-          transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
-          fill="#F46737"
-        >
-          <animateMotion
-            dur="5s"
-            begin="0"
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
             repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_1" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M333.667 382.335L359.42 356.551"
-          transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
-          stroke="url(#paint6_linear)"
-        >
-          <animateMotion
-            dur="5s"
-            begin="0"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_1" />
-          </animateMotion>
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="-33.333333333333336s"
+            values="M0 0L 0 905.6210644519471Q 160 888.21266400108  320 847.4207077138724T 640 734.457283162302T 960 647.7794891207178T 1280 562.8447808265189T 1600 506.3380951700003T 1920 478.80331243048005L 1920 0 Z;M0 0L 0 867.9140827288043Q 160 858.9398565799803  320 816.4512873579828T 640 763.2872725103874T 960 685.2795415760067T 1280 573.8865086272772T 1600 445.8017162680017T 1920 451.75602730407087L 1920 0 Z;M0 0L 0 854.6290844981853Q 160 812.275850455217  320 794.5306577896054T 640 751.0932167510805T 960 606.669218898213T 1280 516.5788929576838T 1600 492.1812062846847T 1920 452.55262697896745L 1920 0 Z;M0 0L 0 905.6210644519471Q 160 888.21266400108  320 847.4207077138724T 640 734.457283162302T 960 647.7794891207178T 1280 562.8447808265189T 1600 506.3380951700003T 1920 478.80331243048005L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="165.524"
-          cy="93.9596"
-          rx="1.07306"
-          ry="1.07433"
-          transform="translate(-165.524 -93.9596)"
-          fill="#F46737"
-        >
-          <animateMotion
-            dur="10s"
-            begin="3"
+        <path d="" fill="url(#lg-0.8324277718715198)" opacity="0.4">
+          <animate
+            attributeName="d"
+            dur="50s"
             repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M165.182 94.3159L139.429 120.1"
-          transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
-          stroke="url(#paint7_linear)"
-        >
-          <animateMotion
-            dur="10s"
-            begin="3"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
+            keyTimes="0;0.333;0.667;1"
+            calcMode="spline"
+            keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+            begin="-41.666666666666664s"
+            values="M0 0L 0 882.7872683069859Q 160 784.9617750149039  320 751.5065390125925T 640 712.8773481300339T 960 654.8819337313408T 1280 565.5630256298803T 1600 476.2998024302534T 1920 466.36113054732976L 1920 0 Z;M0 0L 0 880.140940746588Q 160 785.5973705707603  320 754.6437733572919T 640 703.6363220772487T 960 679.1705824106551T 1280 575.3967047361116T 1600 509.58334181748836T 1920 340.56295693296073L 1920 0 Z;M0 0L 0 927.5965512669768Q 160 846.362852508389  320 805.8820059078053T 640 704.8928374756099T 960 630.838358226714T 1280 647.9423013429229T 1600 541.0633637175915T 1920 509.409983119465L 1920 0 Z;M0 0L 0 882.7872683069859Q 160 784.9617750149039  320 751.5065390125925T 640 712.8773481300339T 960 654.8819337313408T 1280 565.5630256298803T 1600 476.2998024302534T 1920 466.36113054732976L 1920 0 Z"
+          ></animate>
         </path>
-        <ellipse
-          cx="476.525"
-          cy="363.313"
-          rx="1.07433"
-          ry="1.07306"
-          transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-          fill="#13ADC7"
-        >
-          <animateMotion
-            dur="12s"
-            begin="4"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
-        </ellipse>
-        <path
-          d="M476.171 362.952L450.417 337.168"
-          transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-          stroke="url(#paint11_linear)"
-        >
-          <animateMotion
-            dur="12s"
-            begin="4"
-            repeatCount="indefinite"
-            rotate="auto"
-          >
-            <mpath xlinkHref="#path_0" />
-          </animateMotion>
-        </path>
-        <defs>
-          <radialGradient
-            id="paint0_radial"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(301 301) rotate(90) scale(300)"
-          >
-            <stop
-              offset="0.333333"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-            />
-            <stop
-              offset="1"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-              stopOpacity="0"
-            />
-          </radialGradient>
-          <radialGradient
-            id="paint1_radial"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(301 301) rotate(90) scale(300)"
-          >
-            <stop
-              offset="0.333333"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-            />
-            <stop
-              offset="1"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-              stopOpacity="0"
-            />
-          </radialGradient>
-          <radialGradient
-            id="paint2_radial"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(301 301) rotate(90) scale(300)"
-          >
-            <stop
-              offset="0.333333"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-            />
-            <stop
-              offset="1"
-              stopColor={`${themeCtx.darkTheme ? "#FFF" : "#000"}`}
-              stopOpacity="0"
-            />
-          </radialGradient>
-          <linearGradient
-            id="paint3_linear"
-            x1="295.043"
-            y1="193.116"
-            x2="269.975"
-            y2="218.154"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint4_linear"
-            x1="476.529"
-            y1="363.31"
-            x2="451.461"
-            y2="338.272"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint5_linear"
-            x1="382.168"
-            y1="155.027"
-            x2="357.1"
-            y2="129.989"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint6_linear"
-            x1="333.309"
-            y1="382.693"
-            x2="358.376"
-            y2="357.655"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint7_linear"
-            x1="165.54"
-            y1="93.9578"
-            x2="140.472"
-            y2="118.996"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint8_linear"
-            x1="414.367"
-            y1="301.156"
-            x2="439.435"
-            y2="276.118"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint9_linear"
-            x1="515.943"
-            y1="288.238"
-            x2="541.339"
-            y2="291.454"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint10_linear"
-            x1="117.001"
-            y1="230.619"
-            x2="117.36"
-            y2="258.193"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="paint11_linear"
-            x1="476.529"
-            y1="363.31"
-            x2="451.461"
-            y2="338.272"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
+      </g>
+    </svg>
   );
 };
 
