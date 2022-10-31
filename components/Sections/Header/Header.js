@@ -12,7 +12,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`w-screen fixed opacity-95 z-40`}>
+    <header className={`w-screen fixed opacity-95 h-0 z-40`}>
       <HeaderButtons
         toggleNavHandler={toggleNavHandler}
         isNavShown={isNavShown}
