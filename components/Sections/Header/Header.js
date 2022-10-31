@@ -24,12 +24,12 @@ export default function Header() {
   const themeButton = themeCtx.darkTheme ? (
     <BsSunFill
       onClick={themeCtx.toggleDarkTheme}
-      className="text-slate-200 text-3xl cursor-pointer mx-8 duration-300 hover:scale-110"
+      className="text-slate-200 text-2xl md:text-3xl  cursor-pointer mx-8 duration-300 hover:scale-110"
     />
   ) : (
     <BsMoonFill
       onClick={themeCtx.toggleDarkTheme}
-      className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer mx-8 duration-300 hover:scale-110`}
+      className={`${themeCtx.themeClasses.text} text-2xl md:text-3xl cursor-pointer mx-8 duration-300 hover:scale-110`}
     />
   );
 
@@ -37,12 +37,12 @@ export default function Header() {
     isNavShown === "SHOW" ? (
       <CgClose
         onClick={toggleNavHandler}
-        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer duration-300 hover:scale-110`}
+        className={`${themeCtx.themeClasses.text} text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
       />
     ) : (
       <GiHamburgerMenu
         onClick={toggleNavHandler}
-        className={`${themeCtx.themeClasses.text} text-3xl cursor-pointer duration-300 hover:scale-110`}
+        className={`${themeCtx.themeClasses.text} text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
       />
     );
 
@@ -77,7 +77,7 @@ export default function Header() {
         </div>
         <div className="flex absolute top-7 right-7">
           {themeButton}
-          <SocialLinks iconsSize={"text-3xl"} />
+          <SocialLinks iconsSize={"text-2xl md:text-3xl"} />
         </div>
       </nav>
     </header>

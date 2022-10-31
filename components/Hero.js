@@ -41,18 +41,9 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div className=" absolute w-full -z-10 top-0 lg:static m-auto md:w-1/2">
+        <div className="absolute w-full -z-10 top-0 lg:static m-auto xl:w-1/2">
           <div className="h-full w-full relative">
-            {/* <div className="hidden md:block absolute h-1/3 w-1/3 left-0 top-0 bottom-20 right-0 m-auto">
-              <Image
-                src={"/my-pic1.png"}
-                width="100%"
-                height="100%"
-                layout="fill"
-                alt="me"
-              />
-            </div> */}
-            <BackgroundAnimation isDark={themeCtx.darkTheme} />
+            <BackgroundAnimation />
           </div>
         </div>
       </div>
