@@ -1,16 +1,13 @@
-import { useContext, useRef, useState } from "react";
+import { useContext } from "react";
 import emailjs from "emailjs-com";
 import { ThemeContext } from "../store/ThemeContext";
+import { useForm } from "react-hook-form";
+import Input from "./UI/Input";
 
 export default function ContactForm() {
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const themeCtx = useContext(ThemeContext);
 
-  const form = useRef();
-
-  // add validation
+  const { register, handleSubmit } = useForm();
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -24,74 +21,42 @@ export default function ContactForm() {
     console.log(data);
   };
 
-  const themeCtx = useContext(ThemeContext);
-
   return (
     <form
       id="contact"
-      ref={form}
       onSubmit={sendEmail}
       className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
     >
       <h2 className="text-2xl font-bold">Send me a message!</h2>
       <div className="grid grid-cols-3 gap-10 my-10">
         <div className="col-span-3 lg:col-span-1 ">
-          <label htmlFor="fullname" className="font-light mt-8">
-            Full name<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            value={fullname}
-            onChange={(e) => {
-              setFullname(e.target.value);
-            }}
-            name="fullname"
-            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-          />
+          <Input register={register} inputType="text" label={"Name"} required />
         </div>
 
         <div className="col-span-3 lg:col-span-1">
-          <label htmlFor="email" className="font-light my-3">
-            E-mail<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          <Input
+            register={register}
+            inputType="text"
+            label={"E-mail"}
+            required
           />
         </div>
-
         <div className="col-span-3 lg:col-span-1">
-          <label htmlFor="subject" className="font-light my-3">
-            Subject<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="subject"
-            value={subject}
-            onChange={(e) => {
-              setSubject(e.target.value);
-            }}
-            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          <Input
+            register={register}
+            inputType="text"
+            label={"Subject"}
+            required
           />
         </div>
-
         <div className="col-span-3">
-          <label htmlFor="message" className="font-light my-3">
-            Message<span className="text-red-500">*</span>
-          </label>
-          <textarea
-            name="message"
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-          ></textarea>
+          <Input
+            register={register}
+            inputType="text"
+            label={"Message"}
+            required
+            textArea
+          />
         </div>
       </div>
       <button
