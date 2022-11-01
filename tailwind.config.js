@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./store/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/contexts/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -33,7 +33,7 @@ module.exports = {
         gray: {
           750: "#2C3441",
         },
-        'darkBg': "#0F1624",
+        darkBg: "#0F1624",
       },
     },
   },
