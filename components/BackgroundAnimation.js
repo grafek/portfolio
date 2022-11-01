@@ -6,7 +6,7 @@ const BackgroundAnimation = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="1000"
+      className="h-[110vh]"
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 1920 903"
     >
