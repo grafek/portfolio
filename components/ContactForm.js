@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { ThemeContext } from "../store/ThemeContext";
 import { useForm } from "react-hook-form";
@@ -7,37 +7,87 @@ import Input from "./UI/Input";
 export default function ContactForm() {
   const themeCtx = useContext(ThemeContext);
 
-  const { register, handleSubmit } = useForm();
+  const form = useRef();
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  const [animationClasses, setAnimationClasses] = useState();
 
-    const data = await emailjs.sendForm(
-      "portfolio-contact",
-      "template_tra4ay3",
-      form.current,
-      "pvd-8fUHrfBMag2xW"
+  const {
+    register,
+    formState: { errors, isSubmitting, isSubmitted },
+    handleSubmit,
+    reset,
+  } = useForm();
+
+  let formStatusMessage;
+
+  useEffect(() => {
+    setAnimationClasses("animate-slideIn");
+
+    const timer = setTimeout(() => {
+      if (isSubmitted) {
+        setAnimationClasses("animate-slideOut");
+      }
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, [isSubmitted]);
+
+  if (isSubmitting) {
+    formStatusMessage = <p>Sending..</p>;
+  }
+  if (isSubmitted) {
+    formStatusMessage = (
+      <p className={`${animationClasses} text-green-500`}>
+        Message sent successfully!
+      </p>
     );
-    console.log(data);
+  }
+
+  const sendEmail = async () => {
+    try {
+      const res = await emailjs.sendForm(
+        "portfolio-contact",
+        "template_tra4ay3",
+        form.current,
+        "pvd-8fUHrfBMag2xW"
+      );
+      if (res.status === 200) {
+        reset();
+      }
+    } catch (err) {
+      formStatusMessage = (
+        <p className={`${animationClasses} text-red-500`}>
+          Something went wrong {err}
+        </p>
+      );
+    }
   };
 
   return (
     <form
       id="contact"
-      onSubmit={sendEmail}
+      ref={form}
+      onSubmit={handleSubmit(sendEmail)}
       className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
     >
       <h2 className="text-2xl font-bold">Send me a message!</h2>
       <div className="grid grid-cols-3 gap-10 my-10">
         <div className="col-span-3 lg:col-span-1 ">
-          <Input register={register} inputType="text" label={"Name"} required />
+          <Input
+            register={register}
+            errors={errors.Name}
+            inputType="text"
+            label={"Name"}
+            required
+          />
         </div>
 
         <div className="col-span-3 lg:col-span-1">
           <Input
             register={register}
-            inputType="text"
-            label={"E-mail"}
+            inputType="email"
+            label={"Email"}
+            errors={errors.Email}
             required
           />
         </div>
@@ -46,6 +96,7 @@ export default function ContactForm() {
             register={register}
             inputType="text"
             label={"Subject"}
+            errors={errors.Subject}
             required
           />
         </div>
@@ -54,6 +105,7 @@ export default function ContactForm() {
             register={register}
             inputType="text"
             label={"Message"}
+            errors={errors.Message}
             required
             textArea
           />
@@ -78,6 +130,7 @@ export default function ContactForm() {
           />
         </svg>
       </button>
+      {formStatusMessage}
     </form>
   );
 }

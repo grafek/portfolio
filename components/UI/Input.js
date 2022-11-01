@@ -3,13 +3,14 @@ export default function Input({
   register,
   required,
   inputType,
+  errors,
   textArea = false,
 }) {
   let requiredAsterisk = required ? (
     <span className="text-red-500">*</span>
   ) : null;
 
-  let InputContent = textArea ? (
+  let inputContent = textArea ? (
     <textarea
       name={label}
       {...register(label, { required })}
@@ -26,11 +27,20 @@ export default function Input({
 
   return (
     <>
-      <label htmlFor={label} className="font-light mt-8">
+      <label
+        htmlFor={label}
+        aria-invalid={errors ? "true" : "false"}
+        className="font-light mt-8"
+      >
         {label}
         {requiredAsterisk}
       </label>
-      {InputContent}
+      {inputContent}
+      {errors?.type === "required" ? (
+        <span role={"alert"} className="text-red-500">
+          {label} is required!
+        </span>
+      ) : null}
     </>
   );
 }
