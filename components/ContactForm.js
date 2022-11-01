@@ -31,64 +31,72 @@ export default function ContactForm() {
       id="contact"
       ref={form}
       onSubmit={sendEmail}
-      className={` ${themeCtx.themeClasses.text} flex flex-col mx-auto w-full pb-4 max-w-7xl`}
+      className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
     >
       <h2 className="text-2xl font-bold">Send me a message!</h2>
+      <div className="grid grid-cols-3 gap-10 my-10">
+        <div className="col-span-3 lg:col-span-1 ">
+          <label htmlFor="fullname" className="font-light mt-8">
+            Full name<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            value={fullname}
+            onChange={(e) => {
+              setFullname(e.target.value);
+            }}
+            name="fullname"
+            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          />
+        </div>
 
-      <label htmlFor="fullname" className="font-light mt-8">
-        Full name<span className="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        value={fullname}
-        onChange={(e) => {
-          setFullname(e.target.value);
-        }}
-        name="fullname"
-        className="bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-      />
+        <div className="col-span-3 lg:col-span-1">
+          <label htmlFor="email" className="font-light my-3">
+            E-mail<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          />
+        </div>
 
-      <label htmlFor="email" className="font-light my-3">
-        E-mail<span className="text-red-500">*</span>
-      </label>
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-        className="bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-      />
+        <div className="col-span-3 lg:col-span-1">
+          <label htmlFor="subject" className="font-light my-3">
+            Subject<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            name="subject"
+            value={subject}
+            onChange={(e) => {
+              setSubject(e.target.value);
+            }}
+            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          />
+        </div>
 
-      <label htmlFor="subject" className="font-light my-3">
-        Subject<span className="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        name="subject"
-        value={subject}
-        onChange={(e) => {
-          setSubject(e.target.value);
-        }}
-        className="bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-      />
-
-      <label htmlFor="message" className="font-light my-3">
-        Message<span className="text-red-500">*</span>
-      </label>
-      <textarea
-        name="message"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-        className="bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
-      ></textarea>
-
+        <div className="col-span-3">
+          <label htmlFor="message" className="font-light my-3">
+            Message<span className="text-red-500">*</span>
+          </label>
+          <textarea
+            name="message"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+            className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+          ></textarea>
+        </div>
+      </div>
       <button
         type="submit"
-        className={`${themeCtx.themeClasses.btnFilled} mt-5 mx-auto flex`}
+        className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
       >
         Send
         <svg
