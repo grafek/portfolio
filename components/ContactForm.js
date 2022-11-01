@@ -130,6 +130,7 @@ export default function ContactForm() {
           />
         </svg>
       </button>
+      <br />
       {formStatusMessage}
     </form>
   );

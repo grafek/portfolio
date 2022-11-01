@@ -17,7 +17,7 @@ export default function Navbar({ isNavShown, toggleNavHandler }) {
       <ul
         className={`items-center justify-center h-screen flex flex-col gap-10`}
       >
-        <NavItem content="about" href={"#main"} onClick={toggleNavHandler} />
+        <NavItem content="about" href={"#about"} onClick={toggleNavHandler} />
         <NavItem
           content="projects"
           href={"#projects"}
@@ -25,7 +25,7 @@ export default function Navbar({ isNavShown, toggleNavHandler }) {
         />
         <NavItem
           content="contact"
-          href={"#footer"}
+          href={"#contact"}
           onClick={toggleNavHandler}
         />
       </ul>
