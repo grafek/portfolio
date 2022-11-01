@@ -36,7 +36,7 @@ export default function Card({
         className="h-60 lg:h-80 relative hover:scale-105 duration-300"
         title={title}
       >
-        <a href={url} rel="noreferrer" target="_blank">
+        <a href={url} rel="noreferrer" className="relative" target="_blank">
           <div className="z-30 absolute flex justify-center h-full w-full">
             <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
               {title}

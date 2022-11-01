@@ -21,12 +21,12 @@ export default function HeaderButtons({ toggleNavHandler, isNavShown }) {
     );
 
   return (
-    <div className="flex justify-between absolute w-full top-0 p-8 z-20">
-      {navMobileButtons}
-      <div className="flex gap-6">
+    <>
+      <div className="absolute top-0 p-8 z-20">{navMobileButtons}</div>
+      <div className="absolute flex gap-6 top-0 right-0 p-8 z-20">
         {themeCtx.changeThemeBtn}
         <SocialIcons iconsSize={"text-2xl md:text-3xl"} />
       </div>
-    </div>
+    </>
   );
 }
