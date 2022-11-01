@@ -25,7 +25,7 @@ function ThemeContextProvider({ children }) {
   const shadow = darkTheme ? "shadow-[#ffffff15]" : "shadow-[#00000025]";
 
   const text = darkTheme
-    ? "text-gray-100 transition-all"
+    ? "text-gray-50 transition-all"
     : "text-inherit transition-all";
 
   const subText = darkTheme

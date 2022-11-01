@@ -13,12 +13,12 @@ const BackgroundAnimation = () => {
       <g transform="translate(960,451.5) scale(1,1) translate(-960,-451.5)">
         <linearGradient id="lg-0.8324277718715198" x1="0" x2="1" y1="0" y2="0">
           <stop
-            stop-color={themeCtx.darkTheme ? "#0F1624" : "#d1d5db"}
+            stopColor={themeCtx.darkTheme ? "#0F1624" : "#d1d5db"}
             className={"transition-all"}
             offset="0"
           ></stop>
           <stop
-            stop-color={themeCtx.darkTheme ? "#312e81" : "#c7d2fe"}
+            stopColor={themeCtx.darkTheme ? "#312e81" : "#c7d2fe"}
             className={"transition-all"}
             offset="1"
           ></stop>
