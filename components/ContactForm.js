@@ -13,7 +13,7 @@ export default function ContactForm() {
 
   const {
     register,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
     handleSubmit,
     reset,
   } = useForm();
@@ -24,18 +24,18 @@ export default function ContactForm() {
     setAnimationClasses("animate-slideIn");
 
     const timer = setTimeout(() => {
-      if (isSubmitted) {
+      if (isSubmitSuccessful) {
         setAnimationClasses("animate-slideOut");
       }
     }, 6000);
 
     return () => clearTimeout(timer);
-  }, [isSubmitted]);
+  }, [isSubmitSuccessful]);
 
   if (isSubmitting) {
     formStatusMessage = <p>Sending..</p>;
   }
-  if (isSubmitted) {
+  if (isSubmitSuccessful) {
     formStatusMessage = (
       <p className={`${animationClasses} text-green-500`}>
         Message sent successfully!
