@@ -70,6 +70,8 @@ export const DUMMY_PROJECTS = [
     tags: ["#react", "#next", "#tailwindcss"],
   },
 ];
+
+export const navItems = ["hero", "projects", "about", "contact"];
 export const FRONTEND_SKILLS = [
   "HTML5",
   "CSS3 Grid and flex",

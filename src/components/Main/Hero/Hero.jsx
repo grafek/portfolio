@@ -6,7 +6,10 @@ export default function Hero() {
   const themeCtx = useContext(ThemeContext);
 
   return (
-    <section className="h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center">
+    <section
+      id="hero"
+      className="h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
+    >
       <div className="w-2/3 flex flex-col gap-14">
         <div>
           <h1
