@@ -59,13 +59,13 @@ function ThemeContextProvider({ children }) {
 
   const btnTrans =
     darkTheme === "dark"
-      ? "text-white bg-transparent rounded-md border-indigo-700 border py-2 hover:bg-indigo-700 hover:text-white px-8 duration-300"
-      : "text-black bg-transparent rounded-md border-indigo-700 border py-2 hover:bg-indigo-700 hover:text-white px-8 duration-300";
+      ? "text-white bg-transparent rounded-md border-indigo-700 border  py-2 md:py-3 hover:bg-indigo-700 hover:text-white px-8 md:px-12 duration-300"
+      : "text-black bg-transparent rounded-md border-indigo-700 border py-2 md:py-3 hover:bg-indigo-700 hover:text-white px-8 md:px-12 duration-300";
 
   const btnFilled =
     darkTheme === "dark"
-      ? "text-white bg-indigo-700 py-2 rounded-md hover:bg-transparent border border-indigo-700 hover:text-white px-8 duration-300"
-      : "text-white bg-indigo-700 rounded-md border-indigo-700 border py-2 hover:bg-transparent hover:text-black px-8 duration-300";
+      ? "text-white bg-indigo-700 py-2 md:py-3 rounded-md hover:bg-transparent border border-indigo-700 hover:text-white px-8 md:px-12 duration-300"
+      : "text-white bg-indigo-700 rounded-md border-indigo-700 border py-2 md:py-3 hover:bg-transparent hover:text-black px-8 md:px-12 duration-300";
 
   const themeClasses = {
     text,
