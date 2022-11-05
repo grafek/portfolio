@@ -54,8 +54,8 @@ function ThemeContextProvider({ children }) {
 
   const darkBg =
     darkTheme === "dark"
-      ? "bg-darkBg transition-all"
-      : "bg-gray-100 transition-all";
+      ? "bg-darkBg transition-colors"
+      : "bg-gray-100 transition-colors";
 
   const btnTrans =
     darkTheme === "dark"
