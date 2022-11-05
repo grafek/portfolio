@@ -15,7 +15,7 @@ export default function Layout({ children, pageTitle }) {
         <title>{pageTitle}</title>
       </Head>
       <Header />
-      <main className={`${themeCtx.themeClasses.darkBg} `} id={"main"}>
+      <main className={`${themeCtx.themeClasses.darkBg} `} id={"home"}>
         <div className="mx-auto container">{children}</div>
       </main>
       <Footer />

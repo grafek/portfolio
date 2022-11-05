@@ -1,12 +1,13 @@
-import {Card, SectionHeading} from "../../UI";
+import { SectionHeading } from "../../UI";
 import { DUMMY_PROJECTS } from "../../../constants";
+import Project from "./Project";
 
 export default function Projects() {
   let content;
 
   content = DUMMY_PROJECTS.map((prj) => {
     return (
-      <Card
+      <Project
         key={prj.id}
         id={prj.id}
         title={prj.name}
@@ -14,16 +15,17 @@ export default function Projects() {
         img={prj.img}
         url={prj.url}
         tags={prj.tags}
-      >
-        {prj.description}
-      </Card>
+        description={prj.description}
+      />
     );
   });
 
   return (
-    <section id={"projects"}>
+    <section id={"projects"} className={"h-screen my-auto"}>
       <SectionHeading>Projects</SectionHeading>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 ">{content}</div>
+      <div className="overflow-x-scroll w-11/12 m-auto flex items-center h-[85%] gap-8 ">
+        {content}
+      </div>
     </section>
   );
 }
