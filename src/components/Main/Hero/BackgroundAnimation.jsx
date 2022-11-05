@@ -11,21 +11,21 @@ const BackgroundAnimation = () => {
       height={"100vh"}
       viewBox="0 0 1920 903"
     >
-      <g transform="translate(960,451.5) scale(1,1) translate(-960,-451.5)">
+      <g transform="translate(960,451.5) scale(1,1) translate(-1000,-451.5)">
         <linearGradient
           id="lg-0.8324277718715198"
-          x1="0"
+          x1="0.4"
           x2="0"
           y1="1"
-          y2="0.2"
+          y2="0.5"
         >
           <stop
-            stopColor={themeCtx.darkTheme === "dark" ? "#201e5e" : "#99acf5"}
+            stopColor={themeCtx.darkTheme === "dark" ? "#201e5e" : "#d1d4d8"}
             className={"transition-all"}
             offset="0"
           ></stop>
           <stop
-            stopColor={themeCtx.darkTheme === "dark" ? "#0a1014" : "#b6bcc4"}
+            stopColor={themeCtx.darkTheme === "dark" ? "#0a1014" : "#9fb2fd"}
             className={"transition-all"}
             offset="1"
           ></stop>

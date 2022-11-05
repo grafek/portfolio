@@ -71,7 +71,7 @@ export const DUMMY_PROJECTS = [
   },
 ];
 
-export const navItems = ["hero", "projects", "about", "contact"];
+export const navItems = ["HOME", "projects", "about", "contact"];
 export const FRONTEND_SKILLS = [
   "HTML5",
   "CSS3 Grid and flex",

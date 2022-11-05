@@ -6,19 +6,26 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const themeCtx = useContext(ThemeContext);
 
+  console.log(themeCtx.darkTheme);
+
+  const heroHeadingColor =
+    themeCtx.darkTheme === "dark"
+      ? "bg-gradient-to-r from-indigo-400 to-violet-700"
+      : "bg-gradient-to-r from-violet-700 to-indigo-500";
+
   return (
     <section
       id="hero"
       className="h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
     >
-      <div className="w-2/3 flex flex-col gap-14">
+      <div className="w-5/6 md:min-w-fit flex flex-col gap-14">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
           <h1
-            className={`bg-gradient-to-r from-indigo-800 to-cyan-700 bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold`}
+            className={`${heroHeadingColor} bg-clip-text text-transparent text-5xl sm:text-[6rem] md:text-[7rem] lg:text-[8rem] xl:text-[10rem] font-bold`}
           >
             Hi, I&apos;m Jacek
           </h1>
@@ -34,24 +41,20 @@ export default function Hero() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.5, delay: 1.5 }}
-          className="flex flex-col md:flex-row max-w-2xl lg:mx-auto gap-8"
+          className="flex flex-col md:flex-row md:max-w-md md:mx-auto gap-8"
         >
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className={`${themeCtx.themeClasses.btnFilled} w-3/4  mx-auto font-semibold`}
+          <a
+            className={`${themeCtx.themeClasses.btnFilled} w-1/2 md:w-3/4 mx-auto font-semibold`}
             href={"#projects"}
           >
             Projects
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className={`${themeCtx.themeClasses.btnTrans} w-3/4 mx-auto  font-semibold`}
+          </a>
+          <a
+            className={`${themeCtx.themeClasses.btnTrans} w-1/2  md:w-3/4 mx-auto  font-semibold`}
             href={`#contact`}
           >
             Contact
-          </motion.a>
+          </a>
         </motion.div>
       </div>
 
