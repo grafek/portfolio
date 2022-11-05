@@ -45,10 +45,10 @@ export default function Project({
         className ? className : ""
       } ${
         themeCtx.themeClasses.shadow
-      } min-w-full md:min-w-[25%] m-auto flex flex-col justify-between rounded-md h-full shadow-md `}
+      } min-w-full md:min-w-[40%] m-auto flex flex-col justify-between rounded-md h-full shadow-md `}
     >
       {imgContent}
-      <div className={`p-4 text-sm lg:text-lg leading-6`}>
+      <div className={`p-4 lg:text-lg leading-6`}>
         <p className={`${themeCtx.themeClasses.subText}`}>{description}</p>
         {tagsContent}
       </div>

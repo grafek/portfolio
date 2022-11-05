@@ -23,7 +23,7 @@ export default function Projects() {
   return (
     <section id={"projects"} className={"h-screen my-auto"}>
       <SectionHeading>Projects</SectionHeading>
-      <div className="overflow-x-scroll w-11/12 m-auto flex items-center h-[85%] gap-8 ">
+      <div className="overflow-x-scroll w-11/12 m-auto flex items-center h-[80%] gap-8 ">
         {content}
       </div>
     </section>
