@@ -37,6 +37,11 @@ function ThemeContextProvider({ children }) {
       />
     );
 
+  const scrollbar =
+    darkTheme === "dark"
+      ? "scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-800"
+      : "scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-300";
+
   const shadow =
     darkTheme === "dark" ? "shadow-[#ffffff15]" : "shadow-[#00000025]";
 
@@ -75,6 +80,7 @@ function ThemeContextProvider({ children }) {
     btnTrans,
     btnFilled,
     shadow,
+    scrollbar,
   };
 
   return (

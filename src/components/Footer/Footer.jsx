@@ -15,7 +15,7 @@ export default function Footer() {
       className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen h-fit`}
     >
       <SectionHeading>Contact me!</SectionHeading>
-      <div className="min-h-[85vh] md:h-[85vh] flex flex-col items-center justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
+      <div className="min-h-[85vh] md:h-[87vh] flex flex-col items-center justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
         <div className="w-full h-full md:flex items-center">
           {" "}
           <ContactForm />

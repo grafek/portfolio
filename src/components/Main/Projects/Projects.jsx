@@ -1,8 +1,12 @@
 import { SectionHeading } from "../../UI";
 import { DUMMY_PROJECTS } from "../../../constants";
 import Project from "./Project";
+import { useContext } from "react";
+import { ThemeContext } from "../../../contexts/Theme";
 
 export default function Projects() {
+  const themeCtx = useContext(ThemeContext);
+
   let content;
 
   content = DUMMY_PROJECTS.map((prj) => {
@@ -27,9 +31,7 @@ export default function Projects() {
     >
       <SectionHeading>Projects</SectionHeading>
       <div
-        className={
-          "h-[80%] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll"
-        }
+        className={`${themeCtx.themeClasses.scrollbar}  h-[80%] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll`}
       >
         {content}
       </div>

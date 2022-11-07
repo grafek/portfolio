@@ -7,7 +7,9 @@ export default function Layout({ children, pageTitle }) {
   const themeCtx = useContext(ThemeContext);
 
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth">
+    <div
+      className={`${themeCtx.themeClasses.scrollbar} h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth`}
+    >
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
