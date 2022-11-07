@@ -21,9 +21,16 @@ export default function Projects() {
   });
 
   return (
-    <section id={"projects"} className={"h-screen my-auto"}>
+    <section
+      id={"projects"}
+      className={"snap-center h-screen my-auto relative overflow-hidden"}
+    >
       <SectionHeading>Projects</SectionHeading>
-      <div className="overflow-x-scroll w-11/12 m-auto flex items-center h-[80%] gap-8 ">
+      <div
+        className={
+          "h-[80%] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll"
+        }
+      >
         {content}
       </div>
     </section>

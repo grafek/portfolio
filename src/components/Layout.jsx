@@ -7,7 +7,7 @@ export default function Layout({ children, pageTitle }) {
   const themeCtx = useContext(ThemeContext);
 
   return (
-    <>
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth">
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,10 +15,10 @@ export default function Layout({ children, pageTitle }) {
         <title>{pageTitle}</title>
       </Head>
       <Header />
-      <main className={`${themeCtx.themeClasses.darkBg} `} id={"home"}>
+      <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
         <div className="mx-auto container">{children}</div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

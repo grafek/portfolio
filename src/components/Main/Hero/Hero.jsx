@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
+      className="snap-center h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
     >
       <div className="w-5/6 md:min-w-fit flex flex-col gap-14">
         <motion.div

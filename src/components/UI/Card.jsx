@@ -7,7 +7,6 @@ export default function Card({
   title,
   children,
   tags,
-
   className,
   icon,
 }) {

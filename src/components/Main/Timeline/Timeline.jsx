@@ -11,9 +11,9 @@ const Timeline = () => {
   ));
 
   return (
-    <div className="flex justify-center w-11/12 py-14 mx-auto">
+    <div className="flex justify-center w-11/12 py-5 mx-auto">
       <ul
-        className={`${themeCtx.themeClasses.subText} lg:flex lg:w-full  lg:justify-between`}
+        className={`${themeCtx.themeClasses.subText} lg:flex lg:w-full text-sm md:text-base lg:justify-between`}
       >
         {timelineContet}
       </ul>

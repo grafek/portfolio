@@ -18,7 +18,7 @@ const sidebar = {
   },
   closed: {
     opacity: 0.95,
-    clipPath: "circle(30px at 43px 45px)",
+    clipPath: "circle(20px at 26px 26px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -56,9 +56,7 @@ export default function Navbar() {
         className={`${themeCtx.themeClasses.lightDarkBg} absolute top-0 left-0 bottom-0 w-1/3 md:w-1/5 h-screen`}
         variants={sidebar}
       >
-        <div className="absolute top-0 left-0 p-[32px] md:p-[29px] z-20">
-          {navBtn}
-        </div>
+        <div className="absolute top-0 left-0 p-[14px] z-20">{navBtn}</div>
         <Navigation toggleNav={toggleNav} />
       </motion.div>
     </motion.nav>
