@@ -7,7 +7,7 @@ export default function SectionHeading({ children }) {
   return (
     <>
       <h3
-        className={`${themeCtx.themeClasses.text} text-center sm:text-left px-4 text-4xl lg:text-5xl font-semibold py-8`}
+        className={`${themeCtx.themeClasses.text} text-center px-4 text-4xl lg:text-5xl font-semibold py-8 tracking-widest`}
       >
         <SectionDivider />
         {children}

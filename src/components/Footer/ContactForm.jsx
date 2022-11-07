@@ -72,8 +72,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit(sendEmail)}
       className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
     >
-      <h2 className="text-2xl font-bold">Send me a message!</h2>
-      <div className="grid grid-cols-3 gap-10 my-10">
+      <div className="grid grid-cols-3 gap-8 my-2 md:my-8">
         <div className="col-span-3 lg:col-span-1 ">
           <Input
             register={register}

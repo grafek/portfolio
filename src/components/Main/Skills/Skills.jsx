@@ -1,48 +1,22 @@
-import { Card, Pill, SectionHeading } from "../../UI";
-import { DiReact } from "react-icons/di";
-import { SiPrisma, SiNextdotjs } from "react-icons/si";
-import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
-import {
-  FRONTEND_SKILLS,
-  DATABASE_SKILLS,
-  OTHER_SKILLS,
-  BACKEND_SKILLS,
-} from "../../../constants";
-import { listItems } from "../../../utils/functions";
-
-const iconsInlineClasses = "inline text-3xl mr-3";
+import { SectionHeading } from "../../UI";
+import { SKILLS } from "../../../constants";
+import Skill from "./Skill";
 
 const Skills = () => {
   return (
-    <section id={"stack"}>
-      <SectionHeading>Current Stack</SectionHeading>
-      <div className="mx-auto grid lg:grid-cols-2 2xl:grid-cols-4 gap-10">
-        <Card
-          icon={<DiReact className={iconsInlineClasses} />}
-          title={"Front-end"}
-        >
-          {listItems(FRONTEND_SKILLS, Pill)}
-        </Card>
-        <Card
-          title={"Back-end"}
-          icon={<SiNextdotjs className={iconsInlineClasses} />}
-        >
-          {listItems(BACKEND_SKILLS, Pill)}
-        </Card>
-        <Card
-          title={"Databases"}
-          icon={<SiPrisma className={iconsInlineClasses} />}
-        >
-          {listItems(DATABASE_SKILLS, Pill)}
-        </Card>
-        <Card
-          title={"Other"}
-          icon={
-            <HiOutlineDotsCircleHorizontal className={iconsInlineClasses} />
-          }
-        >
-          {listItems(OTHER_SKILLS, Pill)}
-        </Card>
+    <section id={"skills"} className="snap-center h-screen">
+      <SectionHeading>Skills</SectionHeading>
+      <div className=" w-11/12 flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-[80%] justify-center xl:space-y-0 mx-auto items-center">
+        <div className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16">
+          {SKILLS.map((item, i) => (
+            <Skill
+              key={i}
+              img={item.img}
+              name={item.name}
+              progress={item.progress}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

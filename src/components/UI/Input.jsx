@@ -13,8 +13,9 @@ export default function Input({
   let inputContent = textArea ? (
     <textarea
       name={label}
+      
       {...register(label, { required })}
-      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md h-40 md:h-60 focus:ring-1 border-gray-400"
     ></textarea>
   ) : (
     <input
