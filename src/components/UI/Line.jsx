@@ -27,10 +27,10 @@ const Line = () => {
           y2="0.500295"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={themeCtx.darkTheme ? "white" : "black"} />
+          <stop stopColor={themeCtx.darkTheme === "dark" ? "white" : "black"} />
           <stop
             offset="0.79478"
-            stopColor={themeCtx.darkTheme ? "white" : "black"}
+            stopColor={themeCtx.darkTheme === "dark" ? "white" : "black"}
             stopOpacity="0.2"
           />
         </linearGradient>

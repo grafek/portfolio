@@ -7,12 +7,12 @@ export default function ContactIcons({ iconsSize }) {
 
   return (
     <>
-      <a href={"mailto:jacek.grafender@gmail.com"}>
+      <a href={"mailto:jacek.grafender@gmail.com"} title={"mail"}>
         <BsEnvelopeFill
           className={`${iconsSize} ${themeCtx.themeClasses.text} duration-300 hover:scale-110`}
         />
       </a>
-      <a href={"tel:+48737637407"}>
+      <a href={"tel:+48737637407"} title={`phone`}>
         <BsTelephoneFill
           className={`${iconsSize} ${themeCtx.themeClasses.text} duration-300 hover:scale-110`}
         />

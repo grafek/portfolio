@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const themeCtx = useContext(ThemeContext);
 
-  console.log(themeCtx.darkTheme);
-
   const heroHeadingColor =
     themeCtx.darkTheme === "dark"
       ? "bg-gradient-to-r from-indigo-400 to-violet-700"
@@ -29,9 +27,9 @@ export default function Hero() {
           >
             Hi, I&apos;m Jacek
           </h1>
-          <h3 className={`${themeCtx.themeClasses.text} italic py-5 text-2xl`}>
+          <h2 className={`${themeCtx.themeClasses.text} italic py-5 text-2xl`}>
             IT Technician and Developer
-          </h3>
+          </h2>
           <p className={`${themeCtx.themeClasses.subText} leading-7 `}>
             Web development passionate - looking for a first experience as a
             front-end developer!
