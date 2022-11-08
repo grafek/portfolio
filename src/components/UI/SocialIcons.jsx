@@ -7,7 +7,12 @@ export default function SocialIcons({ iconsSize }) {
 
   return (
     <>
-      <a href={"https://github.com/grafek"} rel="noreferrer" target={"_blank"}>
+      <a
+        href={"https://github.com/grafek"}
+        rel="noreferrer"
+        target={"_blank"}
+        title={"github"}
+      >
         <BsGithub
           className={`${iconsSize} ${themeCtx.themeClasses.text}  duration-300 hover:scale-110`}
         />
@@ -16,6 +21,8 @@ export default function SocialIcons({ iconsSize }) {
         href={"https://www.linkedin.com/in/jacek-grafender/"}
         rel="noreferrer"
         target={"_blank"}
+        title={"linkedin"}
+        id
       >
         <BsLinkedin
           className={`${iconsSize} ${themeCtx.themeClasses.text}  duration-300 hover:scale-110`}
