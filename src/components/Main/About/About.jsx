@@ -9,9 +9,9 @@ const About = () => {
   return (
     <section id={`about`} className={"snap-start h-fit min-h-screen"}>
       <SectionHeading>About</SectionHeading>
-      <div className="h-[80vh] flex flex-col justify-around">
-        <div className="w-11/12 mx-auto flex flex-col md:flex-row gap-8 items-center min-h-fit">
-          <div className="relative filter w-24 h-24 sm:w-40 sm:h-40 md:w-[250vw] md:h-[35vh] lg:h-[50vh]  xl:w-[100vw]">
+      <div className="flex flex-col h-[calc(100vh-3.5rem)] justify-around">
+        <div className="w-11/12 mx-auto flex flex-col md:flex-row gap-2 md:gap-8 items-center min-h-fit">
+          <div className="relative w-24 h-24 sm:w-40 sm:h-40 md:w-[250vw] md:h-[35vh] lg:h-[50vh]  xl:w-[100vw]">
             <Image
               src={"/assets/ja_caa.png"}
               layout="fill"

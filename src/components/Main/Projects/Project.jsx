@@ -24,7 +24,7 @@ export default function Project({
   if (img && hasBackdrop) {
     imgContent = (
       <div
-        className="h-1/3 md:h-1/2 relative hover:scale-105 duration-300"
+        className="flex-1 relative hover:scale-105 duration-300"
         title={title}
       >
         <a href={url} rel="noreferrer" className="relative" target="_blank">
@@ -45,7 +45,7 @@ export default function Project({
         className ? className : ""
       } ${
         themeCtx.themeClasses.shadow
-      } w-[320px] snap-center min-w-[320px] md:w-[600px] xl:w-[900px] flex-shrink-0  m-auto flex flex-col rounded-md h-full shadow-md `}
+      } snap-center min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] flex-shrink-0  m-auto flex flex-col  rounded-md h-full shadow-md `}
     >
       {imgContent}
       <div className={`p-4 lg:text-lg leading-6`}>

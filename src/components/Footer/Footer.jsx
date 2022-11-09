@@ -11,15 +11,15 @@ export default function Footer() {
 
   return (
     <footer
-      id={"footer"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen h-fit`}
+      id={"contact"}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen h-fit md:h-screen`}
     >
-      <SectionHeading>Contact me!</SectionHeading>
-      <div className="min-h-[85vh] md:h-[87vh] flex flex-col items-center justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
-        <div className="w-full h-full md:flex items-center">
+      <SectionHeading>Contact</SectionHeading>
+      <div className="h-[90%] flex flex-col justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
+        <div className="w-full md:flex items-center">
           <ContactForm />
         </div>
-        <div className="relative bottom-0 left-0 flex flex-col justify-center w-full space-y-6">
+        <div className="flex flex-col justify-center w-full space-y-6">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>

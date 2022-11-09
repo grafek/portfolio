@@ -31,7 +31,7 @@ export default function Projects() {
     >
       <SectionHeading>Projects</SectionHeading>
       <div
-        className={`${themeCtx.themeClasses.scrollbar}  h-[80%] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll`}
+        className={`${themeCtx.themeClasses.scrollbar}  h-[calc(100vh-8rem)] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll`}
       >
         {content}
       </div>

@@ -67,7 +67,7 @@ export default function ContactForm() {
 
   return (
     <form
-      id="contact"
+      id="contact-form"
       ref={form}
       onSubmit={handleSubmit(sendEmail)}
       className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
