@@ -70,9 +70,9 @@ export default function ContactForm() {
       id="contact-form"
       ref={form}
       onSubmit={handleSubmit(sendEmail)}
-      className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
+      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
     >
-      <div className="grid grid-cols-3 gap-8 my-2 md:my-8">
+      <div className="grid grid-cols-3 gap-2 md:gap-8 mb-2">
         <div className="col-span-3 lg:col-span-1 ">
           <Input
             register={register}

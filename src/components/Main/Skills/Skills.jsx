@@ -3,12 +3,12 @@ import { SKILLS } from "../../../constants";
 import Skill from "./Skill";
 import { motion } from "framer-motion";
 
-const containerVariants = {
+const skillsVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.34,
       delayChildren: 0.5,
     },
   },
@@ -20,7 +20,7 @@ const Skills = () => {
       <SectionHeading>Skills</SectionHeading>
       <div className=" w-11/12 flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-[80%] justify-center xl:space-y-0 mx-auto items-center">
         <motion.div
-          variants={containerVariants}
+          variants={skillsVariants}
           initial={"hidden"}
           whileInView={"show"}
           className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16"
