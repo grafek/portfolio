@@ -15,7 +15,7 @@ const timelineVariants = {
   },
 };
 
-export default function Timeline () {
+export default function Timeline() {
   const themeCtx = useContext(ThemeContext);
 
   let timelineContet = TIMELINE_DATA.map((item, index) => (
@@ -30,12 +30,8 @@ export default function Timeline () {
         whileInView={"timelineShown"}
         className={`${themeCtx.themeClasses.subText} lg:flex lg:w-full text-sm md:text-base lg:justify-between`}
       >
-        {TIMELINE_DATA.map((item, index) => (
-          <TimelineItem key={index} year={item.year} text={item.text} />
-        ))}
+        {timelineContet}
       </motion.ul>
     </div>
   );
-};
-
-
+}

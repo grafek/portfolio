@@ -3,3 +3,21 @@ export function listItems(arr, Component) {
 
   return content;
 }
+
+export function debounce(fn, sleep) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn();
+    }, sleep);
+  };
+}
+
+export function getWindowSize() {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+}
