@@ -15,11 +15,11 @@ export default function Footer() {
       className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen`}
     >
       <SectionHeading>Contact</SectionHeading>
-      <div className="h-[calc(90vh-1rem)] flex flex-col justify-between w-full p-8 pb-1 overflow-hidden">
+      <div className="h-[calc(90vh-1rem)] relative flex flex-col md:justify-between w-full p-8 pb-1 overflow-hidden">
         <div className="w-full flex items-center h-2/3 md:h-full">
           <ContactForm />
         </div>
-        <div className="flex flex-col justify-center w-full space-y-6 relative">
+        <div className="flex flex-col justify-center w-full space-y-3 absolute bottom-0 left-0">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>
