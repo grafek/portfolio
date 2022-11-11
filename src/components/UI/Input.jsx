@@ -14,13 +14,13 @@ export default function Input({
     <textarea
       name={label}
       {...register(label, { required })}
-      className="w-full bg-transparent border-b focus:outline-none focus:rounded-md  md:h-40 focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md  md:h-40 focus:ring-1 border-gray-400"
     ></textarea>
   ) : (
     <input
       type={inputType}
       name={label}
-      className="w-full bg-transparent border-b focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
       {...register(label, { required })}
     />
   );
