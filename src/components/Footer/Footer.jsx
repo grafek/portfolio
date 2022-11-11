@@ -12,11 +12,11 @@ export default function Footer() {
   return (
     <footer
       id={"contact"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start h-screen`}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start max-h-screen`}
     >
       <SectionHeading>Contact</SectionHeading>
       <div className="h-[calc(100vh-5rem)] flex flex-col justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
-        <div className="w-full flex items-center h-full">
+        <div className="w-full flex items-center h-2/3 md:h-full">
           <ContactForm />
         </div>
         <div className="flex flex-col justify-center w-full space-y-6">
