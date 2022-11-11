@@ -42,7 +42,7 @@ const About = () => {
         >
           <motion.div
             variants={aboutItemVariants}
-            className="relative w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full"
+            className="relative w-full sm:w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full"
           >
             <div className="h-full w-1/2 md:w-full bg-gray-600 opacity-10 z-20 rounded-full relative flex m-auto justify-center"></div>
             <Image
