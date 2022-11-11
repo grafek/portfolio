@@ -14,7 +14,7 @@ export default function Input({
     <textarea
       name={label}
       {...register(label, { required })}
-      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md h-24 md:h-40 focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md h-16 md:h-40 focus:ring-1 border-gray-400"
     ></textarea>
   ) : (
     <input

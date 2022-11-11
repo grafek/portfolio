@@ -13,12 +13,12 @@ function Notification({ notification }) {
   return (
     <div
       title="notification"
-      className="w-full fixed flex items-end bottom-5 right-0 "
+      className="w-full fixed flex items-end bottom-5 right-0 z-50"
     >
       <AnimatePresence initial={false}>
         {isShown ? (
           <motion.div
-            className={`flex flex-col justify-center  sm:ml-auto sm:mr-5 mx-auto items-center w-3/4 md:w-[300px] h-10 md:h-20 rounded-xl ${stateClasses}`}
+            className={`flex flex-col justify-center sm:ml-auto sm:mr-5 mx-auto items-center w-3/4 md:w-[300px] h-10 md:h-20 rounded-xl ${stateClasses}`}
             positionTransition
             variants={notificationsVariants}
             initial="initial"

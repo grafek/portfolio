@@ -12,14 +12,14 @@ export default function Footer() {
   return (
     <footer
       id={"contact"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen max-h-full relative`}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen h-fit `}
     >
       <SectionHeading>Contact</SectionHeading>
-      <div className="h-[calc(90vh-1rem)] min-h-[560px]  flex flex-col md:justify-between w-full p-8 pb-1 overflow-hidden">
-        <div className="w-full flex items-center h-5/6 ">
+      <div className="h-[calc(90vh-1rem)] min-h-[560px] relative justify-between flex flex-col w-full p-8 pb-1 overflow-hidden">
+        <div className="w-full flex items-center h-2/3 ">
           <ContactForm />
         </div>
-        <div className="flex flex-col justify-center w-full space-y-3 absolute bottom-0 left-0">
+        <div className="flex flex-col justify-center w-full space-y-3 relative bottom-2 md:bottom-0 left-0 z-0">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>
