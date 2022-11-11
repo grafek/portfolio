@@ -34,7 +34,7 @@ const submitButtonVariants = {
     opacity: 1,
     rotate: [0, 0, 0, -10, 10, 0],
     scale: [1, 1, 1, 1.1, 1.2, 1],
-    transition: { delay: 3 },
+    transition: { delay: 1 },
   },
 };
 
@@ -45,6 +45,7 @@ export default function ContactForm() {
 
   const [notification, setNotification] = useState({});
   const [btnState, setBtnState] = useState("Send");
+  
 
   const {
     register,
@@ -52,6 +53,7 @@ export default function ContactForm() {
     handleSubmit,
     reset,
   } = useForm();
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
