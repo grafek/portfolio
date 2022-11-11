@@ -27,15 +27,13 @@ export default function Project({
         className="flex-1 relative hover:scale-105 duration-300"
         title={title}
       >
-        <a href={url} rel="noreferrer" className="relative" target="_blank">
-          <div className="z-30 absolute flex justify-center h-full w-full">
-            <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
-              {title}
-            </h2>
-          </div>
-          <div className="h-full w-full bg-black opacity-60 z-20 relative flex justify-center"></div>
-          <Image layout="fill" objectFit="cover" alt={title} src={img} />
-        </a>
+        <div className="z-30 absolute flex justify-center h-full w-full">
+          <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
+            {title}
+          </h2>
+        </div>
+        <div className="h-full w-full bg-black opacity-60 z-20 relative flex justify-center"></div>
+        <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
     );
   }

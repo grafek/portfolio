@@ -22,7 +22,6 @@ export default function SocialIcons({ iconsSize }) {
         rel="noreferrer"
         target={"_blank"}
         title={"linkedin"}
-        id
       >
         <BsLinkedin
           className={`${iconsSize} ${themeCtx.themeClasses.text}  duration-300 hover:scale-110`}

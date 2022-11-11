@@ -2,9 +2,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const skillItemVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: -20, scale: 0.6 },
   show: {
     opacity: 1,
+    y: 0,
+    scale: 1,
+    transition:{duration:0.5}
   },
 };
 

@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { ThemeContext } from "../../contexts/Theme";
 import { useForm } from "react-hook-form";
 import { Input } from "../UI";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const themeCtx = useContext(ThemeContext);
@@ -65,6 +66,38 @@ export default function ContactForm() {
     }
   };
 
+  const contactFormVariants = {
+    contactFormHidden: { opacity: 0 },
+    contactFormShown: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 1,
+      },
+    },
+  };
+
+  const contactFormItemVariants = {
+    contactFormHidden: { opacity: 0, y: -50, scale: 0.7 },
+    contactFormShown: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
+  const submitButtonVariants = {
+    submitButtonHidden: { opacity: 0 },
+    submitButtonShown: {
+      opacity: 1,
+      rotate: [0, 0, 0, -10, 10, 0],
+      scale: [1, 1, 1, 1.1, 1.2, 1],
+      transition: { delay: 2.5 },
+    },
+  };
   return (
     <form
       id="contact-form"
@@ -72,8 +105,16 @@ export default function ContactForm() {
       onSubmit={handleSubmit(sendEmail)}
       className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
     >
-      <div className="grid grid-cols-3 gap-2 md:gap-8 mb-2">
-        <div className="col-span-3 lg:col-span-1 ">
+      <motion.div
+        variants={contactFormVariants}
+        initial={"contactFormHidden"}
+        whileInView={"contactFormShown"}
+        className="grid grid-cols-3 gap-2 md:gap-8 mb-2"
+      >
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1 "
+        >
           <Input
             register={register}
             errors={errors.Name}
@@ -81,9 +122,12 @@ export default function ContactForm() {
             label={"Name"}
             required
           />
-        </div>
+        </motion.div>
 
-        <div className="col-span-3 lg:col-span-1">
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1"
+        >
           <Input
             register={register}
             inputType="email"
@@ -91,8 +135,11 @@ export default function ContactForm() {
             errors={errors.Email}
             required
           />
-        </div>
-        <div className="col-span-3 lg:col-span-1">
+        </motion.div>
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1"
+        >
           <Input
             register={register}
             inputType="text"
@@ -100,8 +147,8 @@ export default function ContactForm() {
             errors={errors.Subject}
             required
           />
-        </div>
-        <div className="col-span-3">
+        </motion.div>
+        <motion.div variants={contactFormItemVariants} className="col-span-3">
           <Input
             register={register}
             inputType="text"
@@ -110,10 +157,13 @@ export default function ContactForm() {
             required
             textArea
           />
-        </div>
-      </div>
-      <button
+        </motion.div>
+      </motion.div>
+      <motion.button
         type="submit"
+        variants={submitButtonVariants}
+        initial={"submitButtonHidden"}
+        whileInView={"submitButtonShown"}
         className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
       >
         {btnState}
@@ -130,7 +180,7 @@ export default function ContactForm() {
             fill="currentColor"
           />
         </svg>
-      </button>
+      </motion.button>
       <br />
       {formStatusMessage}
     </form>

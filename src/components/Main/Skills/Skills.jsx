@@ -9,7 +9,7 @@ const skillsVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.34,
-      delayChildren: 0.5,
+      delayChildren: 1.5,
     },
   },
 };
@@ -23,7 +23,7 @@ const Skills = () => {
           variants={skillsVariants}
           initial={"hidden"}
           whileInView={"show"}
-          className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16"
+          className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16 relative"
         >
           {SKILLS.map((item, i) => (
             <Skill

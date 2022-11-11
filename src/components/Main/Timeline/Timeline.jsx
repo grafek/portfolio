@@ -10,7 +10,7 @@ const timelineVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.7,
-      delayChildren: 1,
+      delayChildren: 2.5,
     },
   },
 };
