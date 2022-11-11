@@ -103,7 +103,7 @@ export default function ContactForm() {
         variants={contactFormVariants}
         initial={"contactFormHidden"}
         whileInView={"contactFormShown"}
-        className="grid grid-cols-3 gap-2 md:gap-8 mb-2"
+        className="grid grid-cols-3 gap-2  md:gap-8 mb-2"
       >
         <motion.div
           variants={contactFormItemVariants}
