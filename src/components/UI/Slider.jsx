@@ -2,25 +2,13 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { getWindowSize, debounce } from "../../utils/functions";
 
-const sliderVariants = {
-  sliderHidden: { opacity: 0, scale: 0.5, x: -10 },
-  sliderShown: {
-    opacity: 1,
-    scale: 1,
-    x: 0,
-    transition: {
-      delay: 1.3,
-      duration: 0.8,
-      type: "spring",
-      stiffnes: 300,
-    },
-  },
-};
+
 
 const Slider = ({
   outerSliderClasses = "",
   innerSliderClasses = "",
   children,
+  sliderVariants
 }) => {
   const carouselRef = useRef(null);
   const [leftConstraints, setLeftConstraints] = useState(0);

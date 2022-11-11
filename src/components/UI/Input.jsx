@@ -30,13 +30,16 @@ export default function Input({
       <label
         htmlFor={label}
         aria-invalid={errors ? "true" : "false"}
-        className="font-light mt-8"
+        className="font-light mt-8 relative z-30"
       >
         {label}
         {requiredAsterisk}
         {inputContent}
         {errors?.type === "required" ? (
-          <span role={"alert"} className="text-red-500 font-semibold pt-2">
+          <span
+            role={"alert"}
+            className="text-red-500 absolute top-6 left-0 font-semibold pt-2 -z-10"
+          >
             {label} is required!
           </span>
         ) : null}
