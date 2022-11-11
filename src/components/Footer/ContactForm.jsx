@@ -2,51 +2,70 @@ import { useContext, useEffect, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { ThemeContext } from "../../contexts/Theme";
 import { useForm } from "react-hook-form";
-import { Input } from "../UI";
+import { Input, Notification } from "../UI";
+import { motion } from "framer-motion";
+
+const contactFormVariants = {
+  contactFormHidden: { opacity: 0 },
+  contactFormShown: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.6,
+      delayChildren: 1,
+    },
+  },
+};
+
+const contactFormItemVariants = {
+  contactFormHidden: { opacity: 0, y: -50, scale: 0.7 },
+  contactFormShown: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const submitButtonVariants = {
+  submitButtonHidden: { opacity: 0 },
+  submitButtonShown: {
+    opacity: 1,
+    rotate: [0, 0, 0, -10, 10, 0],
+    scale: [1, 1, 1, 1.1, 1.2, 1],
+    transition: { delay: 3 },
+  },
+};
 
 export default function ContactForm() {
   const themeCtx = useContext(ThemeContext);
 
   const form = useRef();
 
-  const [animationClasses, setAnimationClasses] = useState();
+  const [notification, setNotification] = useState({});
+  const [btnState, setBtnState] = useState("Send");
 
   const {
     register,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitSuccessful },
     handleSubmit,
     reset,
   } = useForm();
 
-  let formStatusMessage;
-  let btnState = "Send";
-
   useEffect(() => {
-    setAnimationClasses("animate-slideIn");
-
     const timer = setTimeout(() => {
-      if (isSubmitSuccessful) {
-        setAnimationClasses("animate-slideOut");
+      if (isSubmitSuccessful && notification.isShown === true) {
+        setNotification({ isShown: false });
       }
-    }, 6000);
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, [isSubmitSuccessful]);
-
-  if (isSubmitting) {
-    btnState = "Sending...";
-  }
-  if (isSubmitSuccessful) {
-    btnState = "Send";
-    formStatusMessage = (
-      <p className={`${animationClasses} text-green-500`}>
-        Message sent successfully!
-      </p>
-    );
-  }
+  }, [notification.isShown, isSubmitSuccessful]);
 
   const sendEmail = async () => {
     try {
+      setBtnState("Sending...");
       const res = await emailjs.sendForm(
         "portfolio-contact",
         "template_tra4ay3",
@@ -54,26 +73,40 @@ export default function ContactForm() {
         "pvd-8fUHrfBMag2xW"
       );
       if (res.status === 200) {
+        setNotification({
+          message: "🎉 Message sent successfully",
+          isShown: true,
+          isSuccessful: true,
+        });
         reset();
       }
     } catch (err) {
-      formStatusMessage = (
-        <p className={`${animationClasses} text-red-500`}>
-          Something went wrong {err}
-        </p>
-      );
+      setNotification({
+        message: `❌ Something went wrong!`,
+        isShown: true,
+        isSuccessful: false,
+      });
     }
+    setBtnState("Send");
   };
 
   return (
     <form
-      id="contact"
+      id="contact-form"
       ref={form}
       onSubmit={handleSubmit(sendEmail)}
-      className={` ${themeCtx.themeClasses.text} mx-auto w-full pb-4 max-w-7xl`}
+      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
     >
-      <div className="grid grid-cols-3 gap-8 my-2 md:my-8">
-        <div className="col-span-3 lg:col-span-1 ">
+      <motion.div
+        variants={contactFormVariants}
+        initial={"contactFormHidden"}
+        whileInView={"contactFormShown"}
+        className="grid grid-cols-3 gap-2 md:gap-8 mb-2"
+      >
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1 "
+        >
           <Input
             register={register}
             errors={errors.Name}
@@ -81,9 +114,12 @@ export default function ContactForm() {
             label={"Name"}
             required
           />
-        </div>
+        </motion.div>
 
-        <div className="col-span-3 lg:col-span-1">
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1"
+        >
           <Input
             register={register}
             inputType="email"
@@ -91,8 +127,11 @@ export default function ContactForm() {
             errors={errors.Email}
             required
           />
-        </div>
-        <div className="col-span-3 lg:col-span-1">
+        </motion.div>
+        <motion.div
+          variants={contactFormItemVariants}
+          className="col-span-3 lg:col-span-1"
+        >
           <Input
             register={register}
             inputType="text"
@@ -100,8 +139,8 @@ export default function ContactForm() {
             errors={errors.Subject}
             required
           />
-        </div>
-        <div className="col-span-3">
+        </motion.div>
+        <motion.div variants={contactFormItemVariants} className="col-span-3">
           <Input
             register={register}
             inputType="text"
@@ -110,10 +149,13 @@ export default function ContactForm() {
             required
             textArea
           />
-        </div>
-      </div>
-      <button
+        </motion.div>
+      </motion.div>
+      <motion.button
         type="submit"
+        variants={submitButtonVariants}
+        initial={"submitButtonHidden"}
+        whileInView={"submitButtonShown"}
         className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
       >
         {btnState}
@@ -130,9 +172,8 @@ export default function ContactForm() {
             fill="currentColor"
           />
         </svg>
-      </button>
-      <br />
-      {formStatusMessage}
+      </motion.button>
+      <Notification notification={notification} />
     </form>
   );
 }

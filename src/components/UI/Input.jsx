@@ -7,14 +7,14 @@ export default function Input({
   textArea = false,
 }) {
   let requiredAsterisk = required ? (
-    <span className="text-red-500">*</span>
+    <span className="text-red-500 font-semibold">*</span>
   ) : null;
 
   let inputContent = textArea ? (
     <textarea
       name={label}
       {...register(label, { required })}
-      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md h-40 md:h-60 focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md h-24 md:h-40 focus:ring-1 border-gray-400"
     ></textarea>
   ) : (
     <input
@@ -34,10 +34,9 @@ export default function Input({
       >
         {label}
         {requiredAsterisk}
-
         {inputContent}
         {errors?.type === "required" ? (
-          <span role={"alert"} className="text-red-500">
+          <span role={"alert"} className="text-red-500 font-semibold pt-2">
             {label} is required!
           </span>
         ) : null}

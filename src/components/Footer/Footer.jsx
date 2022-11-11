@@ -11,15 +11,15 @@ export default function Footer() {
 
   return (
     <footer
-      id={"footer"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start min-h-screen h-fit`}
+      id={"contact"}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start h-screen`}
     >
-      <SectionHeading>Contact me!</SectionHeading>
-      <div className="min-h-[85vh] md:h-[87vh] flex flex-col items-center justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
-        <div className="w-full h-full md:flex items-center">
+      <SectionHeading>Contact</SectionHeading>
+      <div className="h-[calc(100vh-5rem)] flex flex-col justify-between w-full shadow-xl p-8 pb-1 overflow-hidden">
+        <div className="w-full flex items-center h-full">
           <ContactForm />
         </div>
-        <div className="relative bottom-0 left-0 flex flex-col justify-center w-full space-y-6">
+        <div className="flex flex-col justify-center w-full space-y-6">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>
@@ -27,7 +27,7 @@ export default function Footer() {
             <SocialIcons iconsSize={"text-2xl"} />
             <ContactIcons iconsSize={"text-2xl"} />
           </div>
-          <p className={`${themeCtx.themeClasses.subText} text-center mb-2`}>
+          <p className={`${themeCtx.themeClasses.subText} text-center`}>
             ©{currYear} Jacek Grafender
           </p>
         </div>

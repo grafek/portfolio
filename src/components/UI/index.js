@@ -6,3 +6,5 @@ export { default as Pill } from "./Pill";
 export { default as SectionDivider } from "./SectionDivider";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as SocialIcons } from "./SocialIcons";
+export { default as Slider } from "./Slider";
+export { default as Notification } from "./Notification";

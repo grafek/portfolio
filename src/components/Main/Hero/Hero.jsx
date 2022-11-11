@@ -36,9 +36,13 @@ export default function Hero() {
           </p>
         </motion.div>
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.5, delay: 1.5 }}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            rotate: [-3, 3, 0],
+            scale: [1.1, 1.2, 1],
+          }}
+          transition={{ delay: 1.5 }}
           className="flex flex-col md:flex-row md:max-w-md md:mx-auto gap-8"
         >
           <a

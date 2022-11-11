@@ -1,15 +1,9 @@
-import { SectionHeading } from "../../UI";
+import { SectionHeading, Slider } from "../../UI";
 import { DUMMY_PROJECTS } from "../../../constants";
 import Project from "./Project";
-import { useContext } from "react";
-import { ThemeContext } from "../../../contexts/Theme";
 
 export default function Projects() {
-  const themeCtx = useContext(ThemeContext);
-
-  let content;
-
-  content = DUMMY_PROJECTS.map((prj) => {
+  let content = DUMMY_PROJECTS.map((prj) => {
     return (
       <Project
         key={prj.id}
@@ -30,11 +24,12 @@ export default function Projects() {
       className={"snap-center h-screen my-auto relative overflow-hidden"}
     >
       <SectionHeading>Projects</SectionHeading>
-      <div
-        className={`${themeCtx.themeClasses.scrollbar}  h-[80%] w-11/12 mx-auto flex space-x-6 snap-x snap-mandatory overflow-x-scroll`}
+      <Slider
+        innerSliderClasses="h-[calc(100vh-10rem)] gap-8 w-11/12 mx-auto"
+        outerSliderClasses="pt-3"
       >
         {content}
-      </div>
+      </Slider>
     </section>
   );
 }

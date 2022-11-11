@@ -24,18 +24,16 @@ export default function Project({
   if (img && hasBackdrop) {
     imgContent = (
       <div
-        className="h-1/3 md:h-1/2 relative hover:scale-105 duration-300"
+        className="flex-1 relative hover:scale-105 duration-300"
         title={title}
       >
-        <a href={url} rel="noreferrer" className="relative" target="_blank">
-          <div className="z-30 absolute flex justify-center h-full w-full">
-            <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
-              {title}
-            </h2>
-          </div>
-          <div className="h-full w-full bg-black opacity-60 z-20 relative flex justify-center"></div>
-          <Image layout="fill" objectFit="cover" alt={title} src={img} />
-        </a>
+        <div className="z-30 absolute flex justify-center h-full w-full">
+          <h2 className="text-slate-200 capitalize text-center font-bold italic text-3xl md:text-4xl l my-auto">
+            {title}
+          </h2>
+        </div>
+        <div className="h-full w-full bg-black opacity-60 z-20 relative flex justify-center"></div>
+        <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
     );
   }
@@ -45,7 +43,7 @@ export default function Project({
         className ? className : ""
       } ${
         themeCtx.themeClasses.shadow
-      } w-[320px] snap-center min-w-[320px] md:w-[600px] xl:w-[900px] flex-shrink-0  m-auto flex flex-col rounded-md h-full shadow-md `}
+      } snap-center min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] flex-shrink-0  m-auto flex flex-col  rounded-md h-full shadow-md `}
     >
       {imgContent}
       <div className={`p-4 lg:text-lg leading-6`}>
