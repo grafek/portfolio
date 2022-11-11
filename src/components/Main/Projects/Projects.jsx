@@ -1,7 +1,6 @@
-import { SectionHeading } from "../../UI";
+import { SectionHeading, Slider } from "../../UI";
 import { DUMMY_PROJECTS } from "../../../constants";
 import Project from "./Project";
-import Slider from "../../UI/Slider";
 
 export default function Projects() {
   let content = DUMMY_PROJECTS.map((prj) => {

@@ -7,7 +7,7 @@ export default function Input({
   textArea = false,
 }) {
   let requiredAsterisk = required ? (
-    <span className="text-red-500">*</span>
+    <span className="text-red-500 font-semibold">*</span>
   ) : null;
 
   let inputContent = textArea ? (
@@ -34,10 +34,9 @@ export default function Input({
       >
         {label}
         {requiredAsterisk}
-
         {inputContent}
         {errors?.type === "required" ? (
-          <span role={"alert"} className="text-red-500">
+          <span role={"alert"} className="text-red-500 font-semibold pt-2">
             {label} is required!
           </span>
         ) : null}
