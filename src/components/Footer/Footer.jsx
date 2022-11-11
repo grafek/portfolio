@@ -16,7 +16,7 @@ export default function Footer() {
     >
       <SectionHeading>Contact</SectionHeading>
       <div className="h-[calc(90vh-1rem)] relative flex flex-col md:justify-between w-full p-8 pb-1 overflow-hidden">
-        <div className="w-full flex items-center h-2/3 md:h-full">
+        <div className="w-full flex items-center h-5/6 ">
           <ContactForm />
         </div>
         <div className="flex flex-col justify-center w-full space-y-3 absolute bottom-0 left-0">
