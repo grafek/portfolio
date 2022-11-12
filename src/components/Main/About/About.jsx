@@ -31,14 +31,14 @@ const aboutItemVariants = {
 const About = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <section id={`about`} className={"snap-start h-fit min-h-screen"}>
-      <SectionHeading>About</SectionHeading>
-      <div className="flex flex-col h-[calc(100vh-10rem)] justify-around">
+    <section id={`about`} className={"snap-start min-h-screen flex"}>
+      <div className="flex flex-col gap-4 justify-between w-11/12 mx-auto">
+        <SectionHeading>About</SectionHeading>
         <motion.div
           variants={aboutVariants}
           initial={"aboutHidden"}
           whileInView={"aboutShown"}
-          className="w-11/12 mx-auto flex flex-col md:flex-row gap-2 md:gap-8 items-center min-h-fit"
+          className="flex flex-col md:flex-row gap-2 md:gap-8 items-center"
         >
           <motion.div
             variants={aboutItemVariants}
