@@ -18,7 +18,7 @@ const sidebar = {
   },
   closed: {
     opacity: 0.95,
-    clipPath: "circle(24px at 30px 30px)",
+    clipPath: "circle(20px at 28px 28px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -35,12 +35,12 @@ export default function Navbar() {
   const navBtn = isNavShown ? (
     <CgClose
       onClick={toggleNav}
-      className={`${themeCtx.themeClasses.text} text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
+      className={`${themeCtx.themeClasses.text} text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70`}
     />
   ) : (
     <GiHamburgerMenu
       onClick={toggleNav}
-      className={`${themeCtx.themeClasses.text} text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
+      className={`${themeCtx.themeClasses.text} text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70`}
     />
   );
 
@@ -56,7 +56,9 @@ export default function Navbar() {
         className={`${themeCtx.themeClasses.lightDarkBg} absolute top-0 left-0 bottom-0 w-1/3 md:w-1/5 h-screen`}
         variants={sidebar}
       >
-        <div className="absolute top-0 left-0 p-[18px] md:p-4 z-20">{navBtn}</div>
+        <div className="absolute top-0 left-0 p-[18px] md:p-[16px] z-20">
+          {navBtn}
+        </div>
         <Navigation toggleNav={toggleNav} />
       </motion.div>
     </motion.nav>
