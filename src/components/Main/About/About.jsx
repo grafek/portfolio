@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
 import { Timeline } from "../index";
 import { SectionHeading } from "../../UI";
@@ -31,9 +31,12 @@ const aboutItemVariants = {
 const About = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <section id={`about`} className={"snap-start h-screen"}>
+    <section
+      id={`about`}
+      className={"snap-start h-screen "}
+    >
       <SectionHeading>About</SectionHeading>
-      <div className="flex flex-col h-screen justify-around">
+      <div className="flex flex-col h-[calc(100vh-5rem)] justify-around">
         <motion.div
           variants={aboutVariants}
           initial={"aboutHidden"}
