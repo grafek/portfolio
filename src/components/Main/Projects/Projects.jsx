@@ -41,7 +41,7 @@ export default function Projects() {
       <SectionHeading>Projects</SectionHeading>
       <Slider
         innerSliderClasses="h-[calc(100vh-10rem)] gap-8 w-11/12 mx-auto"
-        outerSliderClasses="pt-3"
+        outerSliderClasses="pt-10"
         sliderVariants={projectsSliderVariants}
       >
         {content}
