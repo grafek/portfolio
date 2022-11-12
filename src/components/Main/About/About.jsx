@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { ThemeContext } from "../../../contexts/Theme";
 import { Timeline } from "../index";
 import { SectionHeading } from "../../UI";
@@ -31,14 +31,14 @@ const aboutItemVariants = {
 const About = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <section id={`about`} className={"snap-start min-h-screen flex"}>
-      <div className="flex flex-col gap-4 justify-between w-11/12 mx-auto">
-        <SectionHeading>About</SectionHeading>
+    <section id={`about`} className={"snap-start h-screen"}>
+      <SectionHeading>About</SectionHeading>
+      <div className="flex flex-col h-screen justify-around">
         <motion.div
           variants={aboutVariants}
           initial={"aboutHidden"}
           whileInView={"aboutShown"}
-          className="flex flex-col md:flex-row gap-2 md:gap-8 items-center"
+          className="w-11/12 mx-auto flex flex-col md:flex-row gap-2 md:gap-8 items-center min-h-fit"
         >
           <motion.div
             variants={aboutItemVariants}

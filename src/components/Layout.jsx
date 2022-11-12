@@ -22,7 +22,9 @@ export default function Layout({ children, pageTitle }) {
       </Head>
       <Header />
       <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
-        <div className="mx-auto container">{children}</div>
+        <div className="mx-auto container" id="container">
+          {children}
+        </div>
       </main>
       <Footer />
     </div>
