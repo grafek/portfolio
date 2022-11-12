@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { BsArrowUp } from "react-icons/bs";
 import { ThemeContext } from "../../contexts/Theme";
 import ContactForm from "./ContactForm";
-import { ContactIcons, SectionHeading, SocialIcons } from "../UI";
+import { SectionHeading } from "../UI";
 
 export default function Footer() {
   const themeCtx = useContext(ThemeContext);
@@ -12,24 +12,20 @@ export default function Footer() {
   return (
     <footer
       id={"contact"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start relative min-h-screen flex justify-center`}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start h-screen`}
     >
-      <div className="min-h-[430px] relative justify-between flex  flex-col w-11/12 mx-auto pb-1 overflow-hidden">
-        <SectionHeading>Contact</SectionHeading>
-        <div className="w-full flex items-center md:h-full">
+      <SectionHeading>Contact</SectionHeading>
+      <div className="h-screen flex flex-col w-11/12 mx-auto ">
+        <div className="h-1/2 md:h-2/3 w-full min-h-[300px] flex items-center mt-8">
           <ContactForm />
         </div>
-        <div className="flex flex-col justify-center w-full space-y-3 ">
+        <div className="flex flex-1 flex-col justify-center w-full space-y-3 relative bottom-0 left-0 right-0">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>
-          <div className="flex gap-6 justify-center">
-            <SocialIcons iconsSize={"text-2xl"} />
-            <p className={`${themeCtx.themeClasses.subText} text-center`}>
-              ©{currYear} Jacek Grafender
-            </p>
-            <ContactIcons iconsSize={"text-2xl"} />
-          </div>
+          <p className={`${themeCtx.themeClasses.subText} text-center`}>
+            ©{currYear} Jacek Grafender
+          </p>
         </div>
       </div>
     </footer>

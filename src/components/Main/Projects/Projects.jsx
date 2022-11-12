@@ -29,6 +29,7 @@ export default function Projects() {
         url={prj.url}
         tags={prj.tags}
         description={prj.description}
+
       />
     );
   });

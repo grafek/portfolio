@@ -43,7 +43,7 @@ export default function Project({
         className ? className : ""
       } ${
         themeCtx.themeClasses.shadow
-      } snap-center min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] flex-shrink-0  m-auto flex flex-col  rounded-md h-full shadow-md `}
+      } min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] min-h-[450px] flex-shrink-0 m-auto flex flex-col  rounded-md h-full shadow-md `}
     >
       {imgContent}
       <div className={`p-4 lg:text-lg leading-6`}>

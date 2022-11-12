@@ -16,18 +16,6 @@ const contactFormVariants = {
   },
 };
 
-const contactFormItemVariants = {
-  contactFormHidden: { opacity: 0, y: -50, scale: 0.7 },
-  contactFormShown: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
 const submitButtonVariants = {
   submitButtonHidden: { opacity: 0 },
   submitButtonShown: {
@@ -45,7 +33,6 @@ export default function ContactForm() {
 
   const [notification, setNotification] = useState({});
   const [btnState, setBtnState] = useState("Send");
-  
 
   const {
     register,
@@ -53,7 +40,6 @@ export default function ContactForm() {
     handleSubmit,
     reset,
   } = useForm();
-  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -105,10 +91,7 @@ export default function ContactForm() {
         whileInView={"contactFormShown"}
         className="grid grid-cols-3 gap-2  md:gap-8 mb-2"
       >
-        <motion.div
-          variants={contactFormItemVariants}
-          className="col-span-3 lg:col-span-1 "
-        >
+        <motion.div variants className="col-span-3 lg:col-span-1 ">
           <Input
             register={register}
             errors={errors.Name}
@@ -118,10 +101,7 @@ export default function ContactForm() {
           />
         </motion.div>
 
-        <motion.div
-          variants={contactFormItemVariants}
-          className="col-span-3 lg:col-span-1"
-        >
+        <motion.div variants className="col-span-3 lg:col-span-1">
           <Input
             register={register}
             inputType="email"
@@ -130,10 +110,7 @@ export default function ContactForm() {
             required
           />
         </motion.div>
-        <motion.div
-          variants={contactFormItemVariants}
-          className="col-span-3 lg:col-span-1"
-        >
+        <motion.div variants className="col-span-3 lg:col-span-1">
           <Input
             register={register}
             inputType="text"
@@ -142,7 +119,7 @@ export default function ContactForm() {
             required
           />
         </motion.div>
-        <motion.div variants={contactFormItemVariants} className="col-span-3">
+        <motion.div className="col-span-3">
           <Input
             register={register}
             inputType="text"
