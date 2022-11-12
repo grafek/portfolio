@@ -16,7 +16,7 @@ export default function Layout({ children, pageTitle }) {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="description"
-          content="Jacek Grafender - Isnpired frontend developer looking for a job"
+          content="Jacek Grafender - Inspired frontend developer looking for a job"
         />
         <title>{pageTitle}</title>
       </Head>

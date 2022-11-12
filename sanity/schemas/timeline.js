@@ -1,6 +1,6 @@
 export default {
-  name: "social",
-  title: "Social",
+  name: "timeline",
+  title: "Timeline",
   type: "document",
   fields: [
     {

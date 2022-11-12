@@ -13,9 +13,12 @@ export default function Timeline() {
   ));
 
   return (
-    <Slider innerSliderClasses="gap-8 w-11/12 mx-auto">
+    <Slider
+      innerSliderClasses="gap-8 w-11/12 mx-auto "
+      outerSliderClasses="overflow-hidden"
+    >
       <motion.ul
-        className={`${themeCtx.themeClasses.subText} flex gap-10 lg:w-full text-sm md:text-base lg:justify-between`}
+        className={`${themeCtx.themeClasses.subText} flex gap-10 w-full text-sm md:text-base`}
       >
         {timelineContet}
       </motion.ul>

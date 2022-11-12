@@ -61,7 +61,7 @@ export const DUMMY_PROJECTS = [
     id: "6",
     name: "Chatting app",
     description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend tcteristic words etc.",
+      "All the Lorem Ipsum generators on the Internet tend tcteristic words etc.",
     url: "#",
     hasBackdrop: true,
     img: "/assets/chat.webp",
@@ -103,5 +103,8 @@ export const TIMELINE_DATA = [
     text: "2 months of front-end school apprenticeship @ Foxysoft",
   },
   { year: 2021, text: "Finished school with IT Technician degree" },
-  { year: 2022, text: "Started journey in IT as a L2 Specialist" },
+  {
+    year: 2022,
+    text: "Finished Vocational Technical High School for Computer Science in Wrocław",
+  },
 ];
