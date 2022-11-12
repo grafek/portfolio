@@ -13,10 +13,10 @@ export default function SectionHeading({ children }) {
         duration: 0.35,
         delay: 0.3,
       }}
-      className={"relative top-6"}
+      className={"relative top-8 flex justify-center"}
     >
       <h3
-        className={`${themeCtx.themeClasses.text} text-center px-4 text-4xl lg:text-5xl font-semibold tracking-widest`}
+        className={`${themeCtx.themeClasses.text} text-4xl lg:text-5xl font-semibold tracking-widest`}
       >
         <SectionDivider />
         {children}

@@ -28,12 +28,12 @@ function ThemeContextProvider({ children }) {
     darkTheme === "dark" ? (
       <BsSunFill
         onClick={toggleDarkTheme}
-        className="text-slate-200 text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110"
+        className="text-slate-200 text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70"
       />
     ) : (
       <BsMoonFill
         onClick={toggleDarkTheme}
-        className={`text-2xl md:text-3xl cursor-pointer duration-300 hover:scale-110`}
+        className={`text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70`}
       />
     );
 

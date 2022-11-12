@@ -46,7 +46,7 @@ export default function ContactForm() {
       if (isSubmitSuccessful && notification.isShown === true) {
         setNotification({ isShown: false });
       }
-    }, 2000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [notification.isShown, isSubmitSuccessful]);

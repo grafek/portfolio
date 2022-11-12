@@ -31,7 +31,7 @@ const aboutItemVariants = {
 const About = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <section id={`about`} className={"snap-start h-screen "}>
+    <section id={`about`} className={"snap-start h-screen relative"}>
       <SectionHeading>About</SectionHeading>
       <motion.div
         variants={aboutVariants}
