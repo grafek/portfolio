@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
 import { Timeline } from "../index";
 import { SectionHeading } from "../../UI";
@@ -17,7 +17,7 @@ const aboutVariants = {
 };
 
 const aboutItemVariants = {
-  aboutHidden: { opacity: 0, x: -50, scale: 0.4 },
+  aboutHidden: { opacity: 0, x: 100, scale: 0.4 },
   aboutShown: {
     opacity: 1,
     x: 0,
@@ -31,22 +31,19 @@ const aboutItemVariants = {
 const About = () => {
   const themeCtx = useContext(ThemeContext);
   return (
-    <section
-      id={`about`}
-      className={"snap-start h-screen "}
-    >
+    <section id={`about`} className={"snap-start h-screen "}>
       <SectionHeading>About</SectionHeading>
-      <div className="flex flex-col h-[calc(100vh-5rem)] justify-around">
+      <motion.div
+        variants={aboutVariants}
+        initial={"aboutHidden"}
+        whileInView={"aboutShown"}
+        className="flex flex-col h-[calc(100vh-5rem)] justify-around"
+      >
         <motion.div
-          variants={aboutVariants}
-          initial={"aboutHidden"}
-          whileInView={"aboutShown"}
+          variants={aboutItemVariants}
           className="w-11/12 mx-auto flex flex-col md:flex-row gap-2 md:gap-8 items-center min-h-fit"
         >
-          <motion.div
-            variants={aboutItemVariants}
-            className="relative w-full sm:w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full"
-          >
+          <div className="relative w-full sm:w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full">
             <div className="h-full w-1/3 sm:w-1/2 md:w-full bg-gray-600 opacity-10 z-20 rounded-full relative flex m-auto justify-center"></div>
             <Image
               src={"/assets/ja_caa.png"}
@@ -55,9 +52,8 @@ const About = () => {
               className="relative object-contain md:object-cover"
               alt="me"
             />
-          </motion.div>
-          <motion.p
-            variants={aboutItemVariants}
+          </div>
+          <p
             className={`${themeCtx.themeClasses.subText} text-sm md:text-base text-justify`}
           >
             I am a graduate of ICT & Electronic school with IT technician
@@ -74,10 +70,12 @@ const About = () => {
             communication is not a problem for me. I am looking for an
             opportunity to broaden my knowledge in the web industry and to work
             in a team.
-          </motion.p>
+          </p>
         </motion.div>
-        <Timeline />
-      </div>
+        <motion.div variants={aboutItemVariants}>
+          <Timeline />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
