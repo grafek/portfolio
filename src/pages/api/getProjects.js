@@ -2,7 +2,10 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../lib/sanityConfig";
 
 const query = groq`
-    *[_type == 'project']
+    *[_type == 'project'] {
+      ...,
+      technologies[] ->
+    }
 `;
 
 export default async function getProjects(req, res) {

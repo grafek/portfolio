@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../lib/sanityConfig";
 
 const query = groq`
-    *[_type == 'timeline']
+  *[_type == 'timeline'] | order(year asc)
 `;
 
 export default async function getTimelineInfo(req, res) {

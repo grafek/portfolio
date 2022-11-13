@@ -17,7 +17,7 @@ const Skill = ({ name, img, progress }) => {
       variants={skillItemVariants}
       className="group relative flex cursor-pointer"
     >
-      <div className="rounded-full w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out">
+      <div className="rounded-full relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out">
         <Image
           alt={name}
           objectFit="cover"

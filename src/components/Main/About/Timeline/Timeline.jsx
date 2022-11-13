@@ -7,9 +7,7 @@ import { Slider } from "../../../UI";
 export default function Timeline({ timelineInfo }) {
   const themeCtx = useContext(ThemeContext);
 
-  const timelineContentSorted = timelineInfo.sort((a, b) => a.year - b.year);
-
-  const timelineContet = timelineContentSorted.map((item, index) => (
+  const timelineContet = timelineInfo.map((item, index) => (
     <TimelineItem key={index} year={item.year} text={item.timelineText} />
   ));
 

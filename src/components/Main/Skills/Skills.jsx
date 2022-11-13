@@ -15,6 +15,7 @@ const skillsVariants = {
 };
 
 const Skills = ({ skills }) => {
+  console.log(skills)
   return (
     <section id={"skills"} className="snap-center h-screen">
       <SectionHeading>Skills</SectionHeading>
@@ -27,7 +28,7 @@ const Skills = ({ skills }) => {
         >
           {skills.map((skill) => (
             <Skill
-              key={skill.id}
+              key={skill._id}
               name={skill.title}
               progress={skill.progress}
               img={getImgUrl(skill.skillImage).url()}
