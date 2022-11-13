@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/Theme";
 
-const Line = () => {
+const Underline = () => {
   const themeCtx = useContext(ThemeContext);
   return (
     <svg
@@ -39,4 +39,4 @@ const Line = () => {
   );
 };
 
-export default Line;
+export default Underline;

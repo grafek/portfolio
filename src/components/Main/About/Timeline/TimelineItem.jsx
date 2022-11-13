@@ -1,4 +1,4 @@
-import { Line } from "../../UI";
+import { Line } from "../../../UI";
 import { motion } from "framer-motion";
 
 const timelineItemVariants = {
