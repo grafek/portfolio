@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { getWindowSize, debounce } from "../../utils/functions";
+import { getWindowSize, debounce } from "../../utils/Helper";
 
 
 

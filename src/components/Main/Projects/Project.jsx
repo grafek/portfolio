@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
-import { listItems } from "../../../utils/functions";
+import { listItems } from "../../../utils/Helper";
 import { Pill } from "../../UI";
 
 export default function Project({

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/Theme";
-import { listItems } from "../../utils/functions";
+import { listItems } from "../../utils/Helper";
 import { Pill } from "./";
 
 export default function Card({
