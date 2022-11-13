@@ -15,7 +15,6 @@ const skillsVariants = {
 };
 
 const Skills = ({ skills }) => {
-  console.log(skills)
   return (
     <section id={"skills"} className="snap-center h-screen">
       <SectionHeading>Skills</SectionHeading>

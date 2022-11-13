@@ -4,20 +4,31 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/Theme";
 import { Hero, Projects, About, Skills } from "../components/Main";
 import {
+  fetchGithub,
+  fetchLinkedIn,
   fetchPageInfo,
   fetchProjects,
   fetchSkills,
-  fetchSocials,
   fetchTimelineInfo,
 } from "../utils/Fetch";
 
 export default function Home({
   skills,
   pageInfo,
-  socials,
   timelineInfo,
   projects,
+  github,
+  linkedIn,
 }) {
+  const { firstName, role, heroShortDescription } = pageInfo;
+  const { phoneNumber, email } = pageInfo;
+
+  const heroInfo = { firstName, role, heroShortDescription };
+
+  const contactInfo = { phoneNumber, email };
+
+  const socials = { github, linkedIn };
+
   const themeCtx = useContext(ThemeContext);
   return (
     <div
@@ -34,13 +45,13 @@ export default function Home({
         <title>{`Jacek Grafender - Portfolio`}</title>
       </Head>
 
-      <Header socials={socials} />
+      <Header socials={socials} contactInfo={contactInfo} />
       <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
         <div className="mx-auto container" id="container">
-          <Hero />
+          <Hero heroInfo={heroInfo} />
           <Projects projects={projects} />
           <Skills skills={skills} />
-          <About timelineInfo={timelineInfo}/>
+          <About timelineInfo={timelineInfo} pageInfo={pageInfo} />
         </div>
       </main>
       <Footer />
@@ -51,17 +62,19 @@ export default function Home({
 export async function getStaticProps() {
   const skills = await fetchSkills();
   const pageInfo = await fetchPageInfo();
-  const socials = await fetchSocials();
+  const github = await fetchGithub();
+  const linkedIn = await fetchLinkedIn();
   const timelineInfo = await fetchTimelineInfo();
   const projects = await fetchProjects();
   return {
     props: {
       skills,
       pageInfo,
-      socials,
+      github,
+      linkedIn,
       timelineInfo,
       projects,
     },
-    revalidate: 60,
+    revalidate: 600,
   };
 }

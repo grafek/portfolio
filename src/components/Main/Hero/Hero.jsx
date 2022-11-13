@@ -3,8 +3,10 @@ import { ThemeContext } from "../../../contexts/Theme";
 import BackgroundAnimation from "./BackgroundAnimation";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ heroInfo }) {
   const themeCtx = useContext(ThemeContext);
+
+  const { firstName, role, heroShortDescription } = heroInfo;
 
   const heroHeadingColor =
     themeCtx.darkTheme === "dark"
@@ -25,14 +27,13 @@ export default function Hero() {
           <h1
             className={`${heroHeadingColor} bg-clip-text text-transparent text-5xl sm:text-[6rem] md:text-[7rem] lg:text-[8rem] xl:text-[10rem] font-bold`}
           >
-            Hi, I&apos;m Jacek
+            Hi, I&apos;m {firstName}
           </h1>
           <h2 className={`${themeCtx.themeClasses.text} italic py-5 text-2xl`}>
-            IT Technician and Developer
+            {role}
           </h2>
           <p className={`${themeCtx.themeClasses.subText} leading-7 `}>
-            Web development passionate - looking for a first experience as a
-            front-end developer!
+            {heroShortDescription}
           </p>
         </motion.div>
         <motion.div

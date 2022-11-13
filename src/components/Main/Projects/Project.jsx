@@ -22,7 +22,10 @@ export default function Project({
     tagsContent = (
       <div>
         {tags.map((tag, i) => (
-          <Pill className={"mb-2 mr-2 "} key={i}>
+          <Pill
+            className={` ${themeCtx.themeClasses.darkBg} ${themeCtx.themeClasses.subText} mb-2 mr-2 `}
+            key={i}
+          >
             #{tag}
           </Pill>
         ))}
@@ -56,26 +59,20 @@ export default function Project({
         <div className="flex flex-col md:flex-row justify-between items-center pt-4 gap-4">
           {tagsContent}
           <div className="flex justify-between md:gap-6 w-full md:w-auto md:items-center">
-            <Pill className={"mb-0"}>
-              <a
-                href={demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-indigo-600"
+            <a href={demoUrl} target="_blank" rel="noreferrer" className={``}>
+              <Pill
+                className={`hover:text-white hover:bg-indigo-500 text-indigo-600`}
               >
                 Source
-              </a>
-            </Pill>
-            <Pill>
-              <a
-                href={codeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-indigo-600"
+              </Pill>
+            </a>
+            <a href={codeUrl} target="_blank" rel="noreferrer">
+              <Pill
+                className={`hover:text-white hover:bg-indigo-500 text-indigo-600 `}
               >
                 Code
-              </a>
-            </Pill>
+              </Pill>
+            </a>
           </div>
         </div>
       </div>

@@ -32,6 +32,11 @@ export default {
       type: "string",
     },
     {
+      name: "heroShortDescription",
+      title: "HeroShortDescription",
+      type: "string",
+    },
+    {
       name: "phoneNumber",
       title: "PhoneNumber",
       type: "string",
@@ -41,11 +46,6 @@ export default {
       title: "Email",
       type: "string",
     },
-    {
-      name: "socials",
-      title: "Socials",
-      type: "array",
-      of: [{ type: "reference", to: { type: "social" } }],
-    },
+   
   ],
 };

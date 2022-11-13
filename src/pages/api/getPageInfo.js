@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../lib/sanityConfig";
 
 const query = groq`
-    *[_type == 'pageInfo']
+    *[_type == 'pageInfo'][0]
 `;
 
 export default async function getPageInfo(req, res) {
