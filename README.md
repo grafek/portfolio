@@ -1,4 +1,4 @@
 TODO: 
 
-- Move data to some CMS (Sanity?) and fetch data from there
-- Performance
+- Performance & refactor
+- Slider arrows?
