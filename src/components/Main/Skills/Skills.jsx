@@ -1,7 +1,7 @@
 import { SectionHeading } from "../../UI";
-import { SKILLS } from "../../../constants";
 import Skill from "./Skill";
 import { motion } from "framer-motion";
+import { getImgUrl } from "../../../lib/sanityConfig";
 
 const skillsVariants = {
   hidden: { opacity: 0 },
@@ -14,7 +14,7 @@ const skillsVariants = {
   },
 };
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   return (
     <section id={"skills"} className="snap-center h-screen">
       <SectionHeading>Skills</SectionHeading>
@@ -25,12 +25,12 @@ const Skills = () => {
           whileInView={"show"}
           className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16 relative"
         >
-          {SKILLS.map((item, i) => (
+          {skills.map((skill) => (
             <Skill
-              key={i}
-              img={item.img}
-              name={item.name}
-              progress={item.progress}
+              key={skill._id}
+              name={skill.title}
+              progress={skill.progress}
+              img={getImgUrl(skill.skillImage).url()}
             />
           ))}
         </motion.div>

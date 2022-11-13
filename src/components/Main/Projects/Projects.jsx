@@ -1,6 +1,6 @@
 import { SectionHeading, Slider } from "../../UI";
-import { DUMMY_PROJECTS } from "../../../constants";
 import Project from "./Project";
+import { getImgUrl } from "../../../lib/sanityConfig";
 
 const projectsSliderVariants = {
   sliderHidden: { opacity: 0, scale: 0.5 },
@@ -17,19 +17,19 @@ const projectsSliderVariants = {
   },
 };
 
-export default function Projects() {
-  let content = DUMMY_PROJECTS.map((prj) => {
+export default function Projects({ projects }) {
+  const projectsContent = projects.map((prj) => {
     return (
       <Project
-        key={prj.id}
-        id={prj.id}
-        title={prj.name}
-        hasBackdrop={prj.hasBackdrop}
-        img={prj.img}
-        url={prj.url}
-        tags={prj.tags}
+        key={prj._id}
+        id={prj._id}
+        title={prj.title}
+        hasBackdrop={true}
+        img={getImgUrl(prj.image).url()}
+        demoUrl={prj.demoLink}
+        codeUrl={prj.codeLink}
+        tags={prj.technologies.map((tech) => tech.title)}
         description={prj.description}
-
       />
     );
   });
@@ -42,10 +42,10 @@ export default function Projects() {
       <SectionHeading>Projects</SectionHeading>
       <Slider
         innerSliderClasses="h-[calc(100vh-10rem)] gap-8 w-11/12 mx-auto"
-        outerSliderClasses="pt-10"
+        outerSliderClasses="pt-12"
         sliderVariants={projectsSliderVariants}
       >
-        {content}
+        {projectsContent}
       </Slider>
     </section>
   );

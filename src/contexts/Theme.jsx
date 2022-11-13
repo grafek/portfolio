@@ -24,19 +24,6 @@ function ThemeContextProvider({ children }) {
     setDarkTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  const changeThemeBtn =
-    darkTheme === "dark" ? (
-      <BsSunFill
-        onClick={toggleDarkTheme}
-        className="text-slate-200 text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70"
-      />
-    ) : (
-      <BsMoonFill
-        onClick={toggleDarkTheme}
-        className={`text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70`}
-      />
-    );
-
   const scrollbar =
     darkTheme === "dark"
       ? "scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-800"
@@ -84,9 +71,7 @@ function ThemeContextProvider({ children }) {
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ toggleDarkTheme, themeClasses, darkTheme, changeThemeBtn }}
-    >
+    <ThemeContext.Provider value={{ toggleDarkTheme, themeClasses, darkTheme }}>
       {children}
     </ThemeContext.Provider>
   );
