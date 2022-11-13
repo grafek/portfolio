@@ -10,5 +10,5 @@ export const sanityConfig = {
 export const sanityClient = createClient(sanityConfig);
 
 export const getImgUrl = (src) => {
-  createImageBuilder(sanityClient).image(src);
+  return createImageBuilder(sanityClient).image(src);
 };

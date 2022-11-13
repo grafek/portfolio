@@ -5,5 +5,5 @@ export default async function fetchProjects() {
 
   const data = await res.json();
 
-  const projects = data.projects;
+  return data.projects;
 }

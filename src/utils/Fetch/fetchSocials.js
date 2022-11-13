@@ -3,5 +3,5 @@ export default async function fetchSocials() {
 
   const data = await res.json();
 
-  const socials = data.socials;
+  return data.socials;
 }

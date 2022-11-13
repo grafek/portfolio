@@ -5,5 +5,5 @@ export default async function fetchTimelineInfo() {
 
   const data = await res.json();
 
-  const timelineInfo = data.timelineInfo;
+  return data.timelineInfo;
 }
