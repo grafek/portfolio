@@ -43,7 +43,7 @@ export default function Hero({ heroInfo }) {
             rotate: [-3, 3, 0],
             scale: [1.1, 1.2, 1],
           }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 1.8 }}
           className="flex flex-col md:flex-row md:max-w-md md:mx-auto gap-8"
         >
           <a
