@@ -3,12 +3,22 @@ import { Footer, Header } from "../components";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/Theme";
 import { Hero, Projects, About, Skills } from "../components/Main";
-import { fetchSkills } from "../utils/Fetch";
+import {
+  fetchPageInfo,
+  fetchProjects,
+  fetchSkills,
+  fetchSocials,
+  fetchTimelineInfo,
+} from "../utils/Fetch";
 
-export default function Home({ skills }) {
+export default function Home({
+  skills,
+  pageInfo,
+  socials,
+  timelineInfo,
+  projects,
+}) {
   const themeCtx = useContext(ThemeContext);
-
-  console.log(skills);
   return (
     <div
       className={`${themeCtx.themeClasses.scrollbar} h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth`}
@@ -24,13 +34,13 @@ export default function Home({ skills }) {
         <title>{`Jacek Grafender - Portfolio`}</title>
       </Head>
 
-      <Header />
+      <Header socials={socials} />
       <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
         <div className="mx-auto container" id="container">
           <Hero />
-          <Projects />
+          <Projects projects={projects} />
           <Skills skills={skills} />
-          <About />
+          <About timelineInfo={timelineInfo}/>
         </div>
       </main>
       <Footer />
@@ -40,9 +50,18 @@ export default function Home({ skills }) {
 
 export async function getStaticProps() {
   const skills = await fetchSkills();
+  const pageInfo = await fetchPageInfo();
+  const socials = await fetchSocials();
+  const timelineInfo = await fetchTimelineInfo();
+  const projects = await fetchProjects();
   return {
     props: {
       skills,
+      pageInfo,
+      socials,
+      timelineInfo,
+      projects,
     },
+    revalidate: 60,
   };
 }

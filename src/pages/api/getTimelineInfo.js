@@ -6,7 +6,7 @@ const query = groq`
 `;
 
 export default async function getTimelineInfo(req, res) {
-  const timeline = await sanityClient.fetch(query);
+  const timelineInfo = await sanityClient.fetch(query);
 
-  res.status(200).json({ timeline });
+  res.status(200).json({ timelineInfo });
 }

@@ -28,7 +28,7 @@ const aboutItemVariants = {
   },
 };
 
-const About = () => {
+const About = ({ timelineInfo }) => {
   const themeCtx = useContext(ThemeContext);
   return (
     <section id={`about`} className={"snap-start h-screen relative"}>
@@ -73,7 +73,7 @@ const About = () => {
           </p>
         </motion.div>
         <motion.div variants={aboutItemVariants}>
-          <Timeline />
+          <Timeline timelineInfo={timelineInfo} />
         </motion.div>
       </motion.div>
     </section>
