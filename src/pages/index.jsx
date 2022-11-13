@@ -59,7 +59,7 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const skills = await fetchSkills();
   const pageInfo = await fetchPageInfo();
   const github = await fetchGithub();
@@ -75,6 +75,6 @@ export async function getStaticProps() {
       timelineInfo,
       projects,
     },
-    revalidate: 600,
+    // revalidate: 600,
   };
 }
