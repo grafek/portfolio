@@ -4,7 +4,7 @@ import { ThemeContext } from "../../../contexts/Theme";
 import Timeline from "./Timeline/Timeline";
 import { SectionHeading } from "../../UI";
 import { motion } from "framer-motion";
-import { getImgUrl } from "../../../lib/sanityConfig";
+import { getImgUrl } from "../../../lib/config";
 
 const aboutVariants = {
   aboutHidden: { opacity: 0 },
