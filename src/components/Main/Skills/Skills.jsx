@@ -1,7 +1,7 @@
 import { SectionHeading } from "../../UI";
 import Skill from "./Skill";
 import { motion } from "framer-motion";
-import { getImgUrl } from "../../../lib/config";
+import { getImgUrl } from "../../../lib/sanityConfig";
 
 const skillsVariants = {
   hidden: { opacity: 0 },

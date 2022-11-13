@@ -1,6 +1,6 @@
 import { SectionHeading, Slider } from "../../UI";
 import Project from "./Project";
-import { getImgUrl } from "../../../lib/config";
+import { getImgUrl } from "../../../lib/sanityConfig";
 
 const projectsSliderVariants = {
   sliderHidden: { opacity: 0, scale: 0.5 },

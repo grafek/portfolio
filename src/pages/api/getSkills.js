@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { sanityClient } from "../../lib/config";
+import { sanityClient } from "../../lib/sanityConfig";
 
 const query = groq`
     *[_type == 'skill'] | order(_createdAt asc)
