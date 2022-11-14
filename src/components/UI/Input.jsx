@@ -38,7 +38,7 @@ export default function Input({
         {errors?.type === "required" ? (
           <span
             role={"alert"}
-            className="text-red-500 absolute top-6 left-0 font-semibold pt-2 -z-10"
+            className="text-red-500 absolute top-6 left-0 font-normal pt-2 -z-10"
           >
             {label} is required!
           </span>

@@ -76,7 +76,6 @@ export async function getStaticProps() {
       timelineInfo,
       projects,
     ];
-    console.log(fetchData);
     if (!fetchData) {
       return { notFound: true };
     }
