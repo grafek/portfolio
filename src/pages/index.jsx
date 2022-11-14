@@ -59,22 +59,38 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps() {
-  const skills = await fetchSkills();
-  const pageInfo = await fetchPageInfo();
-  const github = await fetchGithub();
-  const linkedIn = await fetchLinkedIn();
-  const timelineInfo = await fetchTimelineInfo();
-  const projects = await fetchProjects();
-  return {
-    props: {
+export async function getStaticProps() {
+  try {
+    const skills = await fetchSkills();
+    const pageInfo = await fetchPageInfo();
+    const github = await fetchGithub();
+    const linkedIn = await fetchLinkedIn();
+    const timelineInfo = await fetchTimelineInfo();
+    const projects = await fetchProjects();
+
+    const fetchData = [
       skills,
       pageInfo,
       github,
       linkedIn,
       timelineInfo,
       projects,
-    },
-    // revalidate: 600,
-  };
+    ];
+    if (!fetchData) {
+      return { notFound: true };
+    }
+    return {
+      props: {
+        skills,
+        pageInfo,
+        github,
+        linkedIn,
+        timelineInfo,
+        projects,
+      },
+      revalidate: 600,
+    };
+  } catch (_) {
+    return { notFound: true };
+  }
 }
