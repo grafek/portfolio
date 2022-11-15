@@ -4,7 +4,7 @@ import { ThemeContext } from "../../contexts/Theme";
 
 function ChangeThemeButton({ className = "" }) {
   const themeCtx = useContext(ThemeContext);
-  
+
   const changeThemeBtn =
     themeCtx.darkTheme === "dark" ? (
       <BsSunFill className={`${className} text-slate-200`} />
@@ -12,7 +12,11 @@ function ChangeThemeButton({ className = "" }) {
       <BsMoonFill className={className} />
     );
 
-  return <a onClick={themeCtx.toggleDarkTheme}>{changeThemeBtn}</a>;
+  return (
+    <button onClick={themeCtx.toggleDarkTheme} title="change-theme">
+      {changeThemeBtn}
+    </button>
+  );
 }
 
 export default ChangeThemeButton;
