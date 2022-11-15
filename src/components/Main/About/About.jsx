@@ -32,7 +32,7 @@ const aboutItemVariants = {
 const About = ({ timelineInfo, pageInfo }) => {
   const themeCtx = useContext(ThemeContext);
 
-  const { aboutInfo, aboutImage } = pageInfo
+  const { aboutInfo, aboutImage } = pageInfo;
   return (
     <section id={`about`} className={"snap-start h-screen relative"}>
       <SectionHeading>About</SectionHeading>
@@ -40,11 +40,11 @@ const About = ({ timelineInfo, pageInfo }) => {
         variants={aboutVariants}
         initial={"aboutHidden"}
         whileInView={"aboutShown"}
-        className="flex flex-col h-[calc(100vh-5rem)] justify-around"
+        className="flex flex-col h-full justify-center gap-10"
       >
         <motion.div
           variants={aboutItemVariants}
-          className="w-11/12 mx-auto flex flex-col md:flex-row gap-2 md:gap-8 items-center min-h-fit"
+          className="w-11/12 mx-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center min-h-fit"
         >
           <div className="relative w-full sm:w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full">
             <div className="h-full w-1/3 sm:w-1/2 md:w-full bg-gray-600 opacity-10 z-20 rounded-full relative flex m-auto justify-center"></div>

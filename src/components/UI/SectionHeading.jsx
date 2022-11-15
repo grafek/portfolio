@@ -13,7 +13,7 @@ export default function SectionHeading({ children }) {
         duration: 0.35,
         delay: 0.3,
       }}
-      className={"relative top-8 flex justify-center"}
+      className={"relative top-12 md:top-6 flex justify-center"}
     >
       <h3
         className={`${themeCtx.themeClasses.text} text-4xl lg:text-5xl font-semibold tracking-widest`}
