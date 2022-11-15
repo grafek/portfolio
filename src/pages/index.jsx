@@ -41,9 +41,10 @@ export default function Home({
         <link
           rel="icon"
           type="image/png"
-          sizes="16x16"
-          href="/assets/favicon.ico"
+          sizes="32x32"
+          href="/favicon.ico"
         />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Jacek Grafender - Inspired frontend developer looking for a job"
