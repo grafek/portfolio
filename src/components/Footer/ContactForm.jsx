@@ -83,7 +83,7 @@ export default function ContactForm() {
       id="contact-form"
       ref={form}
       onSubmit={handleSubmit(sendEmail)}
-      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
+      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl max-h-[280px]`}
     >
       <motion.div
         variants={contactFormVariants}
