@@ -17,12 +17,10 @@ const contactFormVariants = {
 };
 
 const submitButtonVariants = {
-  submitButtonHidden: { opacity: 0 },
   submitButtonShown: {
     opacity: 1,
     rotate: [0, 0, 0, -10, 10, 0],
     scale: [1, 1, 1, 1.1, 1.2, 1],
-    transition: { delay: 1 },
   },
 };
 
@@ -83,7 +81,7 @@ export default function ContactForm() {
       id="contact-form"
       ref={form}
       onSubmit={handleSubmit(sendEmail)}
-      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl max-h-[280px]`}
+      className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
     >
       <motion.div
         variants={contactFormVariants}
@@ -133,7 +131,6 @@ export default function ContactForm() {
       <motion.button
         type="submit"
         variants={submitButtonVariants}
-        initial={"submitButtonHidden"}
         whileInView={"submitButtonShown"}
         className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
       >
