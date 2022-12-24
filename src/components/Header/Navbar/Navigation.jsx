@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { navItems } from "../../../constants";
 import NavItem from "./NavItem";
+
+const navItems = ["home", "projects", "skills", "about", "contact"];
 
 const variantsUl = {
   open: {

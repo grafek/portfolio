@@ -11,7 +11,7 @@ export default function Project({
   img,
   hasBackdrop,
   description,
-  className,
+  className = "",
 }) {
   const themeCtx = useContext(ThemeContext);
 
@@ -47,19 +47,19 @@ export default function Project({
   }
   return (
     <div
-      className={`${themeCtx.themeClasses.lightDarkBg} ${
-        className ? className : ""
-      } ${
-        themeCtx.themeClasses.shadow
-      } min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] min-h-[450px] flex-shrink-0 m-auto flex flex-col rounded-md h-full shadow-md transition-colors`}
+      className={`${themeCtx.themeClasses.lightDarkBg} ${className} ${themeCtx.themeClasses.shadow} min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] min-h-[450px] flex-shrink-0 m-auto flex flex-col rounded-md h-full shadow-md transition-colors`}
     >
       {imgContent}
       <div className={`p-4 lg:text-lg leading-6`}>
-        <p className={`${themeCtx.themeClasses.subText}`}>{description}</p>
+        <p
+          className={`${themeCtx.themeClasses.subText} max-h-[160px] overflow-auto`}
+        >
+          {description}
+        </p>
         <div className="flex flex-col md:flex-row justify-between items-center pt-4 gap-4">
           {tagsContent}
           <div className="flex justify-between md:gap-6 w-full md:w-auto md:items-center">
-            <a href={demoUrl} target="_blank" rel="noreferrer" className={``}>
+            <a href={demoUrl} target="_blank" rel="noreferrer">
               <Pill
                 className={`hover:text-white hover:bg-indigo-500 text-indigo-600`}
               >
