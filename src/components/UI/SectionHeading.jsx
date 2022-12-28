@@ -9,6 +9,7 @@ export default function SectionHeading({ children }) {
     <motion.div
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: -10 }}
+      viewport={{ once: true }}
       transition={{
         duration: 0.35,
         delay: 0.3,
@@ -16,7 +17,7 @@ export default function SectionHeading({ children }) {
       className={"relative top-12 md:top-6 flex justify-center"}
     >
       <h3
-        className={`${themeCtx.themeClasses.text} text-4xl lg:text-5xl font-semibold tracking-widest`}
+        className={`${themeCtx.themeClasses.text} text-4xl lg:text-5xl font-semibold tracking-widest select-none`}
       >
         <SectionDivider />
         {children}
