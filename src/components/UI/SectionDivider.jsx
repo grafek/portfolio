@@ -4,6 +4,7 @@ const SectionDivider = () => {
     <motion.div
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: -10 }}
+      viewport={{ once: true }}
       transition={{
         duration: 0.35,
         delay: 0.3,

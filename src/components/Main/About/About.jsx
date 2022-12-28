@@ -40,7 +40,8 @@ const About = ({ timelineInfo, pageInfo }) => {
         variants={aboutVariants}
         initial={"aboutHidden"}
         whileInView={"aboutShown"}
-        className="flex flex-col h-full justify-center gap-6 sm:gap-14"
+        viewport={{ once: true }}
+        className="flex flex-col h-full justify-center gap-6 sm:gap-14 select-none"
       >
         <motion.div
           variants={aboutItemVariants}

@@ -22,8 +22,9 @@ const Skills = ({ skills }) => {
         <motion.div
           variants={skillsVariants}
           initial={"hidden"}
+          viewport={{ once: true }}
           whileInView={"show"}
-          className="grid grid-cols-3 gap-4 sm:gap-8  md:gap-16 relative"
+          className="grid grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8  md:gap-16 relative"
         >
           {skills.map((skill) => (
             <Skill
