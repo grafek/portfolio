@@ -16,10 +16,10 @@ export default function Footer() {
     >
       <SectionHeading>Contact</SectionHeading>
       <div className="h-screen flex flex-col w-11/12 mx-auto justify-evenly sm:justify-around">
-        <div className="h-[60vh] w-full max-h-full flex items-center">
+        <div className="h-[60vh] w-full max-h-full flex items-center ">
           <ContactForm />
         </div>
-        <div className="flex  flex-col justify-center w-full space-y-3">
+        <div className="flex flex-col justify-center w-full space-y-3">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`${themeCtx.themeClasses.text} text-2xl`} />
           </a>

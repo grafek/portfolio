@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
+import { HiOutlineCode } from "react-icons/hi";
 import { Pill } from "../../UI";
 
 export default function Project({
@@ -68,9 +69,9 @@ export default function Project({
             </a>
             <a href={codeUrl} target="_blank" rel="noreferrer">
               <Pill
-                className={`hover:text-white hover:bg-indigo-500 text-indigo-600 `}
+                className={`hover:text-white hover:bg-indigo-500 text-indigo-600 flex`}
               >
-                Code
+                <HiOutlineCode className="text-xl" />
               </Pill>
             </a>
           </div>

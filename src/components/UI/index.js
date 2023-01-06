@@ -1,5 +1,5 @@
 export { default as Input } from "./Input";
-export { default as Line } from "./Underline";
+export { default as Underline } from "./Underline";
 export { default as Pill } from "./Pill";
 export { default as SectionDivider } from "./SectionDivider";
 export { default as SectionHeading } from "./SectionHeading";

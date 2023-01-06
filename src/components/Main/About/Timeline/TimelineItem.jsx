@@ -1,4 +1,4 @@
-import { Line } from "../../../UI";
+import { Underline } from "../../../UI";
 import { motion } from "framer-motion";
 
 const timelineItemVariants = {
@@ -18,7 +18,7 @@ export default function TimelineItem({ year, text }) {
       <div className="w-full">
         <h2 className="font-semibold text-xl">
           {year}
-          <Line />
+          <Underline />
         </h2>
         <p>{text}</p>
       </div>

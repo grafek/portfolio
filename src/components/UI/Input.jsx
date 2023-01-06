@@ -6,21 +6,21 @@ export default function Input({
   errors,
   textArea = false,
 }) {
-  let requiredAsterisk = required ? (
+  const requiredAsterisk = required ? (
     <span className="text-red-500 font-semibold">*</span>
   ) : null;
 
-  let inputContent = textArea ? (
+  const inputContent = textArea ? (
     <textarea
       name={label}
       {...register(label, { required })}
-      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md  md:h-40 focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-1 mt-1 focus:outline-none focus:rounded-md  md:h-40 focus:ring-1 border-gray-400"
     ></textarea>
   ) : (
     <input
       type={inputType}
       name={label}
-      className="w-full bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
+      className="w-full bg-transparent border-b py-1 mt-1 focus:outline-none focus:rounded-md focus:ring-1 border-gray-400"
       {...register(label, { required })}
     />
   );
@@ -30,7 +30,7 @@ export default function Input({
       <label
         htmlFor={label}
         aria-invalid={errors ? "true" : "false"}
-        className="font-light mt-8 relative z-30"
+        className="mt-8 relative z-30"
       >
         {label}
         {requiredAsterisk}
