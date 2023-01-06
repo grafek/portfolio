@@ -18,7 +18,7 @@ const Skills = ({ skills }) => {
   return (
     <section id={"skills"} className="snap-center h-screen">
       <SectionHeading>Skills</SectionHeading>
-      <div className=" w-11/12 flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-[90%] justify-center xl:space-y-0 mx-auto items-center">
+      <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-[90%] justify-center xl:space-y-0 mx-auto items-center">
         <motion.div
           variants={skillsVariants}
           initial={"hidden"}

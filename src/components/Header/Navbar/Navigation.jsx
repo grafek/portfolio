@@ -16,7 +16,7 @@ const Navigation = ({ toggleNav }) => {
   return (
     <motion.ul
       variants={variantsUl}
-      className={`space-y-10 flex flex-col h-full justify-center items-center relative `}
+      className={`space-y-10 flex flex-col h-full justify-center items-center relative`}
     >
       {navItems.map((item, i) => (
         <NavItem href={`#${item}`} onClick={toggleNav} key={i}>

@@ -45,15 +45,14 @@ const About = ({ timelineInfo, pageInfo }) => {
       >
         <motion.div
           variants={aboutItemVariants}
-          className="w-11/12 mx-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center min-h-fit"
+          className="w-11/12 mx-auto flex flex-col md:flex-row gap-8 md:gap-8 items-center min-h-fit"
         >
-          <div className="relative w-full sm:w-1/2 md:w-full h-[20vh] md:h-[35vh] lg:h-[45vh] max-h-[50%] xl:max-h-full">
-            <div className="h-full w-1/3 sm:w-1/2 md:w-full bg-gray-600 opacity-10 z-20 rounded-full relative flex m-auto justify-center"></div>
+          <div className="relative w-full md:w-full h-[15vh] md:h-[13vh] lg:h-[25vh] xl:h-[40vh]">
+            <div className="h-full w-1/3 md:w-full bg-gray-600 opacity-10 z-20 rounded-full relative flex m-auto justify-center"></div>
             <Image
               src={getImgUrl(aboutImage).url()}
               layout="fill"
-              objectFit=""
-              className="relative object-contain md:object-cover"
+              className="relative object-contain"
               alt="me"
             />
           </div>

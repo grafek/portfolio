@@ -38,18 +38,8 @@ export default function Home({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon.ico"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon.ico"
-        />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           name="description"

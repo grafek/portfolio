@@ -18,7 +18,7 @@ export default function Hero({ heroInfo }) {
       id="hero"
       className="snap-center h-screen flex relative z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
     >
-      <div className="w-5/6 md:min-w-fit flex flex-col gap-14">
+      <div className="w-5/6 flex flex-col gap-14">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -42,7 +42,7 @@ export default function Hero({ heroInfo }) {
             opacity: 1,
             y: 0,
           }}
-          transition={{ delay: 1.8 }}
+          transition={{ delay: 1.8, duration: 0.5 }}
           className="flex flex-col md:flex-row md:max-w-md md:mx-auto gap-8"
         >
           <a
