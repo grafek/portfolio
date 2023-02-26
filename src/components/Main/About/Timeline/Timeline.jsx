@@ -17,7 +17,7 @@ export default function Timeline({ timelineInfo }) {
       outerSliderClasses="overflow-hidden"
     >
       <motion.ul
-        className={`${themeCtx.themeClasses.subText} flex gap-14 w-full text-sm md:text-base lg:justify-between`}
+        className={`${themeCtx.themeClasses.subText} flex gap-6 md:gap-14 w-full text-sm md:text-base lg:justify-between`}
       >
         {timelineContet}
       </motion.ul>

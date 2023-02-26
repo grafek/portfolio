@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer
       id={"contact"}
-      className={`${themeCtx.themeClasses.lightDarkBg} snap-start h-screen`}
+      className={`${themeCtx.themeClasses.lightDarkBg} snap-start h-screen relative overflow-hidden`}
     >
       <SectionHeading>Contact</SectionHeading>
       <div className="h-screen flex flex-col w-11/12 mx-auto justify-evenly sm:justify-around">
