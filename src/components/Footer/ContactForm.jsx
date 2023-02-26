@@ -115,7 +115,7 @@ export default function ContactForm() {
         type="submit"
         variants={submitButtonVariants}
         whileInView={"submitButtonShown"}
-        className={`${themeCtx.themeClasses.btnFilled} mx-auto flex z-50`}
+        className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
       >
         {btnState}
         <svg
