@@ -49,10 +49,13 @@ export default function Home({
       </Head>
 
       <Header socials={socials} contactInfo={contactInfo} />
-      <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
+      <main
+        className={`${themeCtx.themeClasses.darkBg} relative z-20`}
+        id={"home"}
+      >
+        <BackgroundAnimation />
         <div className="mx-auto container" id="container">
           <Hero heroInfo={heroInfo} />
-       
           <Projects projects={projects} />
           <Skills skills={skills} />
           <About timelineInfo={timelineInfo} pageInfo={pageInfo} />
