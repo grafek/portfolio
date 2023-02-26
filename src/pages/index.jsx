@@ -52,7 +52,7 @@ export default function Home({
       <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
         <div className="mx-auto container" id="container">
           <Hero heroInfo={heroInfo} />
-          <BackgroundAnimation />
+       
           <Projects projects={projects} />
           <Skills skills={skills} />
           <About timelineInfo={timelineInfo} pageInfo={pageInfo} />
