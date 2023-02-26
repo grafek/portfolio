@@ -5,7 +5,7 @@ const SectionWrap = (Component, idName, sectionName, classsName) =>
     return (
       <section
         id={idName}
-        className={`snap-center h-screen min-h-screen relative overflow-hidden ${classsName}`}
+        className={`snap-start h-screen min-h-screen relative overflow-hidden ${classsName}`}
       >
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
         <Component {...props} />
