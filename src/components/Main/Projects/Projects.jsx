@@ -1,6 +1,7 @@
-import { SectionHeading, Slider } from "../../UI";
+import { Slider } from "../../UI";
 import Project from "./Project";
 import { getImgUrl } from "../../../lib/sanityConfig";
+import SectionWrap from "../../../hoc/SectionWrap";
 
 const projectsSliderVariants = {
   sliderHidden: { opacity: 0, scale: 0.5 },
@@ -17,8 +18,8 @@ const projectsSliderVariants = {
   },
 };
 
-export default function Projects({ projects }) {
-  const projectsContent = projects.map((prj) => {
+function Projects({ projects }) {
+  const projectsContent = projects?.map((prj) => {
     return (
       <Project
         key={prj._id}
@@ -35,18 +36,14 @@ export default function Projects({ projects }) {
   });
 
   return (
-    <section
-      id={"projects"}
-      className={"snap-center h-screen my-auto relative overflow-hidden"}
+    <Slider
+      innerSliderClasses="h-[calc(100vh-12rem)] gap-8 w-11/12 mx-auto"
+      outerSliderClasses="pt-16"
+      sliderVariants={projectsSliderVariants}
     >
-      <SectionHeading>Projects</SectionHeading>
-      <Slider
-        innerSliderClasses="h-[calc(100vh-12rem)] gap-8 w-11/12 mx-auto"
-        outerSliderClasses="pt-16"
-        sliderVariants={projectsSliderVariants}
-      >
-        {projectsContent}
-      </Slider>
-    </section>
+      {projectsContent}
+    </Slider>
   );
 }
+
+export default SectionWrap(Projects, "projects", "Projects");

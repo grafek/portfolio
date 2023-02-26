@@ -11,7 +11,7 @@ import {
   fetchSkills,
   fetchTimelineInfo,
 } from "../utils/Fetch";
-
+import { BackgroundAnimation } from "../components/UI";
 export default function Home({
   skills,
   pageInfo,
@@ -52,6 +52,7 @@ export default function Home({
       <main className={`${themeCtx.themeClasses.darkBg}`} id={"home"}>
         <div className="mx-auto container" id="container">
           <Hero heroInfo={heroInfo} />
+          <BackgroundAnimation />
           <Projects projects={projects} />
           <Skills skills={skills} />
           <About timelineInfo={timelineInfo} pageInfo={pageInfo} />
@@ -91,7 +92,7 @@ export async function getStaticProps() {
         timelineInfo,
         projects,
       },
-      revalidate: 600,
+      revalidate: 100,
     };
   } catch (_) {
     return { notFound: true };

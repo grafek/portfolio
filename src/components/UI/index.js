@@ -6,3 +6,4 @@ export { default as SectionHeading } from "./SectionHeading";
 export { default as Slider } from "./Slider";
 export { default as Notification } from "./Notification";
 export { default as ChangeThemeButton } from "./ChangeThemeButton";
+export { default as BackgroundAnimation } from "./BackgroundAnimation";

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../../contexts/Theme";
+import { ThemeContext } from "../../contexts/Theme";
 
 const BackgroundAnimation = () => {
   const themeCtx = useContext(ThemeContext);
@@ -7,11 +7,11 @@ const BackgroundAnimation = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      width={"4000px"}
+      width={"100%"}
       height={"100vh"}
-      viewBox="0 0 1920 903"
+      className="absolute top-0 left-0"
     >
-      <g transform="translate(960,451.5) scale(1,1) translate(-1000,-451.5)">
+      <g transform="translate(0,-250)">
         <linearGradient
           id="lg-0.8324277718715198"
           x1="0.4"
