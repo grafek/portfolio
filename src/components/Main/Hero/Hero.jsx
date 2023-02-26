@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
 import { motion } from "framer-motion";
 import SectionWrap from "../../../hoc/SectionWrap";
+import { BackgroundAnimation } from "../../UI";
 
 function Hero({ heroInfo }) {
   const themeCtx = useContext(ThemeContext);
@@ -14,7 +15,7 @@ function Hero({ heroInfo }) {
       : "bg-gradient-to-r from-violet-700 to-indigo-500";
 
   return (
-    <div className="w-5/6 flex flex-col gap-14">
+    <div className="flex flex-col gap-14">
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -54,6 +55,7 @@ function Hero({ heroInfo }) {
           Contact
         </a>
       </motion.div>
+      <BackgroundAnimation />
     </div>
   );
 }

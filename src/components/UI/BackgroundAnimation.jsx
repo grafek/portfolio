@@ -9,7 +9,7 @@ const BackgroundAnimation = () => {
       preserveAspectRatio="xMidYMid"
       width={"100%"}
       height={"100vh"}
-      className="absolute top-0 left-0"
+      className="absolute top-0 left-0 -z-20"
     >
       <g transform="translate(0,-250)">
         <linearGradient
