@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../../../contexts/Theme";
 import { motion } from "framer-motion";
 import SectionWrap from "../../../hoc/SectionWrap";
-import { BackgroundAnimation } from "../../UI";
 
 function Hero({ heroInfo }) {
   const themeCtx = useContext(ThemeContext);
@@ -55,7 +54,6 @@ function Hero({ heroInfo }) {
           Contact
         </a>
       </motion.div>
-      <BackgroundAnimation />
     </div>
   );
 }
@@ -64,5 +62,5 @@ export default SectionWrap(
   Hero,
   "hero",
   undefined,
-  "flex z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center static"
+  "flex z-20 flex-col 2xl:px-0 justify-center items-center md:flex-row text-center"
 );
