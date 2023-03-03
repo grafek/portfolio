@@ -1,6 +1,6 @@
 # My portfolio ✨
 
-My first fully respsonsive website created with a framework, where you can check out my projects and more about me! 🙂
+My first fully respsonsive website created with a framework, where you can check out my projects and learn more about me! 🙂
 
 ## 🔥 Features
 
