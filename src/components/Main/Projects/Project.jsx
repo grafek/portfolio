@@ -48,12 +48,12 @@ export default function Project({
   }
   return (
     <div
-      className={`${themeCtx.themeClasses.lightDarkBg} ${className} ${themeCtx.themeClasses.shadow} min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] min-h-[450px] flex-shrink-0 m-auto flex flex-col rounded-md h-full shadow-md transition-colors`}
+      className={`${themeCtx.themeClasses.lightDarkBg}  ${className} ${themeCtx.themeClasses.shadow}  min-w-[260px] w-[260px] md:w-[600px] xl:w-[900px] min-h-[450px] flex-shrink-0 m-auto flex flex-col rounded-md h-full shadow-md transition-colors`}
     >
       {imgContent}
-      <div className={`p-4 lg:text-lg leading-6`}>
+      <div className={`p-4 lg:text-lg leading-6 `}>
         <p
-          className={`${themeCtx.themeClasses.subText} max-h-[160px] overflow-auto`}
+          className={`${themeCtx.themeClasses.subText} pr-2 max-h-[160px] select-none ${themeCtx.themeClasses.scrollbar} overflow-y-auto`}
         >
           {description}
         </p>

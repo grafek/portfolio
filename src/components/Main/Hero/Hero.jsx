@@ -33,12 +33,12 @@ function Hero({ heroInfo }) {
         </p>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{
           opacity: 1,
           y: 0,
         }}
-        transition={{ delay: 1.8, duration: 0.5 }}
+        transition={{ delay: 2.3, duration: 0.5 }}
         className="flex flex-col md:flex-row md:max-w-md md:mx-auto gap-8"
       >
         <a

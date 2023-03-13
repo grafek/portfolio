@@ -25,7 +25,7 @@ function Notification({ notification }) {
             animate="animate"
             exit="exit"
           >
-            <p className={`font-semibold`}>{message}</p>
+            <p className={`font-semibold text-slate-100`}>{message}</p>
           </motion.div>
         ) : (
           ""
