@@ -9,7 +9,7 @@ import { ChangeThemeButton } from "../UI";
 
 export default function HeaderButtons({ contactInfo, socials }) {
   const headerIconClasses =
-    "text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 text-xl md:text-2xl cursor-pointer duration-300 hover:scale-110 opacity-70";
+    "text-xl md:text-2xl xl:text-3xl cursor-pointer duration-300 hover:scale-110 cursor-pointer duration-300 hover:scale-110 opacity-70";
 
   const { phoneNumber, email } = contactInfo;
   const { linkedIn, github } = socials;
