@@ -38,7 +38,6 @@ function Projects({ projects }) {
   return (
     <Slider
       innerSliderClasses="h-[calc(100vh-12rem)] gap-8 w-11/12 mx-auto"
-      outerSliderClasses="pt-16"
       sliderVariants={projectsSliderVariants}
     >
       {projectsContent}
@@ -46,4 +45,4 @@ function Projects({ projects }) {
   );
 }
 
-export default SectionWrap(Projects, "projects", "Projects");
+export default SectionWrap(Projects, "projects", "Projects", "");

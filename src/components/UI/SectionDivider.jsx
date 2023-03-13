@@ -9,8 +9,11 @@ const SectionDivider = () => {
         duration: 0.35,
         delay: 0.3,
       }}
-      className="mr-4 w-[3px] h-3/4 inline-block bg-gradient-to-l from-cyan-500 to-indigo-800"
-    ></motion.div>
+      className="inline-flex flex-col justify-center items-center mr-2"
+    >
+      <div className="w-5 h-5 rounded-full bg-violet-500" />
+      <div className="w-1 h-10 inline-block bg-gradient-to-b from-violet-400 to-transparent" />
+    </motion.div>
   );
 };
 

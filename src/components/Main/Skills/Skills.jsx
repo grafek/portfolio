@@ -16,19 +16,18 @@ const skillsVariants = {
 
 const Skills = ({ skills }) => {
   return (
-    <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-[90%] justify-center xl:space-y-0 mx-auto items-center">
+    <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] justify-center xl:space-y-0 mx-auto items-center">
       <motion.div
         variants={skillsVariants}
         initial={"hidden"}
         viewport={{ once: true }}
         whileInView={"show"}
-        className="grid grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8  md:gap-16 relative"
+        className="grid grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8 md:gap-16 relative"
       >
         {skills.map((skill) => (
           <Skill
             key={skill._id}
             name={skill.title}
-            progress={skill.progress}
             img={getImgUrl(skill.skillImage).url()}
           />
         ))}
@@ -37,4 +36,4 @@ const Skills = ({ skills }) => {
   );
 };
 
-export default SectionWrap(Skills, "skills", "Skills");
+export default SectionWrap(Skills, "skills", "Skills", "");

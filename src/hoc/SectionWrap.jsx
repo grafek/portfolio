@@ -5,10 +5,12 @@ const SectionWrap = (Component, idName, sectionName, classsName) =>
     return (
       <section
         id={idName}
-        className={`snap-start h-screen min-h-screen relative overflow-hidden ${classsName}`}
+        className={`snap-start h-[100dvh] relative flex flex-col overflow-hidden ${classsName}`}
       >
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
-        <Component {...props} />
+        <div className="h-full flex flex-col justify-center">
+          <Component {...props} />
+        </div>
       </section>
     );
   };
