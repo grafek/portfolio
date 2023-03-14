@@ -29,9 +29,10 @@ const Home: NextPage<Props> = ({
   socials,
   timelineInfo,
 }) => {
+  const themeCtx = useContext(ThemeContext);
+
   const { firstName, role, phoneNumber } = pageInfo;
 
-  const themeCtx = useContext(ThemeContext);
   return (
     <div
       className={`${themeCtx.themeClasses.scrollbar} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth overflow-x-hidden`}
@@ -70,20 +71,14 @@ const Home: NextPage<Props> = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const fetchData = {
-    skills: await fetchSkills(),
-    pageInfo: await fetchPageInfo(),
-    socials: await fetchSocials(),
-    timelineInfo: await fetchTimelineInfo(),
-    projects: await fetchProjects(),
-  };
-
-  if (!Object.values(fetchData).every(Boolean)) {
-    return { notFound: true };
-  }
+  const skills = await fetchSkills();
+  const pageInfo = await fetchPageInfo();
+  const socials = await fetchSocials();
+  const timelineInfo = await fetchTimelineInfo();
+  const projects = await fetchProjects();
 
   return {
-    props: fetchData,
+    props: { pageInfo, projects, skills, socials, timelineInfo },
     revalidate: 10,
   };
 };
