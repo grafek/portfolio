@@ -71,14 +71,28 @@ const Home: NextPage<Props> = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const skills = await fetchSkills();
-  const pageInfo = await fetchPageInfo();
-  const socials = await fetchSocials();
-  const timelineInfo = await fetchTimelineInfo();
-  const projects = await fetchProjects();
+  try {
+    const skills = await fetchSkills();
+    const pageInfo = await fetchPageInfo();
+    const socials = await fetchSocials();
+    const timelineInfo = await fetchTimelineInfo();
+    const projects = await fetchProjects();
 
-  return {
-    props: { pageInfo, projects, skills, socials, timelineInfo },
-    revalidate: 10,
-  };
+    const fetchData = [skills, pageInfo, socials, timelineInfo, projects];
+    if (!fetchData) {
+      return { notFound: true };
+    }
+    return {
+      props: {
+        skills,
+        pageInfo,
+        socials,
+        timelineInfo,
+        projects,
+      },
+      revalidate: 100,
+    };
+  } catch (_) {
+    return { notFound: true };
+  }
 };
