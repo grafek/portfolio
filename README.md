@@ -14,6 +14,7 @@ My first fully respsonsive website created with a framework, where you can check
 - [x] smooth animations 
 - [x] slider for projects section & timeline
 - [x] responsive
+- [x] type-safe API calls
 
 
 ## 💻 Tech Stack
