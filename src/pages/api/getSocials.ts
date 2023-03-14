@@ -7,7 +7,7 @@ const query = groq`
     *[_type == 'social']
 `;
 
-export default async function getLinkedIn(
+export default async function getSocials(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
