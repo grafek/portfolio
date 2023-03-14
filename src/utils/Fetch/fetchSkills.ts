@@ -5,5 +5,7 @@ export default async function fetchSkills() {
 
   const data = await res.json();
 
-  return data.skills as Skill[];
+  const skills: Skill[] = data.skills;
+
+  return skills;
 }

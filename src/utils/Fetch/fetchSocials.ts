@@ -5,5 +5,7 @@ export default async function fetchSocials() {
 
   const data = await res.json();
 
-  return data.socials as SocialMedia[];
+  const socials: SocialMedia[] = data.socials;
+
+  return socials;
 }
