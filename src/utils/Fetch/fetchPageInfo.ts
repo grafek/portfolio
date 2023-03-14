@@ -7,5 +7,7 @@ export default async function fetchPageInfo() {
 
   const data = await res.json();
 
-  return data.pageInfo as PageInfo;
+  const pageInfo: PageInfo = data.pageInfo;
+
+  return pageInfo;
 }

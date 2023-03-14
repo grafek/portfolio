@@ -7,5 +7,7 @@ export default async function fetchTimelineInfo() {
 
   const data = await res.json();
 
-  return data.timelineInfo as Timeline[];
+  const timelineInfo: Timeline[] = data.timelineInfo;
+
+  return timelineInfo;
 }
