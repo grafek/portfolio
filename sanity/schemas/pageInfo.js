@@ -41,11 +41,5 @@ export default {
       title: "PhoneNumber",
       type: "string",
     },
-    {
-      name: "email",
-      title: "Email",
-      type: "string",
-    },
-   
   ],
 };
