@@ -4,17 +4,10 @@ export default {
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
-      description: "Skill title",
+      name: "name",
+      title: "Name",
+      description: "Skill name",
       type: "string",
-    },
-    {
-      name: "progress",
-      title: "Progress",
-      type: "number",
-      description: "Skill progress 0 to 100%",
-      validation: (Rule) => Rule.min(0).max(100),
     },
     {
       name: "skillImage",
