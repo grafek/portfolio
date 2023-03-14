@@ -78,10 +78,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const timelineInfo = await fetchTimelineInfo();
     const projects = await fetchProjects();
 
-    const fetchData = [skills, pageInfo, socials, timelineInfo, projects];
-    if (!fetchData) {
-      return { notFound: true };
-    }
     return {
       props: {
         skills,
@@ -90,7 +86,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         timelineInfo,
         projects,
       },
-      revalidate: 100,
+      revalidate: 1,
     };
   } catch (_) {
     return { notFound: true };
