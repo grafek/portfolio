@@ -35,7 +35,10 @@ module.exports = {
         },
         darkBg: '#0F1624',
       },
+      fontFamily: {
+        'gt-walsheim': ['GT Walsheim', 'sans-serif'],
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],
-}
+};

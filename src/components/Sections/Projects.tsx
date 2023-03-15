@@ -6,21 +6,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/Theme';
 import { HiOutlineCode } from 'react-icons/hi';
 import { type Project } from '../../../types';
-
-const projectsSliderVariants = {
-  sliderHidden: { opacity: 0, scale: 0.5 },
-  sliderShown: {
-    opacity: 1,
-    scale: 1,
-    x: [0, -60, 30, 0],
-    transition: {
-      delay: 1.5,
-      duration: 1.2,
-      type: 'spring',
-      stiffnes: 300,
-    },
-  },
-};
+import { projectsSliderVariants } from '../../utils/framer';
 
 type ProjectsProps = { projects: Project[] };
 

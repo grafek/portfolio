@@ -1,11 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { type Notification } from '../../../types';
-
-const notificationsVariants = {
-  initial: { opacity: 0, y: 50, scale: 0.3 },
-  animate: { opacity: 1, y: 0, scale: 1 },
-  exit: { opacity: 0, scale: [1, 0.3], y: 50, transition: { duration: 0.2 } },
-};
+import { notificationVariants } from '../../utils/framer';
 
 type NotificationProps = { notification: Notification };
 
@@ -22,7 +17,7 @@ const Notification: React.FC<NotificationProps> = ({ notification }) => {
         {isShown ? (
           <motion.div
             className={`mx-auto flex h-10 w-3/4 flex-col items-center justify-center rounded-xl sm:ml-auto sm:mr-5 md:h-20 md:w-[300px] ${stateClasses}`}
-            variants={notificationsVariants}
+            variants={notificationVariants}
             initial="initial"
             animate="animate"
             exit="exit"

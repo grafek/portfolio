@@ -3,55 +3,7 @@ import { ThemeContext } from '../contexts/Theme';
 import { motion, useCycle } from 'framer-motion';
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
-
-const sidebarVariants = {
-  open: {
-    opacity: 0.95,
-    clipPath: `circle(1000px at 50px 50px)`,
-    transition: {
-      type: 'spring',
-      stiffness: 30,
-      restDelta: 2,
-      damping: 20,
-    },
-  },
-  closed: {
-    opacity: 0.95,
-    clipPath: 'circle(20px at 28px 28px)',
-    transition: {
-      delay: 0.5,
-      type: 'spring',
-      stiffness: 200,
-      damping: 40,
-    },
-  },
-};
-
-const variantsUl = {
-  open: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.1, staggerDirection: -1 },
-  },
-};
-
-const varitantsLi = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+import { sidebarVariants, variantsUl, varitantsLi } from '../utils/framer';
 
 const navItems = ['home', 'projects', 'skills', 'about', 'contact'];
 

@@ -10,6 +10,7 @@ import {
   FormSchema,
   type Notification as NotificationType,
 } from '../../../types';
+import { submitButtonVariants } from '../../utils/framer';
 
 const Footer: React.FC = () => {
   const themeCtx = useContext(ThemeContext);
@@ -19,7 +20,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       id={'contact'}
-      className={`${themeCtx.themeClasses.lightDarkBg} relative h-[100dvh] snap-start`}
+      className={`${themeCtx.themeClasses.lightDarkBg} relative h-[100dvh]  snap-start`}
     >
       <div className="container mx-auto flex h-full flex-col justify-between">
         <SectionHeading>Let&apos;s talk</SectionHeading>
@@ -39,17 +40,6 @@ const Footer: React.FC = () => {
   );
 };
 export default Footer;
-
-const submitButtonVariants = {
-  submitButtonShown: {
-    opacity: 1,
-    rotate: [0, 0, 0, -10, 10, 0],
-    scale: [1, 1, 1, 1.1, 1.2, 1],
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
 
 function ContactForm() {
   const themeCtx = useContext(ThemeContext);
