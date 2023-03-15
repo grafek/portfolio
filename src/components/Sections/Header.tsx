@@ -10,6 +10,7 @@ import {
 } from 'react-icons/bs';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/Theme';
+import { headerButtonsVariants } from '../../utils/framer';
 
 type HeaderProps = { socials: SocialMedia[]; phoneNumber: string };
 
@@ -42,9 +43,9 @@ const HeaderButtons: React.FC<HeaderButtonProps> = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
+      initial="hidden"
+      animate="show"
+      variants={headerButtonsVariants}
       className="absolute top-0 right-0 z-20 flex gap-4 p-4 md:gap-6 md:px-6 "
     >
       <ChangeThemeButton />

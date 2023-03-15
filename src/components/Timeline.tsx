@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Slider } from './UI';
 import { Underline } from './UI';
 import { type Timeline } from '../../types';
+import { timelineItemVariants } from '../utils/framer';
 
 type TimelineProps = {
   timelineInfo: Timeline[];
@@ -34,13 +35,6 @@ const Timeline: React.FC<TimelineProps> = ({ timelineInfo }) => {
 
 export default Timeline;
 
-const timelineItemVariants = {
-  timelineHidden: { opacity: 0, y: -40 },
-  timelineShown: {
-    opacity: 1,
-    y: 0,
-  },
-};
 
 type TimelineItemProps = {
   year: number;

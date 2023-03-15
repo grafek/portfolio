@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/Theme';
-import { SectionDivider } from '.';
 import { motion } from 'framer-motion';
+import { sectionHeadingVariants } from '../../utils/framer';
 
 type SectionHeadingProps = { children: React.ReactNode };
 
@@ -9,19 +9,19 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ children }) => {
   const themeCtx = useContext(ThemeContext);
   return (
     <motion.div
-      whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: -10 }}
+      whileInView="show"
+      initial="hidden"
+      variants={sectionHeadingVariants}
       viewport={{ once: true }}
-      transition={{
-        duration: 0.35,
-        delay: 0.3,
-      }}
-      className={'relative ml-5 flex pb-4 pt-14 md:pt-[34px]'}
+      className={'relative ml-5 mt-14 flex pb-4 md:mt-[34px]'}
     >
+      <div className="mr-3 inline-flex flex-col items-center justify-center">
+        <div className="h-5 w-5 rounded-full bg-violet-500" />
+        <div className="inline-block h-10 w-1 bg-gradient-to-b from-violet-400 to-transparent" />
+      </div>
       <h3
         className={`${themeCtx.themeClasses.text} xs:text-[40px] flex items-center text-[30px] font-black tracking-widest sm:text-[50px] md:text-[60px]`}
       >
-        <SectionDivider />
         {children}
       </h3>
     </motion.div>

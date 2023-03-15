@@ -3,49 +3,37 @@ import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import BallCanvas from '../Canvas/Ball';
 import { Skill } from '../../../types';
-
-const skillsVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.34,
-      delayChildren: 1.2,
-    },
-  },
-};
-
-const skillItemVariants = {
-  hidden: { opacity: 0, y: -20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
+import { generateSubarrays } from '../../utils/helper';
+import { skillItemVariants, skillsVariants } from '../../utils/framer';
 
 type SkillsProps = {
   skills: Skill[];
 };
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => {
+  const skillsSubarrays = generateSubarrays(skills, 4);
+
   return (
-    <div className="relative mx-auto flex max-w-[2000px] flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0">
+    <div className="relative flex flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0">
       <motion.div
         variants={skillsVariants}
         initial={'hidden'}
         viewport={{ once: true }}
         whileInView={'show'}
-        className="relative grid grid-cols-3 gap-4 sm:gap-8 md:grid-cols-4 md:gap-16"
+        className="relative flex w-full flex-wrap items-center justify-around gap-4 "
       >
-        {skills.map((skill) => (
+        {skillsSubarrays.map((subArray, arrIdx) => (
           <motion.div
+            key={arrIdx}
             variants={skillItemVariants}
-            title={skill.name}
-            key={skill._id}
-            className="group relative flex h-20 w-20 cursor-pointer select-none items-center sm:h-24 sm:w-24 md:h-28 md:w-28 xl:h-36 xl:w-36"
+            className="h-32 w-32 cursor-pointer sm:h-36 sm:w-36 md:h-48 md:w-48 xl:h-56 xl:w-56"
           >
-            <BallCanvas imgUrl={getImgUrl(skill.skillImage).url()} />
+            <BallCanvas
+              imgUrls={subArray.map((skill) =>
+                getImgUrl(skill.skillImage).url()
+              )}
+              autoRotateSpeed={Math.random() + 1 * 0.4}
+            />
           </motion.div>
         ))}
       </motion.div>

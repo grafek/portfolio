@@ -6,29 +6,7 @@ import { motion } from 'framer-motion';
 import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import { PageInfo, Timeline as TimelineType } from '../../../types';
-
-const aboutVariants = {
-  aboutHidden: { opacity: 0 },
-  aboutShown: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      delayChildren: 1,
-    },
-  },
-};
-
-const aboutItemVariants = {
-  aboutHidden: { opacity: 0, x: 100, scale: 0.4 },
-  aboutShown: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
+import { aboutItemVariants, aboutVariants } from '../../utils/framer';
 
 type AboutProps = {
   timelineInfo: TimelineType[];
