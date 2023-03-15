@@ -3,7 +3,7 @@ import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import BallCanvas from '../Canvas/Ball';
 import { Skill } from '../../../types';
-import { generateSubarrays } from '../../utils/helper/';
+import { generateSubarrays } from '../../utils/Helper';
 import { skillItemVariants, skillsVariants } from '../../utils/framer';
 
 type SkillsProps = {

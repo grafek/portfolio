@@ -9,7 +9,7 @@ import {
   fetchProjects,
   fetchSkills,
   fetchTimelineInfo,
-} from '../utils/fetch';
+} from '../utils/Fetch';
 import { BackgroundAnimation } from '../components/UI';
 import { GetStaticProps, NextPage } from 'next';
 import { PageInfo, Project, Skill, SocialMedia, Timeline } from '../../types';
@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({
 
   return (
     <div
-      className={`${themeCtx.themeClasses.scrollbar} h-screen font-gt-walsheim snap-y snap-mandatory overflow-y-scroll scroll-smooth overflow-x-hidden`}
+      className={`${themeCtx.themeClasses.scrollbar} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
     >
       <Head>
         <meta charSet="UTF-8" />
