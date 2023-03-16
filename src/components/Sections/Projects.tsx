@@ -11,27 +11,23 @@ import { projectsSliderVariants } from '../../utils/framer';
 type ProjectsProps = { projects: Project[] };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  const projectsContent = projects?.map((prj) => {
-    return (
-      <Project
-        key={prj._id}
-        title={prj.title}
-        hasBackdrop={true}
-        img={getImgUrl(prj.image).url()}
-        demoUrl={prj.demoLink}
-        codeUrl={prj.codeLink}
-        tags={prj.technologies.map((tech) => tech.name)}
-        description={prj.description}
-      />
-    );
-  });
-
   return (
     <Slider
-      innerSliderClasses="h-[calc(100vh-12rem)] gap-8 w-11/12 mx-auto"
+      innerSliderClasses="gap-8 mx-auto h-full"
+      outerSliderClasses="h-[95%]"
       sliderVariants={projectsSliderVariants}
     >
-      {projectsContent}
+      {projects?.map((prj) => (
+        <Project
+          key={prj._id}
+          title={prj.title}
+          img={getImgUrl(prj.image).url()}
+          demoUrl={prj.demoLink}
+          codeUrl={prj.codeLink}
+          tags={prj.technologies.map((tech) => tech.name)}
+          description={prj.description}
+        />
+      ))}
     </Slider>
   );
 };
@@ -44,9 +40,7 @@ type ProjectItemProps = {
   demoUrl: string;
   codeUrl: string;
   img: string;
-  hasBackdrop: boolean;
   description: string;
-  className?: string;
 };
 
 const Project: React.FC<ProjectItemProps> = ({
@@ -55,57 +49,57 @@ const Project: React.FC<ProjectItemProps> = ({
   demoUrl,
   codeUrl,
   img,
-  hasBackdrop = true,
   description,
-  className = '',
 }) => {
   const themeCtx = useContext(ThemeContext);
 
-  let tagsContent;
-  let imgContent;
+  let desc = <p>{description}</p>;
 
-  if (tags && tags.length >= 1) {
-    tagsContent = (
-      <div>
-        {tags.map((tag, i) => (
-          <Pill
-            className={` ${themeCtx.themeClasses.darkBg} ${themeCtx.themeClasses.subText} mb-2 mr-2 `}
-            key={i}
-          >
-            #{tag}
-          </Pill>
-        ))}
-      </div>
+  if (window.innerWidth < 768) {
+    desc = (
+      <p>
+        {description.slice(0, 160)}
+        <a
+          href={`${codeUrl}#readme`}
+          target="_blank"
+          rel="noreferrer"
+          className="px-1 font-bold underline decoration-indigo-700 decoration-[3px] underline-offset-4"
+          title={`${title} description link`}
+        >
+          ...
+        </a>
+      </p>
     );
   }
 
-  if (img && hasBackdrop) {
-    imgContent = (
+  return (
+    <div
+      className={`${themeCtx.themeClasses.lightDarkBg} ${themeCtx.themeClasses.shadow} flex w-[260px] min-w-[260px] flex-shrink-0 grow flex-col rounded-md shadow-md md:w-[600px] xl:w-[900px]`}
+    >
+      {/* PROJECT IMAGE/TITLE */}
       <div className="relative flex-1" title={title}>
         <div className="absolute z-30 flex h-full w-full justify-center">
-          <h2 className="l my-auto text-center text-3xl font-bold capitalize italic text-slate-200 md:text-4xl">
+          <h2 className="my-auto text-center text-3xl font-bold capitalize italic text-slate-200 md:text-4xl">
             {title}
           </h2>
         </div>
         <div className="relative z-20 flex h-full w-full justify-center bg-black opacity-60"></div>
         <Image layout="fill" objectFit="cover" alt={title} src={img} />
       </div>
-    );
-  }
-  return (
-    <div
-      className={`${themeCtx.themeClasses.lightDarkBg}  ${className} ${themeCtx.themeClasses.shadow}  m-auto flex h-full min-h-[450px] w-[260px] min-w-[260px] flex-shrink-0 flex-col rounded-md shadow-md transition-colors md:w-[600px] xl:w-[900px]`}
-    >
-      {imgContent}
+      {/* PROJECT DESCRIPTION */}
       <div className={`p-4 leading-6 lg:text-lg `}>
-        <p
-          className={`${themeCtx.themeClasses.subText} max-h-[160px] select-none pr-2 ${themeCtx.themeClasses.scrollbar} overflow-y-auto`}
-        >
-          {description}
-        </p>
-        <div className="flex flex-col items-center justify-between gap-4 pt-4 md:flex-row">
-          {tagsContent}
-          <div className="flex w-full justify-between md:w-auto md:items-center md:gap-6">
+        {desc}
+        {/* PROJECT TAGS */}
+        <div className="flex flex-row flex-wrap items-center gap-2 pt-4 md:justify-between">
+          <div>
+            {tags.map((tag, i) => (
+              <Pill className="m-1" key={i}>
+                #{tag}
+              </Pill>
+            ))}
+          </div>
+          {/* PROJECT LINKS */}
+          <div className="flex w-full items-center justify-between md:gap-6 xl:w-auto">
             <a
               href={demoUrl}
               target="_blank"

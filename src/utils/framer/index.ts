@@ -34,21 +34,26 @@ export const projectsSliderVariants: Variants = {
   },
 };
 
-export const heroHeadingVariants: Variants = {
-  hidden: { opacity: 0, y: -20 },
-  show: {
-    y: 0,
+export const heroItemVariants: Variants = {
+  heroHidden: { opacity: 0, x: -350 },
+  heroShown: {
     opacity: 1,
-    transition: { duration: 0.7, delay: 1 },
+    x: 0,
+    transition: {
+      duration: 1.5,
+      type: 'spring',
+    },
   },
 };
 
-export const heroButtonsVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: {
-    y: 0,
+export const heroVariants: Variants = {
+  heroHidden: { opacity: 0 },
+  heroShown: {
     opacity: 1,
-    transition: { duration: 0.4, delay: 2.7 },
+    transition: {
+      staggerChildren: 1,
+      delayChildren: 1.5,
+    },
   },
 };
 
