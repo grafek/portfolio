@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Canvas, Vector3 } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { Decal, Float, OrbitControls, useTexture } from '@react-three/drei';
 import CanvasLoader from './Loader';
 
@@ -12,8 +12,8 @@ const Ball: React.FC<BallProps> = ({ imgUrls }) => {
 
   return (
     <Float speed={3} floatIntensity={1.5}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0.3, 0]} />
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[0, 1, 0]} />
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
@@ -71,6 +71,8 @@ const BallCanvas: React.FC<BallCanvasProps> = ({
           enableZoom={false}
           autoRotate
           autoRotateSpeed={autoRotateSpeed}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2.25}
         />
         <Ball imgUrls={imgUrls} />
       </Suspense>

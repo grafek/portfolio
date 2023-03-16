@@ -14,7 +14,7 @@ const SectionWrap = <T extends {}>(
         className={`relative flex h-[100dvh] snap-start flex-col overflow-hidden ${classsName}`}
       >
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
-        <div className="flex h-full flex-col justify-center">
+        <div className="flex h-full flex-col justify-center pl-3 pr-5">
           <Component {...props} />
         </div>
       </section>

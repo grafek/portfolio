@@ -35,18 +35,16 @@ const Home: NextPage<Props> = ({
 
   return (
     <div
-      className={`${themeCtx.themeClasses.scrollbar} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
+      className={`${themeCtx.themeClasses.scrollbar} ${themeCtx.themeClasses.subText} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
     >
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Jacek Grafender - Inspired frontend developer looking for a job"
+          content="Jacek Grafender - Passionate frontend developer looking for a job"
         />
         <title>{`Jacek Grafender - Portfolio`}</title>
       </Head>

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/Theme';
 import { motion } from 'framer-motion';
 import SectionWrap from '../../hoc/SectionWrap';
-import { heroButtonsVariants, heroHeadingVariants } from '../../utils/framer';
+import { heroItemVariants, heroVariants } from '../../utils/framer';
 
 type HeroProps = {
   firstName: string;
@@ -15,20 +15,22 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
   const heroHeadingColor =
     themeCtx.darkTheme === 'dark'
       ? 'bg-gradient-to-r from-sky-500 to-fuchsia-700'
-      : 'bg-gradient-to-r from-sky-600 to-fuchsia-800'
+      : 'bg-gradient-to-r from-sky-600 to-fuchsia-800';
 
   return (
-    <div className="flex flex-col">
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={heroHeadingVariants}
-      >
+    <motion.div
+      variants={heroVariants}
+      initial="heroHidden"
+      animate="heroShown"
+      className="flex flex-col"
+    >
+      <motion.div variants={heroItemVariants}>
         <h1
-          className={`${heroHeadingColor} bg-clip-text text-5xl font-bold text-transparent sm:text-[6rem] md:text-[7rem] lg:text-[8rem] xl:text-[10rem]`}
+          className={`${heroHeadingColor} bg-clip-text text-[5rem] font-bold text-transparent md:text-[7rem] lg:text-[8rem] xl:text-[12rem]`}
         >
-          Hi, I&apos;m {firstName}
+          {`Hi, I'm ${firstName}`}
         </h1>
+
         <h2
           className={`${themeCtx.themeClasses.text} pt-4 pb-8 text-2xl italic md:py-8 `}
         >
@@ -36,9 +38,8 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
         </h2>
       </motion.div>
       <motion.div
-        initial="hidden"
-        animate="show"
-        variants={heroButtonsVariants}
+        variants={heroItemVariants}
+        initial={{ x: 350, opacity: 0 }}
         className="flex flex-col gap-8 md:mx-auto md:max-w-md md:flex-row"
       >
         <a
@@ -54,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
           Contact
         </a>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -62,5 +63,5 @@ export default SectionWrap(
   Hero,
   'hero',
   undefined,
-  'flex z-20 flex-col 2xl:px-0 justify-center items-center text-center'
+  'flex z-20 flex-col 2xl:px-0 justify-center text-center'
 );
