@@ -1,18 +1,25 @@
 import Head from 'next/head';
-import { Footer, Header } from '../components';
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/Theme';
-import { Hero, Projects, About, Skills } from '../components/Sections';
 import {
-  fetchSocials,
-  fetchPageInfo,
-  fetchProjects,
-  fetchSkills,
-  fetchTimelineInfo,
-} from '../utils/Fetch';
+  Hero,
+  Projects,
+  About,
+  Skills,
+  Footer,
+  Header,
+} from '../components/Sections';
 import { BackgroundAnimation } from '../components/UI';
 import { GetStaticProps, NextPage } from 'next';
-import { PageInfo, Project, Skill, SocialMedia, Timeline } from '../../types';
+import type {
+  PageInfo,
+  Project,
+  Skill,
+  SocialMedia,
+  Timeline,
+} from '../../types';
+import { groq } from 'next-sanity';
+import { sanityClient } from '../lib/sanityConfig';
 
 type Props = {
   skills: Skill[];
@@ -68,12 +75,32 @@ const Home: NextPage<Props> = ({
 
 export default Home;
 
+const pageInfoQuery = groq`
+  *[_type == 'pageInfo'][0]
+`;
+const projectsQuery = groq`
+  *[_type == 'project'] {
+    ...,
+    technologies[] ->
+  }
+`;
+const skillsQuery = groq`
+*[_type == 'skill'] | order(_createdAt asc)
+`;
+const socialsQuery = groq`
+  *[_type == 'social']
+`;
+
+const timelineQuery = groq`
+*[_type == 'timeline'] | order(year asc)
+`;
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const skills = await fetchSkills();
-  const pageInfo = await fetchPageInfo();
-  const socials = await fetchSocials();
-  const timelineInfo = await fetchTimelineInfo();
-  const projects = await fetchProjects();
+  const skills = await sanityClient.fetch(skillsQuery);
+  const pageInfo = await sanityClient.fetch(pageInfoQuery);
+  const socials = await sanityClient.fetch(socialsQuery);
+  const timelineInfo = await sanityClient.fetch(timelineQuery);
+  const projects = await sanityClient.fetch(projectsQuery);
 
   return {
     props: {
@@ -83,6 +110,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       timelineInfo,
       projects,
     },
-    revalidate: 1,
   };
 };

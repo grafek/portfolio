@@ -10,14 +10,9 @@ import {
 } from 'react-icons/bs';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/Theme';
-import {
-  headerButtonsVariants,
-  sidebarVariants,
-  variantsUl,
-  varitantsLi,
-} from '../../utils/framer';
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { headerButtonsVariants, sidebarVariants, variantsUl, varitantsLi } from '../../utils/framer';
 
 type HeaderProps = { socials: SocialMedia[]; phoneNumber: string };
 

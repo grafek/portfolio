@@ -35,7 +35,7 @@ export const projectsSliderVariants: Variants = {
 };
 
 export const heroItemVariants: Variants = {
-  heroHidden: { opacity: 0, x: -350 },
+  heroHidden: { opacity: 0, x: -550 },
   heroShown: {
     opacity: 1,
     x: 0,

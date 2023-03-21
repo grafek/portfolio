@@ -3,12 +3,8 @@ import { motion } from 'framer-motion';
 import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import { PageInfo, Timeline as TimelineType } from '../../../types';
-import {
-  aboutItemVariants,
-  aboutVariants,
-  timelineItemVariants,
-} from '../../utils/framer';
 import { Slider, Underline } from '../UI';
+import { aboutItemVariants, aboutVariants, timelineItemVariants } from '../../utils/framer';
 
 type AboutProps = {
   timelineInfo: TimelineType[];
