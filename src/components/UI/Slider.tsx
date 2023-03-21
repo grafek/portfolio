@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { getWindowSize, debounce } from '../../utils/Helper';
+import { debounce, getWindowSize } from '../../utils/helpers';
 
 type SliderProps = {
   children: React.ReactNode;
