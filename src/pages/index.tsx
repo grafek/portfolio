@@ -79,7 +79,7 @@ const pageInfoQuery = groq`
   *[_type == 'pageInfo'][0]
 `;
 const projectsQuery = groq`
-  *[_type == 'project'] {
+  *[_type == 'project'] | order(_createdAt desc) {
     ...,
     technologies[] ->
   }

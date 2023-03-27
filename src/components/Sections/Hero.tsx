@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
       </motion.div>
       <motion.div
         variants={heroItemVariants}
-        initial={{ x: 350, opacity: 0 }}
+        initial={{ x: '100vw', opacity: 0 }}
         className="flex flex-col gap-8 md:mx-auto md:max-w-md md:flex-row"
       >
         <a
