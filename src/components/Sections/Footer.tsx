@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       id={'contact'}
-      className={`${themeCtx.themeClasses.lightDarkBg} relative h-[100dvh] snap-start`}
+      className={`relative h-[100dvh] snap-start`}
     >
       <div className="container mx-auto flex h-full flex-col justify-between">
         <SectionHeading>Let&apos;s talk</SectionHeading>

@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
         </h1>
 
         <h2
-          className={`${themeCtx.themeClasses.text} pt-4 pb-8 text-2xl italic md:py-8 `}
+          className={`${themeCtx.themeClasses.text} pt-4 pb-8 text-2xl font-semibold md:py-8 `}
         >
           {role}
         </h2>

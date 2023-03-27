@@ -9,7 +9,6 @@ import {
   Footer,
   Header,
 } from '../components/Sections';
-import { BackgroundAnimation } from '../components/UI';
 import { GetStaticProps, NextPage } from 'next';
 import type {
   PageInfo,
@@ -42,7 +41,7 @@ const Home: NextPage<Props> = ({
 
   return (
     <div
-      className={`${themeCtx.themeClasses.scrollbar} ${themeCtx.themeClasses.subText} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
+      className={`${themeCtx.themeClasses.scrollbar} ${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
     >
       <Head>
         <meta charSet="UTF-8" />
@@ -56,11 +55,7 @@ const Home: NextPage<Props> = ({
         <title>{`Jacek Grafender - Portfolio`}</title>
       </Head>
       <Header socials={socials} phoneNumber={phoneNumber} />
-      <main
-        className={`${themeCtx.themeClasses.darkBg} relative z-20`}
-        id={'home'}
-      >
-        <BackgroundAnimation />
+      <main className={`relative z-20`} id={'home'}>
         <div className="container mx-auto" id="container">
           <Hero firstName={firstName} role={role} />
           <Projects projects={projects} />

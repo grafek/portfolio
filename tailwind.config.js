@@ -35,6 +35,12 @@ module.exports = {
         },
         darkBg: '#0F1624',
       },
+      colors: {
+        darkBg: '#0F1624',
+        gray: {
+          750: '#2C3441',
+        },
+      },
       fontFamily: {
         'gt-walsheim': ['GT Walsheim', 'sans-serif'],
       },
