@@ -35,12 +35,12 @@ export const projectsSliderVariants: Variants = {
 };
 
 export const heroItemVariants: Variants = {
-  heroHidden: { opacity: 0, x: -550 },
+  heroHidden: { opacity: 0, x: '-100vw' },
   heroShown: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1.5,
+      duration: 2,
       type: 'spring',
     },
   },
