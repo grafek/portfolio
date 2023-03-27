@@ -4,7 +4,11 @@ import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import { PageInfo, Timeline as TimelineType } from '../../../types';
 import { Slider, Underline } from '../UI';
-import { aboutItemVariants, aboutVariants, timelineItemVariants } from '../../utils/framer';
+import {
+  aboutItemVariants,
+  aboutVariants,
+  timelineItemVariants,
+} from '../../utils/framer';
 
 type AboutProps = {
   timelineInfo: TimelineType[];
@@ -58,7 +62,7 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
                     {item.year}
                     <Underline />
                   </h2>
-                  <p>{item.timelineText}</p>
+                  <p className="mt-2 font-semibold">{item.timelineText}</p>
                 </div>
               </motion.li>
             ))}

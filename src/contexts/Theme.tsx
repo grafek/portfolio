@@ -9,6 +9,7 @@ type ThemeClasses = {
   btnFilled: string;
   shadow: string;
   scrollbar: string;
+  pill: string;
 };
 
 type ThemeContextType = {
@@ -28,6 +29,7 @@ const ThemeContext = React.createContext<ThemeContextType>({
     btnFilled: '',
     shadow: '',
     scrollbar: '',
+    pill: '',
   },
   darkTheme: '',
 });
@@ -75,8 +77,8 @@ function ThemeContextProvider({ children }: { children: React.ReactNode }) {
 
   const darkBg =
     darkTheme === 'dark'
-      ? 'bg-darkBg transition-colors'
-      : 'bg-gray-100 transition-colors';
+      ? 'bg-gradient-to-b from-[#110c3b] to-darkBg transition-colors'
+      : 'bg-gradient-to-b from-[#9693eb] to-[#dfdef8] transition-colors';
 
   const btnTrans =
     darkTheme === 'dark'
@@ -88,6 +90,11 @@ function ThemeContextProvider({ children }: { children: React.ReactNode }) {
       ? 'text-white bg-indigo-700 py-2 md:py-3 rounded-md hover:bg-transparent border border-indigo-700 hover:text-white px-8 md:px-12 duration-300'
       : 'text-white bg-indigo-700 rounded-md border-indigo-700 border py-2 md:py-3 hover:bg-transparent hover:text-black px-8 md:px-12 duration-300';
 
+  const pill =
+    darkTheme === 'dark'
+      ? 'bg-darkBg transition-colors'
+      : 'bg-gray-100 transition-colors';
+
   const themeClasses = {
     text,
     subText,
@@ -97,6 +104,7 @@ function ThemeContextProvider({ children }: { children: React.ReactNode }) {
     btnFilled,
     shadow,
     scrollbar,
+    pill,
   };
 
   return (
