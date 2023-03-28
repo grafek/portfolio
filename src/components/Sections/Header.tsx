@@ -100,6 +100,7 @@ const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
             className={`cursor-pointer text-xl text-slate-900 opacity-70 duration-300 hover:scale-110  dark:text-gray-50 md:text-2xl xl:text-3xl`}
             key={idx}
             rel={item.rel}
+            title={item.title}
             target={item.target}
           >
             <item.Icon />
