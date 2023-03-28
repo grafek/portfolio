@@ -1,5 +1,5 @@
 import { SocialMedia } from '../../../types';
-import { motion, useCycle } from 'framer-motion';
+import { motion as m, useCycle } from 'framer-motion';
 import {
   BsEnvelopeFill,
   BsGithub,
@@ -8,18 +8,44 @@ import {
   BsSunFill,
   BsTelephoneFill,
 } from 'react-icons/bs';
-import { useContext } from 'react';
-import { ThemeContext } from '../../contexts/Theme';
+import { useEffect, useState } from 'react';
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { headerButtonsVariants, sidebarVariants, variantsUl, varitantsLi } from '../../utils/framer';
+import {
+  headerButtonsVariants,
+  sidebarVariants,
+  variantsUl,
+  varitantsLi,
+} from '../../utils/framer';
 
 type HeaderProps = { socials: SocialMedia[]; phoneNumber: string };
 
+const getLocalStorageTheme =
+  typeof window !== 'undefined' ? localStorage.theme : 'dark';
+
 const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
-  const themeCtx = useContext(ThemeContext);
+  const [theme, setTheme] = useState(getLocalStorageTheme);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
 
   const [isNavShown, toggleNav] = useCycle(false, true);
+
+  if (!isMounted) return <div></div>;
+
+  const toggleTheme = () => {
+    setTheme((prev: string) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   const github = socials.find((social) => social.title === 'Github');
   const linkedin = socials.find((social) => social.title === 'LinkedIn');
@@ -55,27 +81,23 @@ const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
 
   return (
     <header className={`fixed z-40 w-screen`}>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="show"
         variants={headerButtonsVariants}
-        className="absolute top-0 right-0 z-20 flex gap-4 p-4 md:gap-6 md:px-6 "
+        className="absolute top-0 right-0 z-20 flex gap-4 p-4 md:gap-6 md:px-6"
       >
         <button
-          onClick={themeCtx.toggleDarkTheme}
-          className={`cursor-pointer text-xl opacity-70 duration-300 hover:scale-110 md:text-2xl xl:text-3xl ${themeCtx.themeClasses.text}`}
-          title="change-theme"
+          onClick={toggleTheme}
+          className={`cursor-pointer text-xl text-slate-900 opacity-70 duration-300 hover:scale-110  dark:text-gray-50 md:text-2xl xl:text-3xl`}
+          title={`Toggle ${theme === 'dark' ? 'light' : 'dark'} theme`}
         >
-          {themeCtx.darkTheme === 'dark' ? (
-            <BsSunFill className="text-slate-200" />
-          ) : (
-            <BsMoonFill />
-          )}
+          {theme === 'dark' ? <BsSunFill /> : <BsMoonFill />}
         </button>
         {HEADER_ICONS.map((item, idx) => (
           <a
             href={item.href}
-            className={`cursor-pointer text-xl opacity-70 duration-300 hover:scale-110 md:text-2xl xl:text-3xl ${themeCtx.themeClasses.text}`}
+            className={`cursor-pointer text-xl text-slate-900 opacity-70 duration-300 hover:scale-110  dark:text-gray-50 md:text-2xl xl:text-3xl`}
             key={idx}
             rel={item.rel}
             target={item.target}
@@ -83,54 +105,43 @@ const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
             <item.Icon />
           </a>
         ))}
-      </motion.div>
+      </m.div>
 
       {/* NAVBAR */}
-
-      <motion.nav
-        animate={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.8 }}
+      <m.nav
+        animate={isNavShown ? 'open' : 'closed'}
+        initial={'closed'}
+        className={`absolute top-0 left-0 bottom-0 h-screen w-1/3 bg-gradient-to-b from-[#827fe0] to-[#c0bef3] opacity-95 transition-colors dark:from-[#1f1769]/80 dark:to-darkBg/80 md:w-1/5`}
+        variants={sidebarVariants}
       >
-        <motion.div
-          animate={isNavShown ? 'open' : 'closed'}
-          initial={false}
-          className={`${themeCtx.themeClasses.lightDarkBg} absolute top-0 left-0 bottom-0 h-screen w-1/3 md:w-1/5`}
-          variants={sidebarVariants}
+        <div className="absolute top-0 left-0 z-20 cursor-pointer p-[18px] text-xl text-slate-900 opacity-70 duration-300 hover:scale-110 dark:text-gray-50 md:p-[16px] md:text-2xl">
+          {isNavShown ? (
+            <CgClose onClick={() => toggleNav()} />
+          ) : (
+            <GiHamburgerMenu onClick={() => toggleNav()} />
+          )}
+        </div>
+        <m.ul
+          variants={variantsUl}
+          className={` flex h-full flex-col items-center justify-center`}
         >
-          <div className="absolute top-0 left-0 z-20 p-[18px] md:p-[16px]">
-            {isNavShown ? (
-              <CgClose
+          {NAV_ITEMS.map((item, i) => (
+            <m.li
+              variants={varitantsLi}
+              key={i}
+              className={`flex w-full text-center`}
+            >
+              <a
+                className="w-full py-4 font-semibold uppercase text-gray-700 transition-all duration-300 hover:scale-105 hover:text-[#000] active:scale-95 dark:text-gray-200 dark:hover:text-[#fff]"
+                href={`#${item}`}
                 onClick={() => toggleNav()}
-                className={`${themeCtx.themeClasses.text} cursor-pointer text-xl opacity-70 duration-300 hover:scale-110 md:text-2xl`}
-              />
-            ) : (
-              <GiHamburgerMenu
-                onClick={() => toggleNav()}
-                className={`${themeCtx.themeClasses.text} cursor-pointer text-xl opacity-70 duration-300 hover:scale-110 md:text-2xl`}
-              />
-            )}
-          </div>
-          <motion.ul
-            variants={variantsUl}
-            className={`relative flex h-full flex-col items-center justify-center space-y-10`}
-          >
-            {NAV_ITEMS.map((item, i) => (
-              <motion.li
-                variants={varitantsLi}
-                key={i}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className={`${themeCtx.themeClasses.text} border-b border-indigo-900 font-semibold uppercase`}
               >
-                <a href={`#${item}`} onClick={() => toggleNav()}>
-                  {item}
-                </a>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-      </motion.nav>
+                {item}
+              </a>
+            </m.li>
+          ))}
+        </m.ul>
+      </m.nav>
     </header>
   );
 };

@@ -29,12 +29,6 @@ module.exports = {
         slideOut: 'slideOut 0.8s forwards',
         slideIn: 'slideIn 0.8s forwards',
       },
-      backgroundColor: {
-        gray: {
-          750: '#2C3441',
-        },
-        darkBg: '#0F1624',
-      },
       colors: {
         darkBg: '#0F1624',
         gray: {
@@ -47,4 +41,5 @@ module.exports = {
     },
   },
   plugins: [require('tailwind-scrollbar')],
+  darkMode: 'class',
 };

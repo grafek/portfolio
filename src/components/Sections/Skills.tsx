@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import BallCanvas from '../Canvas/Ball';
@@ -15,7 +15,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
 
   return (
     <div className="relative flex flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0">
-      <motion.div
+      <m.div
         variants={skillsVariants}
         initial={'hidden'}
         viewport={{ once: true }}
@@ -23,7 +23,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
         className="relative flex w-full flex-wrap items-center justify-around gap-4 "
       >
         {skillsSubarrays.map((subArray, arrIdx) => (
-          <motion.div
+          <m.div
             key={arrIdx}
             variants={skillItemVariants}
             className="h-32 w-32 cursor-pointer sm:h-36 sm:w-36 md:h-48 md:w-48 xl:h-56 xl:w-56"
@@ -34,9 +34,9 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               )}
               autoRotateSpeed={Math.random() + 1 * 0.4}
             />
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

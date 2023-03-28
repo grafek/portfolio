@@ -1,13 +1,9 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../contexts/Theme';
-
 type PillProps = { children: React.ReactNode; className?: string };
 
 const Pill: React.FC<PillProps> = ({ children, className }) => {
-  const themeCtx = useContext(ThemeContext);
   return (
     <span
-      className={`${themeCtx.themeClasses.pill} ${className} inline-block rounded-full px-3 py-1 text-sm font-semibold`}
+      className={`${className} inline-block rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold transition-colors dark:bg-darkBg`}
     >
       {children}
     </span>

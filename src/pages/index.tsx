@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Head from 'next/head';
-import { useContext } from 'react';
-import { ThemeContext } from '../contexts/Theme';
 import {
   Hero,
   Projects,
@@ -19,6 +18,7 @@ import type {
 } from '../../types';
 import { groq } from 'next-sanity';
 import { sanityClient } from '../lib/sanityConfig';
+import Script from 'next/script';
 
 type Props = {
   skills: Skill[];
@@ -35,13 +35,11 @@ const Home: NextPage<Props> = ({
   socials,
   timelineInfo,
 }) => {
-  const themeCtx = useContext(ThemeContext);
-
   const { firstName, role, phoneNumber } = pageInfo;
 
   return (
     <div
-      className={`${themeCtx.themeClasses.scrollbar} ${themeCtx.themeClasses.subText} ${themeCtx.themeClasses.darkBg} h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth font-gt-walsheim overflow-x-hidden`}
+      className={`h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scroll-smooth bg-gradient-to-b from-[#9693eb] to-[#dfdef8] font-gt-walsheim text-slate-700 transition-colors scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-indigo-600 dark:from-[#110c3b] dark:to-darkBg dark:text-slate-400 dark:scrollbar-track-gray-800 dark:scrollbar-thumb-indigo-600`}
     >
       <Head>
         <meta charSet="UTF-8" />
@@ -54,8 +52,9 @@ const Home: NextPage<Props> = ({
         />
         <title>{`Jacek Grafender - Portfolio`}</title>
       </Head>
+      <Script src="/theme.js" strategy="beforeInteractive" />
       <Header socials={socials} phoneNumber={phoneNumber} />
-      <main className={`relative z-20`} id={'home'}>
+      <main className={`relative z-20 `} id={'home'}>
         <div className="container mx-auto" id="container">
           <Hero firstName={firstName} role={role} />
           <Projects projects={projects} />

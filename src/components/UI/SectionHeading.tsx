@@ -1,12 +1,9 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../contexts/Theme';
 import { motion } from 'framer-motion';
 import { sectionHeadingVariants } from '../../utils/framer';
 
 type SectionHeadingProps = { children: React.ReactNode };
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ children }) => {
-  const themeCtx = useContext(ThemeContext);
   return (
     <motion.div
       whileInView="show"
@@ -20,7 +17,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ children }) => {
         <div className="inline-block h-10 w-1 bg-gradient-to-b from-violet-400 to-transparent" />
       </div>
       <h3
-        className={`${themeCtx.themeClasses.text} xs:text-[40px] flex items-center text-[30px] font-black tracking-widest sm:text-[50px] md:text-[60px]`}
+        className={`xs:text-[40px] flex items-center text-[30px] font-black tracking-widest text-slate-900 dark:text-gray-50 sm:text-[50px] md:text-[60px]`}
       >
         {children}
       </h3>

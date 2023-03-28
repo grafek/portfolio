@@ -2,11 +2,10 @@ import { Slider, Pill } from '../UI';
 import { getImgUrl } from '../../lib/sanityConfig';
 import SectionWrap from '../../hoc/SectionWrap';
 import Image from 'next/image';
-import { useContext } from 'react';
-import { ThemeContext } from '../../contexts/Theme';
 import { HiOutlineCode } from 'react-icons/hi';
 import { type Project } from '../../../types';
 import { projectsSliderVariants } from '../../utils/framer';
+import { useEffect, useState } from 'react';
 
 type ProjectsProps = { projects: Project[] };
 
@@ -51,11 +50,13 @@ const Project: React.FC<ProjectItemProps> = ({
   img,
   description,
 }) => {
-  const themeCtx = useContext(ThemeContext);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => setIsMounted(true), []);
 
   let desc = <p>{description}</p>;
 
-  if (window.innerWidth < 768) {
+  if (isMounted && window.innerWidth < 768) {
     desc = (
       <p>
         {description.slice(0, 160)}
@@ -74,7 +75,7 @@ const Project: React.FC<ProjectItemProps> = ({
 
   return (
     <div
-      className={`${themeCtx.themeClasses.lightDarkBg} ${themeCtx.themeClasses.shadow} flex w-[260px] min-w-[260px] flex-shrink-0 grow flex-col rounded-md shadow-md md:w-[600px] xl:w-[900px]`}
+      className={`flex w-[260px] min-w-[260px] flex-shrink-0 grow flex-col rounded-md bg-[#dfdef8] shadow-md shadow-[#00000025] transition-colors dark:bg-gray-900 dark:shadow-[#ffffff15] md:w-[600px] xl:w-[900px]`}
     >
       {/* PROJECT IMAGE/TITLE */}
       <div className="relative flex-1" title={title}>
@@ -84,7 +85,15 @@ const Project: React.FC<ProjectItemProps> = ({
           </h2>
         </div>
         <div className="relative z-20 flex h-full w-full justify-center bg-black opacity-60"></div>
-        <Image layout="fill" objectFit="cover" alt={title} src={img} />
+        <Image
+          fill
+          alt={title}
+          className="object-cover"
+          src={img}
+          sizes="(max-width: 768px) 260px,
+              (max-width: 1280px) 600px,
+              900px"
+        />
       </div>
       {/* PROJECT DESCRIPTION */}
       <div className={`p-4 leading-6 lg:text-lg `}>
@@ -107,7 +116,7 @@ const Project: React.FC<ProjectItemProps> = ({
               title={`${title} source link`}
             >
               <Pill
-                className={`text-indigo-600 hover:bg-indigo-500 hover:text-white`}
+                className={`text-indigo-600 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500`}
               >
                 Source
               </Pill>
@@ -119,7 +128,7 @@ const Project: React.FC<ProjectItemProps> = ({
               title={`${title} code link`}
             >
               <Pill
-                className={`flex text-indigo-600 hover:bg-indigo-500 hover:text-white`}
+                className={`flex text-indigo-600 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500`}
               >
                 <HiOutlineCode className="text-xl" />
               </Pill>
