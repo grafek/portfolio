@@ -42,7 +42,7 @@ const TextArea = <T extends FieldValues>({
       <textarea
         {...register(name, validation)}
         id={name}
-        className={`${className} ${errorClassses} mt-1 max-h-[60px] min-h-[40px] w-full rounded-md bg-transparent px-3 py-2 outline outline-1 focus:outline-none focus:ring-1 sm:max-h-[150px] sm:h-[250px] xl:h-[380px] md:max-h-[420px]`}
+        className={`${className} ${errorClassses} mt-1 max-h-[60px] min-h-[40px] w-full rounded-md bg-transparent px-3 py-2 outline outline-1 focus:outline-none focus:ring-1 sm:max-h-[150px] sm:h-[20vh] xl:h-[25vh] md:max-h-[420px]`}
         {...props}
       />
       {errors?.type === 'required' ? (

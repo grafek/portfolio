@@ -54,7 +54,7 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
             {timelineInfo.map((item) => (
               <li
                 key={item._id}
-                className="my-4 flex max-w-[240px] flex-shrink-0 md:max-w-[400px] lg:my-0"
+                className="flex max-w-[300px] flex-shrink-0 md:max-w-[420px]"
               >
                 <div className="w-full">
                   <h2 className="text-xl font-semibold">
