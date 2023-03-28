@@ -1,22 +1,17 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BsArrowUp } from 'react-icons/bs';
-import { ThemeContext } from '../../contexts/Theme';
 import { SectionHeading, TextArea } from '../UI';
 import emailjs from 'emailjs-com';
 import { useForm } from 'react-hook-form';
 import { Input, Notification } from '../UI';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import {
   type FormSchema,
   type Notification as NotificationType,
 } from '../../../types';
-import { submitButtonVariants } from '../../utils/framer';
+import { formVariants, submitButtonVariants } from '../../utils/framer';
 
 const Footer: React.FC = () => {
-  const themeCtx = useContext(ThemeContext);
-
-  const currYear = new Date().getFullYear();
-
   const form = useRef<HTMLFormElement>(null);
 
   const [notification, setNotification] = useState<NotificationType>({
@@ -69,21 +64,22 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer
-      id={'contact'}
-      className={`relative h-[100dvh] snap-start`}
-    >
+    <footer id={'contact'} className={`relative h-[100dvh] snap-start`}>
       <div className="container mx-auto flex h-full flex-col justify-between">
         <SectionHeading>Let&apos;s talk</SectionHeading>
         <div className="mx-auto flex h-5/6 max-h-full w-full items-center pl-3 pr-5">
-          <form
+          <m.form
+            variants={formVariants}
+            initial={'initial'}
+            whileInView={'animate'}
+            viewport={{ once: true }}
             id="contact-form"
             ref={form}
             onSubmit={handleSubmit(sendEmail)}
-            className={` ${themeCtx.themeClasses.text} mx-auto w-full max-w-7xl`}
+            className={` mx-auto w-full max-w-7xl`}
           >
-            <div className="mb-2 grid grid-cols-3 gap-2 md:gap-8">
-              <div className="col-span-3 lg:col-span-1 ">
+            <div className="mb-2 grid grid-cols-3 gap-2 font-semibold md:gap-8">
+              <div className="col-span-3 lg:col-span-1">
                 <Input
                   register={register}
                   errors={errors.name}
@@ -125,11 +121,11 @@ const Footer: React.FC = () => {
                 />
               </div>
             </div>
-            <motion.button
+            <m.button
               type="submit"
               variants={submitButtonVariants}
               whileInView={'submitButtonShown'}
-              className={`${themeCtx.themeClasses.btnFilled} mx-auto flex`}
+              className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 py-2 px-8 text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:py-3 md:px-12`}
             >
               {btnState}
               <svg
@@ -143,15 +139,17 @@ const Footer: React.FC = () => {
                   fill="currentColor"
                 />
               </svg>
-            </motion.button>
+            </m.button>
             <Notification notification={notification} />
-          </form>
+          </m.form>
         </div>
         <div className="mt-auto flex w-full flex-col justify-center space-y-3">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`text-2xl`} />
           </a>
-          <p className={`text-center`}>©{currYear} Jacek Grafender</p>
+          <p className={`text-center font-semibold`}>
+            ©{new Date().getFullYear()} Jacek Grafender
+          </p>
         </div>
       </div>
     </footer>

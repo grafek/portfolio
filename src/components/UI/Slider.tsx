@@ -17,7 +17,10 @@ const Slider: React.FC<SliderProps> = ({
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [leftConstraints, setLeftConstraints] = useState(0);
-  const [windowDimensions, setWindowDimensions] = useState(getWindowSize);
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
 
   useEffect(() => {
     if (!carouselRef.current) return;
