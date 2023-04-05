@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { BsArrowUp } from 'react-icons/bs';
 import { SectionHeading, TextArea } from '../UI';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import { Input, Notification } from '../UI';
 import { motion as m } from 'framer-motion';
