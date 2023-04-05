@@ -17,9 +17,9 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
     <div className="relative flex flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0">
       <m.div
         variants={skillsVariants}
-        initial={'hidden'}
+        initial={'initial'}
         viewport={{ once: true }}
-        whileInView={'show'}
+        whileInView={'animate'}
         className="relative flex w-full flex-wrap items-center justify-around gap-4 "
       >
         {skillsSubarrays.map((subArray, arrIdx) => (

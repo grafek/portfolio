@@ -1,8 +1,8 @@
 import { Variants } from 'framer-motion';
 
 export const sectionHeadingVariants: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  show: {
+  initial: { opacity: 0, x: -40 },
+  animate: {
     opacity: 1,
     x: 0,
     transition: {
@@ -14,21 +14,12 @@ export const sectionHeadingVariants: Variants = {
 };
 
 export const headerButtonsVariants: Variants = {
-  hidden: { opacity: 0, x: 100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  initial: { opacity: 0, x: 100 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
 
 export const sidebarVariants: Variants = {
-  open: {
-    clipPath: `circle(1000px at 50px 50px)`,
-    transition: {
-      type: 'spring',
-      stiffness: 30,
-      restDelta: 2,
-      damping: 20,
-    },
-  },
-  closed: {
+  initial: {
     clipPath: 'circle(20px at 28px 28px)',
     transition: {
       delay: 0.5,
@@ -37,37 +28,46 @@ export const sidebarVariants: Variants = {
       damping: 40,
     },
   },
+  animate: {
+    clipPath: `circle(1000px at 50px 50px)`,
+    transition: {
+      type: 'spring',
+      stiffness: 30,
+      restDelta: 2,
+      damping: 20,
+    },
+  },
 };
 
 export const variantsUl: Variants = {
-  open: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.4 },
-  },
-  closed: {
+  initial: {
     transition: { staggerChildren: 0.1, staggerDirection: -1 },
+  },
+  animate: {
+    transition: { staggerChildren: 0.2, delayChildren: 0.4 },
   },
 };
 
 export const varitantsLi: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
+  initial: {
     opacity: 0,
     y: 50,
     transition: {
       y: { stiffness: 1000 },
     },
   },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
 };
 
 export const heroVariants: Variants = {
-  heroHidden: { opacity: 0 },
-  heroShown: {
+  initial: { opacity: 0 },
+  animate: {
     opacity: 1,
     transition: {
       staggerChildren: 1,
@@ -77,8 +77,8 @@ export const heroVariants: Variants = {
 };
 
 export const heroItemVariants: Variants = {
-  heroHidden: { opacity: 0, x: '-100vw' },
-  heroShown: {
+  initial: { opacity: 0, x: '-100vw' },
+  animate: {
     opacity: 1,
     x: 0,
     transition: {
@@ -89,8 +89,8 @@ export const heroItemVariants: Variants = {
 };
 
 export const projectsSliderVariants: Variants = {
-  sliderHidden: { opacity: 0, scale: 0.8, x: '50vw' },
-  sliderShown: {
+  initial: { opacity: 0, scale: 0.8, x: '50vw' },
+  animate: {
     opacity: 1,
     scale: 1,
     x: 0,
@@ -103,8 +103,8 @@ export const projectsSliderVariants: Variants = {
 };
 
 export const skillsVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
+  initial: { opacity: 0 },
+  animate: {
     opacity: 1,
     transition: {
       staggerChildren: 0.34,
@@ -114,8 +114,8 @@ export const skillsVariants: Variants = {
 };
 
 export const skillItemVariants: Variants = {
-  hidden: { opacity: 0, y: -20 },
-  show: {
+  initial: { opacity: 0, y: -20 },
+  animate: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5 },
@@ -123,8 +123,8 @@ export const skillItemVariants: Variants = {
 };
 
 export const aboutVariants: Variants = {
-  aboutHidden: { opacity: 0 },
-  aboutShown: {
+  initial: { opacity: 0 },
+  animate: {
     opacity: 1,
     transition: {
       staggerChildren: 0.5,
@@ -134,8 +134,8 @@ export const aboutVariants: Variants = {
 };
 
 export const aboutItemVariants: Variants = {
-  aboutHidden: { opacity: 0, y: 50, scale: 0.7 },
-  aboutShown: {
+  initial: { opacity: 0, y: 50, scale: 0.7 },
+  animate: {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -159,19 +159,19 @@ export const formVariants: Variants = {
 };
 
 export const submitButtonVariants: Variants = {
-  submitButtonShown: {
+  animate: {
     opacity: 1,
     rotate: [0, 0, 0, -10, 10, 0],
     scale: [1, 1, 1, 1.1, 1.2, 1],
     transition: {
       duration: 0.8,
-      delay:1
+      delay: 1,
     },
   },
 };
 
 export const notificationVariants: Variants = {
-  initial: { opacity: 0, y: 50, scale: 0.3 },
+  initial: { opacity: 0, y: -50, scale: 0.8 },
   animate: { opacity: 1, y: 0, scale: 1 },
-  exit: { opacity: 0, scale: [1, 0.3], y: 50, transition: { duration: 0.2 } },
+  exit: { opacity: 0, scale: [1, 0.8], y: -50, transition: { duration: 0.2 } },
 };
