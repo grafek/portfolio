@@ -82,8 +82,8 @@ const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
   return (
     <header className={`fixed z-40 w-screen`}>
       <m.div
-        initial="hidden"
-        animate="show"
+        initial="initial"
+        animate="animate"
         variants={headerButtonsVariants}
         className="absolute top-0 right-0 z-20 flex gap-4 p-4 md:gap-6 md:px-6"
       >
@@ -110,8 +110,8 @@ const Header: React.FC<HeaderProps> = ({ socials, phoneNumber }) => {
 
       {/* NAVBAR */}
       <m.nav
-        animate={isNavShown ? 'open' : 'closed'}
-        initial={'closed'}
+        animate={isNavShown ? 'animate' : 'initial'}
+        initial={'initial'}
         className={`absolute top-0 left-0 bottom-0 h-screen w-1/3 bg-gradient-to-b from-[#827fe0] to-[#c0bef3] opacity-95 transition-colors dark:from-[#1f1769]/80 dark:to-darkBg/80 md:w-1/5`}
         variants={sidebarVariants}
       >

@@ -15,7 +15,7 @@ const Slider: React.FC<SliderProps> = ({
   children,
   sliderVariants,
 }) => {
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const [leftConstraints, setLeftConstraints] = useState(0);
   const [windowDimensions, setWindowDimensions] = useState({
     width: 0,
@@ -23,10 +23,10 @@ const Slider: React.FC<SliderProps> = ({
   });
 
   useEffect(() => {
-    if (!carouselRef.current) return;
+    if (!sliderRef.current) return;
 
     setLeftConstraints(
-      -(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth + 20)
+      -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20)
     );
 
     // set initial left constraints
@@ -34,13 +34,9 @@ const Slider: React.FC<SliderProps> = ({
     const handleResize = () => {
       setWindowDimensions(getWindowSize());
       setTimeout(() => {
-        if (!carouselRef.current) return;
+        if (!sliderRef.current) return;
         setLeftConstraints(
-          -(
-            carouselRef.current.scrollWidth -
-            carouselRef.current.offsetWidth +
-            20
-          )
+          -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20)
         );
       }, 150);
     };
@@ -60,11 +56,11 @@ const Slider: React.FC<SliderProps> = ({
 
   return (
     <motion.div
-      ref={carouselRef}
+      ref={sliderRef}
       variants={sliderVariants}
-      initial={'sliderHidden'}
+      initial={'initial'}
       viewport={{ once: true }}
-      whileInView={'sliderShown'}
+      whileInView={'animate'}
       className={`${outerSliderClasses} cursor-grab`}
       whileTap={{ cursor: 'grabbing' }}
     >

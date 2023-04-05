@@ -17,8 +17,8 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
   return (
     <m.div
       variants={aboutVariants}
-      initial={'aboutHidden'}
-      whileInView={'aboutShown'}
+      initial={'initial'}
+      whileInView={'animate'}
       viewport={{ once: true }}
       className="flex select-none flex-col gap-6 sm:gap-14"
     >

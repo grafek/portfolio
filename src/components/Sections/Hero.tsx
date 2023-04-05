@@ -1,6 +1,7 @@
-import { motion as m} from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import SectionWrap from '../../hoc/SectionWrap';
 import { heroItemVariants, heroVariants } from '../../utils/framer';
+import Link from 'next/link';
 
 type HeroProps = {
   firstName: string;
@@ -11,8 +12,8 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
   return (
     <m.div
       variants={heroVariants}
-      initial="heroHidden"
-      animate="heroShown"
+      initial="initial"
+      animate="animate"
       className="flex flex-col"
     >
       <m.div variants={heroItemVariants}>
@@ -33,18 +34,18 @@ const Hero: React.FC<HeroProps> = ({ firstName, role }) => {
         initial={{ x: '100vw', opacity: 0 }}
         className="flex flex-col gap-8 md:mx-auto md:max-w-md md:flex-row"
       >
-        <a
+        <Link
           className={`mx-auto w-1/2 rounded-md border border-indigo-700 bg-indigo-700 py-2 px-8 font-semibold text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:w-3/4 md:py-3 md:px-12`}
           href={'#projects'}
         >
           Projects
-        </a>
-        <a
+        </Link>
+        <Link
           className={`mx-auto w-1/2 rounded-md border border-indigo-700 bg-transparent py-2 px-8 font-semibold text-black duration-300 hover:bg-indigo-700 hover:text-white dark:text-white md:w-3/4 md:py-3  md:px-12`}
           href={`#contact`}
         >
           Contact
-        </a>
+        </Link>
       </m.div>
     </m.div>
   );

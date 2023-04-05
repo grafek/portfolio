@@ -40,10 +40,10 @@ const Footer: React.FC = () => {
     try {
       setBtnState('Sending...');
       const res = await emailjs.sendForm(
-        'portfolio-contact',
-        'template_tra4ay3',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         form.current as HTMLFormElement,
-        'pvd-8fUHrfBMag2xW'
+        process.env.NEXT_PUBLIC_EMAILJS_KEY
       );
       if (res.status === 200) {
         setNotification({
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer id={'contact'} className={`relative h-[100dvh] snap-start`}>
+    <footer className={`h-[100dvh] snap-start`}>
       <div className="container mx-auto flex h-full flex-col justify-between">
         <SectionHeading>Let&apos;s talk</SectionHeading>
         <div className="mx-auto flex h-5/6 max-h-full w-full items-center pl-3 pr-5">
@@ -73,49 +73,52 @@ const Footer: React.FC = () => {
             initial={'initial'}
             whileInView={'animate'}
             viewport={{ once: true }}
-            id="contact-form"
+            id="contact"
             ref={form}
             onSubmit={handleSubmit(sendEmail)}
             className={` mx-auto w-full max-w-7xl`}
           >
-            <div className="mb-2 grid grid-cols-3 gap-2 font-semibold md:gap-8">
-              <div className="col-span-3 lg:col-span-1">
+            <div className="mb-2 grid grid-cols-3 gap-4 font-semibold md:gap-8">
+              <div className="relative col-span-3 lg:col-span-1">
                 <Input
                   register={register}
-                  errors={errors.name}
+                  error={errors.name}
                   validation={{ required: true }}
                   labelname={'Name'}
                   name="name"
                   required
                 />
               </div>
-              <div className="col-span-3 lg:col-span-1">
+              <div className="relative col-span-3 lg:col-span-1">
                 <Input
                   register={register}
-                  validation={{ required: true }}
+                  validation={{
+                    required: true,
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  }}
                   labelname={'Email'}
-                  errors={errors.email}
+                  error={errors.email}
                   name="email"
                   type="email"
                   required
                 />
               </div>
-              <div className="col-span-3 lg:col-span-1">
+              <div className="relative col-span-3 lg:col-span-1">
                 <Input
                   register={register}
                   validation={{ required: true }}
                   labelname={'Subject'}
-                  errors={errors.subject}
+                  error={errors.subject}
                   name="subject"
                   required
                 />
               </div>
-              <div className="col-span-3">
+              <div className="relative col-span-3">
                 <TextArea
                   register={register}
                   labelname={'Message'}
                   validation={{ required: true }}
-                  errors={errors.message}
+                  error={errors.message}
                   name="message"
                   required
                 />
@@ -124,8 +127,8 @@ const Footer: React.FC = () => {
             <m.button
               type="submit"
               variants={submitButtonVariants}
-              whileInView={'submitButtonShown'}
-              className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 py-2 px-8 text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:py-3 md:px-12`}
+              whileInView={'animate'}
+              className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 py-2 px-8 font-semibold tracking-wide text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:py-3 md:px-12`}
             >
               {btnState}
               <svg
@@ -140,9 +143,9 @@ const Footer: React.FC = () => {
                 />
               </svg>
             </m.button>
-            <Notification notification={notification} />
           </m.form>
         </div>
+        <Notification notification={notification} />
         <div className="mt-auto flex w-full flex-col justify-center space-y-3">
           <a href="#home" className="mx-auto" title="home">
             <BsArrowUp className={`text-2xl`} />
