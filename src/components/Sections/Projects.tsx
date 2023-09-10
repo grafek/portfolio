@@ -72,7 +72,7 @@ const Project: React.FC<ProjectItemProps> = ({
     >
       <div
         style={{ backgroundImage: `url(${img})` }}
-        className="h-42 w-full bg-cover bg-center md:h-full"
+        className="h-42 w-full bg-cover bg-center md:h-full md:w-60"
       >
         <div className="flex h-40 w-full items-center justify-center backdrop-brightness-[0.3] md:h-full md:w-60">
           <span className="text-center text-4xl tracking-wider text-slate-200">
