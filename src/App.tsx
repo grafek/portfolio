@@ -72,7 +72,7 @@ const App = () => {
       <Header socials={pageData.socials} phoneNumber={phoneNumber} />
 
       <div className="container mx-auto" id="container">
-        <main className={`relative z-20 `} id={"home"}>
+        <main id={"home"}>
           <Hero firstName={firstName} role={role} />
           <Projects projects={pageData.projects} />
           <Skills skills={pageData.skills} />
@@ -82,7 +82,6 @@ const App = () => {
           />
         </main>
         <ScrollTopButton isVisible={isVisible} containerRef={containerRef} />
-
         <Footer />
       </div>
     </div>
@@ -106,9 +105,10 @@ const ScrollTopButton = ({ containerRef, isVisible }: Props) => {
   return (
     <button
       onClick={scrollToTop}
+      style={{ WebkitBackfaceVisibility: "hidden" }}
       className={`${
         isVisible ? "block" : "hidden"
-      } absolute bottom-4 right-4 z-[100] rounded-full bg-indigo-600 p-2 md:p-3`}
+      } fixed bottom-4 right-4 z-[100] translate-y-0 rounded-full bg-indigo-600 p-2 md:p-3`}
     >
       <BsArrowUp className={`text-md text-white`} />
     </button>

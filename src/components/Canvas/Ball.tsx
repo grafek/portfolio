@@ -24,11 +24,11 @@ const Ball: React.FC<BallProps> = ({ imgUrls }) => {
   const [decal1, decal2, decal3, decal4] = useTexture(imgUrls);
   const meshRef = useRef<MeshStandardMaterialType | null>(null);
 
-  const random = 0.2 + Math.random() * 0.2;
+  const randomNum = 0.2 + Math.random() * 0.2;
 
   useFrame(({ clock }) => {
     const emissiveIntensity = Math.abs(
-      Math.sin(clock.getElapsedTime() * random),
+      Math.sin(clock.getElapsedTime() * randomNum),
     );
 
     if (meshRef.current)
@@ -43,8 +43,8 @@ const Ball: React.FC<BallProps> = ({ imgUrls }) => {
         <sphereGeometry />
         <meshStandardMaterial
           attach="material"
-          color="#afc1f4"
-          emissive="#afc1f4"
+          color="#a1b5ec"
+          emissive="#737abb"
         />
         <Decal
           position={[0, 0, 1]}
