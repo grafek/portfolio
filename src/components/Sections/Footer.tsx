@@ -57,7 +57,6 @@ const Footer: React.FC = () => {
         reset();
       }
     } catch (err) {
-      console.log(err);
       setNotification({
         message: `❌ Something went wrong!`,
         isShown: true,
