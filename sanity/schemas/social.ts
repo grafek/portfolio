@@ -1,20 +1,20 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'social',
-  title: 'Social',
-  type: 'document',
+  name: "social",
+  title: "Social",
+  type: "document",
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      description: 'Social media platform name',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      description: "Social media platform name",
+      type: "string",
     }),
     defineField({
-      name: 'socialLink',
-      title: 'SocialLink',
-      type: 'url',
+      name: "socialLink",
+      title: "SocialLink",
+      type: "url",
     }),
   ],
 });

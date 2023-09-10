@@ -23,8 +23,8 @@ const Underline = () => {
           y2="0.500295"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={'#5855b8'} />
-          <stop offset="0.79478" stopColor={'#9693eb'} stopOpacity="0.2" />
+          <stop stopColor={"#5855b8"} />
+          <stop offset="0.79478" stopColor={"#9693eb"} stopOpacity="0.2" />
         </linearGradient>
       </defs>
     </svg>

@@ -9,7 +9,6 @@ My first fully respsonsive website created with a framework, where you can check
 - [x] form validation  
 - [x] notifications when submitting the form
 - [x] light & dark theme change button utilizing React Context API
-- [x] snapping to next section 
 - [x] hamburger menu
 - [x] smooth animations 
 - [x] slider for projects section & timeline
@@ -19,7 +18,6 @@ My first fully respsonsive website created with a framework, where you can check
 
 ## 💻 Tech Stack
 
-**Back-end Framework** - [NextJS](https://nextjs.org/)  
 **Front-end Framework** - [ReactJS](https://reactjs.org/)  
 **CMS** - [Sanity](https://www.sanity.io/)  
 **Form Validation** - [react-hook-form](https://react-hook-form.com/)  

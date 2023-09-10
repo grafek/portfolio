@@ -1,19 +1,16 @@
-import { Slider, Pill } from '../UI';
-import { getImgUrl } from '../../lib/sanityConfig';
-import SectionWrap from '../../hoc/SectionWrap';
-import Image from 'next/image';
-import { HiOutlineCode } from 'react-icons/hi';
-import { type Project } from '../../../types';
-import { projectsSliderVariants } from '../../utils/framer';
-import { useEffect, useState } from 'react';
+import { Slider, Pill } from "../UI";
+import { getImgUrl } from "../../lib/sanityConfig";
+import SectionWrap from "../../hoc/SectionWrap";
+import { HiOutlineCode } from "react-icons/hi";
+import type { Project } from "../../../types";
+import { projectsSliderVariants } from "../../utils/framer";
 
 type ProjectsProps = { projects: Project[] };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <Slider
-      innerSliderClasses="gap-8 mx-auto h-full"
-      outerSliderClasses="h-[95%]"
+      innerSliderClasses="gap-6 mx-auto pb-2"
       sliderVariants={projectsSliderVariants}
     >
       {projects?.map((prj) => (
@@ -31,7 +28,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   );
 };
 
-export default SectionWrap(Projects, 'projects', 'Projects', '');
+export default SectionWrap(Projects, "projects", "Projects", "");
 
 type ProjectItemProps = {
   title: string;
@@ -50,16 +47,12 @@ const Project: React.FC<ProjectItemProps> = ({
   img,
   description,
 }) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => setIsMounted(true), []);
-
   let desc = <p>{description}</p>;
 
-  if (isMounted && window.innerWidth < 768) {
+  if (window.innerWidth < 768) {
     desc = (
       <p>
-        {description.slice(0, 160)}
+        {description.slice(0, 120)}
         <a
           href={`${codeUrl}#readme`}
           target="_blank"
@@ -75,30 +68,23 @@ const Project: React.FC<ProjectItemProps> = ({
 
   return (
     <div
-      className={`flex w-[260px] min-w-[260px] flex-shrink-0 grow flex-col rounded-md bg-[#dfdef8] shadow-md shadow-[#00000025] transition-colors dark:bg-gray-900 dark:shadow-[#ffffff15] md:w-[600px] xl:w-[900px]`}
+      className={`flex w-[calc(100%-2rem)] flex-shrink-0 flex-col items-center rounded-md bg-[#dfdef8] shadow-md shadow-[#00000025] dark:bg-gray-900 dark:shadow-[#ffffff15] md:w-[36rem] md:flex-row`}
     >
-      {/* PROJECT IMAGE/TITLE */}
-      <div className="relative flex-1" title={title}>
-        <div className="absolute z-30 flex h-full w-full justify-center">
-          <h2 className="my-auto text-center text-3xl font-bold capitalize italic text-slate-200 md:text-4xl">
+      <div
+        style={{ backgroundImage: `url(${img})` }}
+        className="h-full w-full bg-cover bg-center"
+      >
+        <div className="flex h-40 w-full items-center justify-center backdrop-brightness-[0.3] md:h-full md:w-60">
+          <span className="text-center text-4xl tracking-wider text-slate-200">
             {title}
-          </h2>
+          </span>
         </div>
-        <div className="relative z-20 flex h-full w-full justify-center bg-black opacity-60"></div>
-        <Image
-          fill
-          alt={title}
-          className="object-cover"
-          src={img}
-          sizes="(max-width: 768px) 260px,
-              (max-width: 1280px) 600px,
-              900px"
-        />
       </div>
-      {/* PROJECT DESCRIPTION */}
-      <div className={`p-4 leading-6 lg:text-lg `}>
+
+      <div
+        className={`flex h-full flex-col justify-between p-4 leading-6 lg:text-lg`}
+      >
         {desc}
-        {/* PROJECT TAGS */}
         <div className="flex flex-row flex-wrap items-center gap-2 pt-4 md:justify-between">
           <div>
             {tags.map((tag, i) => (
@@ -107,7 +93,7 @@ const Project: React.FC<ProjectItemProps> = ({
               </Pill>
             ))}
           </div>
-          {/* PROJECT LINKS */}
+
           <div className="flex w-full items-center justify-between md:gap-6 xl:w-auto">
             <a
               href={demoUrl}

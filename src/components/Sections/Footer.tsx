@@ -1,23 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
-import { BsArrowUp } from 'react-icons/bs';
-import { SectionHeading, TextArea } from '../UI';
-import emailjs from '@emailjs/browser';
-import { useForm } from 'react-hook-form';
-import { Input, Notification } from '../UI';
-import { motion as m } from 'framer-motion';
-import {
-  type FormSchema,
-  type Notification as NotificationType,
-} from '../../../types';
-import { formVariants, submitButtonVariants } from '../../utils/framer';
+import { useEffect, useRef, useState } from "react";
+import { TextArea, Input, Notification } from "../UI";
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { motion as m } from "framer-motion";
+import type { TNotification } from "../../../types";
+import { formVariants, submitButtonVariants } from "../../utils/framer";
+import SectionWrap from "../../hoc/SectionWrap";
+
+type FormSchema = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const Footer: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
 
-  const [notification, setNotification] = useState<NotificationType>({
+  const [notification, setNotification] = useState<TNotification>({
     isShown: false,
   });
-  const [btnState, setBtnState] = useState('Send');
+  const [btnState, setBtnState] = useState("Send");
 
   const {
     register,
@@ -38,16 +41,16 @@ const Footer: React.FC = () => {
 
   const sendEmail = async () => {
     try {
-      setBtnState('Sending...');
+      setBtnState("Sending...");
       const res = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         form.current as HTMLFormElement,
-        process.env.NEXT_PUBLIC_EMAILJS_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_KEY,
       );
       if (res.status === 200) {
         setNotification({
-          message: '🎉 Message sent successfully',
+          message: "🎉 Message sent successfully",
           isShown: true,
           isSuccessful: true,
         });
@@ -60,102 +63,97 @@ const Footer: React.FC = () => {
         isSuccessful: false,
       });
     }
-    setBtnState('Send');
+    setBtnState("Send");
   };
 
   return (
-    <footer className={`h-[100dvh] snap-start`}>
-      <div className="container mx-auto flex h-full flex-col justify-between">
-        <SectionHeading>Let&apos;s talk</SectionHeading>
-        <div className="mx-auto flex h-5/6 max-h-full w-full items-center pl-3 pr-5">
-          <m.form
-            variants={formVariants}
-            initial={'initial'}
-            whileInView={'animate'}
-            viewport={{ once: true }}
-            id="contact"
-            ref={form}
-            onSubmit={handleSubmit(sendEmail)}
-            className={` mx-auto w-full max-w-7xl`}
-          >
-            <div className="mb-2 grid grid-cols-3 gap-4 font-semibold md:gap-8">
-              <div className="relative col-span-3 lg:col-span-1">
-                <Input
-                  register={register}
-                  error={errors.name}
-                  validation={{ required: true }}
-                  labelname={'Name'}
-                  name="name"
-                  required
-                />
-              </div>
-              <div className="relative col-span-3 lg:col-span-1">
-                <Input
-                  register={register}
-                  validation={{
-                    required: true,
-                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  }}
-                  labelname={'Email'}
-                  error={errors.email}
-                  name="email"
-                  type="email"
-                  required
-                />
-              </div>
-              <div className="relative col-span-3 lg:col-span-1">
-                <Input
-                  register={register}
-                  validation={{ required: true }}
-                  labelname={'Subject'}
-                  error={errors.subject}
-                  name="subject"
-                  required
-                />
-              </div>
-              <div className="relative col-span-3">
-                <TextArea
-                  register={register}
-                  labelname={'Message'}
-                  validation={{ required: true }}
-                  error={errors.message}
-                  name="message"
-                  required
-                />
-              </div>
+    <footer>
+      <div className="mx-auto flex w-3/4 items-center">
+        <m.form
+          variants={formVariants}
+          initial={"initial"}
+          whileInView={"animate"}
+          viewport={{ once: true }}
+          id="contact"
+          ref={form}
+          onSubmit={handleSubmit(sendEmail)}
+          className={`mx-auto w-full max-w-7xl`}
+        >
+          <div className="mb-2 grid grid-cols-3 gap-4 font-medium md:gap-8">
+            <div className="relative col-span-3 lg:col-span-1">
+              <Input
+                register={register}
+                error={errors.name}
+                validation={{ required: true }}
+                labelname={"Name"}
+                name="name"
+                autoComplete="name"
+                required
+              />
             </div>
-            <m.button
-              type="submit"
-              variants={submitButtonVariants}
-              whileInView={'animate'}
-              className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 py-2 px-8 font-semibold tracking-wide text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:py-3 md:px-12`}
+            <div className="relative col-span-3 lg:col-span-1">
+              <Input
+                register={register}
+                validation={{
+                  required: true,
+                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                }}
+                labelname={"Email"}
+                error={errors.email}
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+              />
+            </div>
+            <div className="relative col-span-3 lg:col-span-1">
+              <Input
+                register={register}
+                validation={{ required: true }}
+                labelname={"Subject"}
+                error={errors.subject}
+                name="subject"
+                autoComplete="subject"
+                required
+              />
+            </div>
+            <div className="relative col-span-3">
+              <TextArea
+                register={register}
+                labelname={"Message"}
+                validation={{ required: true }}
+                error={errors.message}
+                name="message"
+                required
+              />
+            </div>
+          </div>
+          <m.button
+            type="submit"
+            variants={submitButtonVariants}
+            whileInView={"animate"}
+            className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 px-4 py-2 font-medium tracking-wide text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:px-6`}
+          >
+            {btnState}
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="ml-2 text-cyan-500"
             >
-              {btnState}
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="ml-2 text-cyan-500"
-              >
-                <path
-                  d="M9.00967 5.12761H11.0097C12.1142 5.12761 13.468 5.89682 14.0335 6.8457L16.5089 11H21.0097C21.562 11 22.0097 11.4477 22.0097 12C22.0097 12.5523 21.562 13 21.0097 13H16.4138L13.9383 17.1543C13.3729 18.1032 12.0191 18.8724 10.9145 18.8724H8.91454L12.4138 13H5.42485L3.99036 15.4529H1.99036L4.00967 12L4.00967 11.967L2.00967 8.54712H4.00967L5.44417 11H12.5089L9.00967 5.12761Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </m.button>
-          </m.form>
-        </div>
-        <Notification notification={notification} />
-        <div className="mt-auto flex w-full flex-col justify-center space-y-3">
-          <a href="#home" className="mx-auto" title="home">
-            <BsArrowUp className={`text-2xl`} />
-          </a>
-          <p className={`text-center font-semibold`}>
-            ©{new Date().getFullYear()} Jacek Grafender
-          </p>
-        </div>
+              <path
+                d="M9.00967 5.12761H11.0097C12.1142 5.12761 13.468 5.89682 14.0335 6.8457L16.5089 11H21.0097C21.562 11 22.0097 11.4477 22.0097 12C22.0097 12.5523 21.562 13 21.0097 13H16.4138L13.9383 17.1543C13.3729 18.1032 12.0191 18.8724 10.9145 18.8724H8.91454L12.4138 13H5.42485L3.99036 15.4529H1.99036L4.00967 12L4.00967 11.967L2.00967 8.54712H4.00967L5.44417 11H12.5089L9.00967 5.12761Z"
+                fill="currentColor"
+              />
+            </svg>
+          </m.button>
+        </m.form>
       </div>
+      <Notification notification={notification} />
+      <p className={`mt-4 text-center font-medium`}>
+        ©{new Date().getFullYear()} Jacek Grafender
+      </p>
     </footer>
   );
 };
-export default Footer;
+export default SectionWrap(Footer, "footer", "Let's talk", "");

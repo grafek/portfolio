@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import { motion as m } from 'framer-motion';
-import { getImgUrl } from '../../lib/sanityConfig';
-import SectionWrap from '../../hoc/SectionWrap';
-import { PageInfo, Timeline as TimelineType } from '../../../types';
-import { Slider, Underline } from '../UI';
-import { aboutItemVariants, aboutVariants } from '../../utils/framer';
+import { motion as m } from "framer-motion";
+import { getImgUrl } from "../../lib/sanityConfig";
+import SectionWrap from "../../hoc/SectionWrap";
+import { PageInfo, Timeline as TimelineType } from "../../../types";
+import { Slider, Underline } from "../UI";
+import { aboutItemVariants, aboutVariants } from "../../utils/framer";
 
 type AboutProps = {
   timelineInfo: TimelineType[];
@@ -17,51 +16,45 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
   return (
     <m.div
       variants={aboutVariants}
-      initial={'initial'}
-      whileInView={'animate'}
+      initial={"initial"}
+      whileInView={"animate"}
       viewport={{ once: true }}
-      className="flex select-none flex-col gap-6 sm:gap-14"
+      className="flex select-none flex-col gap-8"
     >
       <m.div
         variants={aboutItemVariants}
-        className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8 "
+        className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8"
       >
-        <div className="relative h-[15vh] w-full md:h-[13vh] md:w-full lg:h-[25vh] xl:h-[40vh]">
-          <Image
+        <div className="relative hidden aspect-square md:block md:w-full lg:h-[25vh] xl:h-[40vh]">
+          <img
             src={getImgUrl(aboutImage).url()}
-            fill
-            sizes="(max-width: 768px) 118px,
-            (max-width: 1024px) 133px,
-            (max-width: 1538px) 344px,
-            476px"
-            className="relative object-contain"
-            alt="me"
+            alt="my-photo"
+            className="mx-auto max-h-full max-w-full"
           />
         </div>
-        <p className={`text-justify text-sm md:text-base`}>{aboutInfo}</p>
+        <p className={`text-justify text-sm leading-6 md:text-base lg:text-lg`}>
+          {aboutInfo}
+        </p>
       </m.div>
 
-      {/* TIMELINE */}
-
       <m.div variants={aboutItemVariants}>
-        <Slider
-          innerSliderClasses="gap-8 mx-auto "
-          outerSliderClasses="overflow-hidden"
-        >
+        <Slider innerSliderClasses="gap-8 mx-auto">
           <m.ul
-            className={`flex w-full gap-6 text-sm md:gap-14 md:text-base lg:justify-between`}
+            className={`flex w-full gap-6 text-sm md:gap-12 md:text-base lg:justify-between`}
           >
             {timelineInfo.map((item) => (
               <li
                 key={item._id}
-                className="flex max-w-[300px] flex-shrink-0 md:max-w-[420px]"
+                className="flex max-w-[14rem] flex-shrink-0 md:max-w-[20rem]"
               >
                 <div className="w-full">
                   <h2 className="text-xl font-semibold">
                     {item.year}
                     <Underline />
                   </h2>
-                  <p className="mt-2 font-semibold">{item.timelineText}</p>
+                  <p className="mt-2 font-medium leading-6 lg:text-lg">
+                    {item.timelineText}
+                  </p>
                 </div>
               </li>
             ))}
@@ -72,4 +65,4 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
   );
 };
 
-export default SectionWrap(About, 'about', 'About', '');
+export default SectionWrap(About, "about", "About", "");

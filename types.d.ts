@@ -6,15 +6,15 @@ interface SanityDocument {
 }
 
 interface SanityImage {
-  _type: 'image';
+  _type: "image";
   asset: {
     _ref: string;
-    _type: 'reference';
+    _type: "reference";
   };
 }
 
 export interface PageInfo extends SanityDocument {
-  _type: 'pageInfo';
+  _type: "pageInfo";
   aboutInfo: string;
   email: string;
   firstName: string;
@@ -25,13 +25,13 @@ export interface PageInfo extends SanityDocument {
 }
 
 export interface Skill extends SanityDocument {
-  _type: 'skill';
+  _type: "skill";
   name: string;
   skillImage: SanityImage;
 }
 
 export interface Project extends SanityDocument {
-  _type: 'project';
+  _type: "project";
   title: string;
   codeLink: string;
   demoLink: string;
@@ -41,26 +41,19 @@ export interface Project extends SanityDocument {
 }
 
 export interface SocialMedia extends SanityDocument {
-  _type: 'social';
+  _type: "social";
   title: string;
   socialLink: string;
 }
 
 export interface Timeline extends SanityDocument {
-  _type: 'timeline';
+  _type: "timeline";
   timelineText: string;
   year: number;
 }
 
-export interface Notification {
+export interface TNotification {
   isShown: boolean;
   isSuccessful?: boolean;
   message?: string;
 }
-
-export type FormSchema = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
