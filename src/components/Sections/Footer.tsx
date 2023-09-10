@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
     try {
       setBtnState("Sending...");
       const res = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
         form.current as HTMLFormElement,
-        process.env.NEXT_PUBLIC_EMAILJS_KEY,
+        import.meta.env.VITE_EMAILJS_KEY,
       );
       if (res.status === 200) {
         setNotification({
@@ -57,6 +57,7 @@ const Footer: React.FC = () => {
         reset();
       }
     } catch (err) {
+      console.log(err);
       setNotification({
         message: `❌ Something went wrong!`,
         isShown: true,
@@ -79,7 +80,7 @@ const Footer: React.FC = () => {
           onSubmit={handleSubmit(sendEmail)}
           className={`mx-auto w-full max-w-7xl`}
         >
-          <div className="mb-2 grid grid-cols-3 gap-4 font-medium md:gap-8">
+          <div className="grid grid-cols-3 gap-4 font-medium">
             <div className="relative col-span-3 lg:col-span-1">
               <Input
                 register={register}
@@ -132,7 +133,7 @@ const Footer: React.FC = () => {
             type="submit"
             variants={submitButtonVariants}
             whileInView={"animate"}
-            className={`mx-auto flex rounded-md border border-indigo-700 bg-indigo-700 px-4 py-2 font-medium tracking-wide text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:px-6`}
+            className={`mx-auto mt-4 flex rounded-md border border-indigo-700 bg-indigo-700 px-4 py-2 font-medium tracking-wide text-white duration-300 hover:bg-transparent hover:text-black dark:border-indigo-700 dark:hover:bg-transparent dark:hover:text-white md:px-6`}
           >
             {btnState}
             <svg
