@@ -1,6 +1,6 @@
-import { motion, type Variants } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { debounce, getWindowSize } from '../../utils/helpers';
+import { motion, type Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { debounce, getWindowSize } from "../../utils/helpers";
 
 type SliderProps = {
   children: React.ReactNode;
@@ -10,8 +10,8 @@ type SliderProps = {
 };
 
 const Slider: React.FC<SliderProps> = ({
-  outerSliderClasses = '',
-  innerSliderClasses = '',
+  outerSliderClasses = "",
+  innerSliderClasses = "",
   children,
   sliderVariants,
 }) => {
@@ -26,7 +26,7 @@ const Slider: React.FC<SliderProps> = ({
     if (!sliderRef.current) return;
 
     setLeftConstraints(
-      -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20)
+      -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20),
     );
 
     // set initial left constraints
@@ -36,7 +36,7 @@ const Slider: React.FC<SliderProps> = ({
       setTimeout(() => {
         if (!sliderRef.current) return;
         setLeftConstraints(
-          -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20)
+          -(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth + 20),
         );
       }, 150);
     };
@@ -44,7 +44,7 @@ const Slider: React.FC<SliderProps> = ({
 
     const handleResizeDebounced = debounce(handleResize, 100);
 
-    window.addEventListener('resize', handleResizeDebounced);
+    window.addEventListener("resize", handleResizeDebounced);
 
     //listen for resize event
 
@@ -58,11 +58,11 @@ const Slider: React.FC<SliderProps> = ({
     <motion.div
       ref={sliderRef}
       variants={sliderVariants}
-      initial={'initial'}
+      initial={"initial"}
       viewport={{ once: true }}
-      whileInView={'animate'}
+      whileInView={"animate"}
       className={`${outerSliderClasses} cursor-grab`}
-      whileTap={{ cursor: 'grabbing' }}
+      whileTap={{ cursor: "grabbing" }}
     >
       <motion.div
         dragTransition={{ bounceStiffness: 200, bounceDamping: 10 }}

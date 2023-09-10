@@ -1,10 +1,10 @@
-import { motion as m } from 'framer-motion';
-import { getImgUrl } from '../../lib/sanityConfig';
-import SectionWrap from '../../hoc/SectionWrap';
-import BallCanvas from '../Canvas/Ball';
-import { Skill } from '../../../types';
-import { generateSubarrays } from '../../utils/helpers';
-import { skillItemVariants, skillsVariants } from '../../utils/framer';
+import { motion as m } from "framer-motion";
+import { getImgUrl } from "../../lib/sanityConfig";
+import SectionWrap from "../../hoc/SectionWrap";
+import BallCanvas from "../Canvas/Ball";
+import { Skill } from "../../../types";
+import { generateSubarrays } from "../../utils/helpers";
+import { skillItemVariants, skillsVariants } from "../../utils/framer";
 
 type SkillsProps = {
   skills: Skill[];
@@ -17,9 +17,9 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
     <div className="relative flex flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0">
       <m.div
         variants={skillsVariants}
-        initial={'initial'}
+        initial={"initial"}
         viewport={{ once: true }}
-        whileInView={'animate'}
+        whileInView={"animate"}
         className="relative flex w-full flex-wrap items-center justify-around gap-4 "
       >
         {skillsSubarrays.map((subArray, arrIdx) => (
@@ -30,7 +30,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
           >
             <BallCanvas
               imgUrls={subArray.map((skill) =>
-                getImgUrl(skill.skillImage).url()
+                getImgUrl(skill.skillImage).url(),
               )}
               autoRotateSpeed={Math.random() + 1 * 0.4}
             />
@@ -41,4 +41,4 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   );
 };
 
-export default SectionWrap(Skills, 'skills', 'Skills', '');
+export default SectionWrap(Skills, "skills", "Skills", "");

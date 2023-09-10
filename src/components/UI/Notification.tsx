@@ -1,12 +1,12 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { type Notification } from '../../../types';
-import { notificationVariants } from '../../utils/framer';
+import { AnimatePresence, motion } from "framer-motion";
+import type { TNotification } from "../../../types";
+import { notificationVariants } from "../../utils/framer";
 
-type NotificationProps = { notification: Notification };
+type NotificationProps = { notification: TNotification };
 
 const Notification: React.FC<NotificationProps> = ({ notification }) => {
   const { message, isSuccessful, isShown } = notification;
-  const stateClasses = isSuccessful ? 'bg-green-600' : 'bg-red-600';
+  const stateClasses = isSuccessful ? "bg-green-600" : "bg-red-600";
 
   return (
     <div
@@ -22,7 +22,7 @@ const Notification: React.FC<NotificationProps> = ({ notification }) => {
             animate="animate"
             exit="exit"
           >
-            <p className={`font-semibold text-slate-100`}>{message}</p>
+            <p className={`font-medium text-slate-100`}>{message}</p>
           </motion.div>
         ) : null}
       </AnimatePresence>

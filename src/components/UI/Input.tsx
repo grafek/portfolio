@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import {
-  type UseFormRegister,
-  type RegisterOptions,
-  type Path,
-  type FieldValues,
-  type FieldError,
-} from 'react-hook-form';
+import { useState } from "react";
+import type {
+  UseFormRegister,
+  RegisterOptions,
+  Path,
+  FieldValues,
+  FieldError,
+} from "react-hook-form";
 
 export interface InputProps<T extends FieldValues>
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -21,7 +21,7 @@ export interface InputProps<T extends FieldValues>
 const Input = <T extends FieldValues>({
   name,
   register,
-  className = '',
+  className = "",
   error,
   labelname,
   validation,
@@ -29,15 +29,15 @@ const Input = <T extends FieldValues>({
   ...props
 }: InputProps<T>) => {
   const errorClassses = error
-    ? 'outline-red-600'
-    : 'outline-indigo-500 dark:outline-indigo-800';
+    ? "outline-red-600"
+    : "outline-indigo-500 dark:outline-indigo-800";
   const requiredAsterisk = required ? (
     <span className="font-semibold text-red-600">*</span>
   ) : null;
 
-  const WITHIN = 'top-5 -z-20 px-4';
+  const WITHIN = "top-5 -z-20 px-4";
 
-  const FLOAT = 'px-2 top-2 z-20 scale-[0.80]';
+  const FLOAT = "px-2 top-2 z-20 scale-[0.80]";
 
   const [labelClasses, setLabelClasses] = useState(WITHIN);
 
@@ -52,7 +52,7 @@ const Input = <T extends FieldValues>({
       <input
         {...register(name, validation)}
         id={name}
-        aria-invalid={error ? 'true' : 'false'}
+        aria-invalid={error ? "true" : "false"}
         onFocus={() => {
           setLabelClasses(FLOAT);
         }}
@@ -61,16 +61,16 @@ const Input = <T extends FieldValues>({
             setLabelClasses(WITHIN);
           }
         }}
-        className={`${className} ${errorClassses} mt-1 w-full rounded-md bg-transparent px-3 pt-4 pb-2 outline outline-1 focus:outline-indigo-800 dark:focus:outline-indigo-600`}
+        className={`${className} ${errorClassses} mt-1 w-full rounded-md bg-transparent px-3 pb-2 pt-4 outline outline-1 focus:outline-indigo-800 dark:focus:outline-indigo-600`}
         {...props}
       />
       {error ? (
         <span
-          role={'alert'}
+          role={"alert"}
           className="block pt-1 text-sm text-red-600 md:text-base"
         >
-          {error?.type == 'required' ? 'Required' : null}
-          {error?.type == 'pattern' ? 'Input valid e-mail' : null}
+          {error?.type == "required" ? "Required" : null}
+          {error?.type == "pattern" ? "Input valid e-mail" : null}
         </span>
       ) : null}
     </>

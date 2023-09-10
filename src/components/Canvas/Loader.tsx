@@ -1,4 +1,4 @@
-import { Html, useProgress } from '@react-three/drei';
+import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
@@ -7,17 +7,17 @@ const CanvasLoader = () => {
       as="div"
       center
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
       }}
     >
       <span className="relative h-1 w-1 rounded-full text-sm"></span>
       <p
         style={{
           fontSize: 14,
-          color: '#F1F1F1',
+          color: "#F1F1F1",
           fontWeight: 800,
           marginTop: 40,
         }}

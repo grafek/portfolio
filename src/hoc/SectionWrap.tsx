@@ -1,20 +1,17 @@
-import { ComponentType } from 'react';
-import { SectionHeading } from '../components/UI';
+import { ComponentType } from "react";
+import { SectionHeading } from "../components/UI";
 
 const SectionWrap = <T extends {}>(
   Component: ComponentType<T>,
   idName?: string,
   sectionName?: string,
-  classsName?: string
+  classsName?: string,
 ) =>
   function HOC(props: T) {
     return (
-      <section
-        id={idName}
-        className={`relative flex h-[100dvh] snap-start flex-col overflow-hidden ${classsName}`}
-      >
+      <section id={idName} className={`relative ${classsName}`}>
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
-        <div className="flex h-full flex-col justify-center pl-3 pr-5">
+        <div className="flex h-full flex-col justify-center">
           <Component {...props} />
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import { Variants } from "framer-motion";
 
 export const sectionHeadingVariants: Variants = {
   initial: { opacity: 0, x: -40 },
@@ -8,7 +8,7 @@ export const sectionHeadingVariants: Variants = {
     transition: {
       duration: 1.5,
       delay: 0.3,
-      type: 'spring',
+      type: "spring",
     },
   },
 };
@@ -20,10 +20,10 @@ export const headerButtonsVariants: Variants = {
 
 export const sidebarVariants: Variants = {
   initial: {
-    clipPath: 'circle(20px at 28px 28px)',
+    clipPath: "circle(20px at 28px 28px)",
     transition: {
       delay: 0.5,
-      type: 'spring',
+      type: "spring",
       stiffness: 200,
       damping: 40,
     },
@@ -31,7 +31,7 @@ export const sidebarVariants: Variants = {
   animate: {
     clipPath: `circle(1000px at 50px 50px)`,
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 30,
       restDelta: 2,
       damping: 20,
@@ -77,19 +77,19 @@ export const heroVariants: Variants = {
 };
 
 export const heroItemVariants: Variants = {
-  initial: { opacity: 0, x: '-100vw' },
+  initial: { opacity: 0, x: "-100vw" },
   animate: {
     opacity: 1,
     x: 0,
     transition: {
       duration: 2,
-      type: 'spring',
+      type: "spring",
     },
   },
 };
 
 export const projectsSliderVariants: Variants = {
-  initial: { opacity: 0, scale: 0.8, x: '50vw' },
+  initial: { opacity: 0, scale: 0.8, x: "50vw" },
   animate: {
     opacity: 1,
     scale: 1,
@@ -97,7 +97,7 @@ export const projectsSliderVariants: Variants = {
     transition: {
       duration: 1.8,
       delay: 1.5,
-      type: 'spring',
+      type: "spring",
     },
   },
 };
@@ -146,14 +146,14 @@ export const aboutItemVariants: Variants = {
 };
 
 export const formVariants: Variants = {
-  initial: { opacity: 0, y: '10vh' },
+  initial: { opacity: 0, y: "10vh" },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       delay: 0.8,
       duration: 1.6,
-      type: 'spring',
+      type: "spring",
     },
   },
 };
