@@ -19,7 +19,7 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
       initial={"initial"}
       whileInView={"animate"}
       viewport={{ once: true }}
-      className="flex select-none flex-col gap-8"
+      className="flex select-none flex-col gap-12 md:gap-16"
     >
       <m.div
         variants={aboutItemVariants}
@@ -40,7 +40,7 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
       <m.div variants={aboutItemVariants}>
         <Slider innerSliderClasses="gap-8 mx-auto">
           <m.ul
-            className={`flex w-full gap-6 text-sm md:gap-12 md:text-base lg:justify-between`}
+            className={`flex w-full gap-6 text-sm md:gap-8 md:text-base lg:justify-between`}
           >
             {timelineInfo.map((item) => (
               <li
