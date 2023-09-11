@@ -20,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           img={getImgUrl(prj.image).url()}
           demoUrl={prj.demoLink}
           codeUrl={prj.codeLink}
-          tags={prj.technologies.map((tech) => tech.name)}
+          tags={prj.technologies?.map((tech) => tech.name)}
           description={prj.description}
         />
       ))}
@@ -87,7 +87,7 @@ const Project: React.FC<ProjectItemProps> = ({
         {desc}
         <div className="flex flex-row flex-wrap items-center gap-2 pt-4 md:justify-between">
           <div>
-            {tags.map((tag, i) => (
+            {tags?.map((tag, i) => (
               <Pill className="m-1" key={i}>
                 #{tag}
               </Pill>
@@ -95,22 +95,25 @@ const Project: React.FC<ProjectItemProps> = ({
           </div>
 
           <div className="flex w-full items-center justify-between md:gap-6 xl:w-auto">
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noreferrer"
-              title={`${title} source link`}
-            >
-              <Pill
-                className={`text-indigo-600 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500`}
+            {demoUrl ? (
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                title={`${title} source link`}
               >
-                Source
-              </Pill>
-            </a>
+                <Pill
+                  className={`text-indigo-600 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500`}
+                >
+                  Source
+                </Pill>
+              </a>
+            ) : null}
             <a
               href={codeUrl}
               target="_blank"
               rel="noreferrer"
+              className="ml-auto"
               title={`${title} code link`}
             >
               <Pill
