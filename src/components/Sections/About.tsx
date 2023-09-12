@@ -2,8 +2,13 @@ import { motion as m } from "framer-motion";
 import { getImgUrl } from "../../lib/sanityConfig";
 import SectionWrap from "../../hoc/SectionWrap";
 import { PageInfo, Timeline as TimelineType } from "../../../types";
-import { Slider, Underline } from "../UI";
 import { aboutItemVariants, aboutVariants } from "../../utils/framer";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { Fragment } from "react";
 
 type AboutProps = {
   timelineInfo: TimelineType[];
@@ -38,28 +43,48 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
       </m.div>
 
       <m.div variants={aboutItemVariants}>
-        <Slider innerSliderClasses="gap-8 mx-auto">
-          <m.ul
-            className={`flex w-full gap-6 text-sm md:gap-8 md:text-base lg:justify-between`}
-          >
-            {timelineInfo.map((item) => (
-              <li
-                key={item._id}
-                className="flex max-w-[14rem] flex-shrink-0 md:max-w-[20rem]"
-              >
-                <div className="w-full">
-                  <h2 className="text-xl font-semibold">
-                    {item.year}
-                    <Underline />
-                  </h2>
-                  <p className="mt-2 font-medium leading-6 lg:text-lg">
-                    {item.timelineText}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </m.ul>
-        </Slider>
+        <VerticalTimeline>
+          {timelineInfo.map((item) => (
+            <VerticalTimelineElement
+              key={item._id}
+              className="vertical-timeline-element--work"
+              contentArrowStyle={{
+                borderRight: "7px solid #4f46e5",
+              }}
+              contentStyle={{
+                background: "#151239",
+                color: "#94a3b8",
+              }}
+              date={item.date}
+              dateClassName="text-slate-400"
+              icon={
+                <img
+                  src={getImgUrl(item.companyLogo).url()}
+                  alt={item.companyName}
+                  className="rounded-full object-contain"
+                />
+              }
+            >
+              <h3 className="vertical-timeline-element-title text-xl font-semibold text-gray-50">
+                {item.role}
+              </h3>
+              <span className="font-thin">{item.companyName}</span>
+              <ul className="mt-4 flex list-inside flex-col gap-2">
+                {item.responsibilities.map((item, i) => (
+                  <Fragment key={i}>
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 leading-6 lg:text-lg"
+                    >
+                      <div className="relative top-[6px] h-0 w-0 border-b-[5px] border-l-[7.5px] border-t-[5px] border-b-transparent border-l-indigo-500 border-t-transparent"></div>
+                      {item}
+                    </li>
+                  </Fragment>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
       </m.div>
     </m.div>
   );

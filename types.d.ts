@@ -48,8 +48,12 @@ export interface SocialMedia extends SanityDocument {
 
 export interface Timeline extends SanityDocument {
   _type: "timeline";
-  timelineText: string;
+  responsibilities: string[];
   year: number;
+  role: string;
+  companyLogo: SanityImage;
+  companyName:string
+  date: string;
 }
 
 export interface TNotification {
