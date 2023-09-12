@@ -156,4 +156,4 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-export default SectionWrap(Footer, "footer", "Let's talk", "");
+export default SectionWrap(Footer, "footer", "Let's talk", "pt-12");
