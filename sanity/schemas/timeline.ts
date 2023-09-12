@@ -6,15 +6,33 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "year",
-      title: "Year",
-      description: "Year of a milestone",
-      type: "number",
-      validation: (Rule) => Rule.min(2016).max(2060),
+      name: "date",
+      title: "Date ",
+      description: "Date of a milestone (is present?)",
+      type: "string",
     }),
     defineField({
-      name: "timelineText",
-      title: "TimelineText",
+      name: "role",
+      title: "Role",
+      type: "string",
+    }),
+    defineField({
+      name: "responsibilities",
+      title: "Responsibilities",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "companyLogo",
+      title: "Company Logo",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "companyName",
+      title: "Company Name",
       type: "string",
     }),
   ],

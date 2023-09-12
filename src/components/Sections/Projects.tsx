@@ -68,7 +68,7 @@ const Project: React.FC<ProjectItemProps> = ({
 
   return (
     <div
-      className={`flex w-[calc(100%-2rem)] flex-shrink-0 flex-col items-center rounded-md bg-[#dfdef8] shadow-md shadow-[#00000025] dark:bg-gray-900 dark:shadow-[#ffffff15] md:w-[36rem] md:flex-row`}
+      className={`flex w-[calc(100%-2rem)] flex-shrink-0 flex-col items-center rounded-md bg-[#dfdef8] shadow-md shadow-[#00000025] dark:bg-[#151239] dark:shadow-[#ffffff15] md:w-[36rem] md:flex-row`}
     >
       <div
         style={{ backgroundImage: `url(${img})` }}
@@ -88,7 +88,7 @@ const Project: React.FC<ProjectItemProps> = ({
         <div className="flex flex-row flex-wrap items-center gap-2 pt-4 md:justify-between">
           <div>
             {tags?.map((tag, i) => (
-              <Pill className="m-1" key={i}>
+              <Pill className="my-1" key={i}>
                 #{tag}
               </Pill>
             ))}

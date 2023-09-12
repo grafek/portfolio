@@ -29,7 +29,7 @@ const pageDataQueries = `{
       ...,
       technologies[] ->
     },
-    "timeline": *[_type == 'timeline'] | order(year asc)
+    "timeline": *[_type == 'timeline'] | order(_createdAt desc)
   }`;
 
 const App = () => {
