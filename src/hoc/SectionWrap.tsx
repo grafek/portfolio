@@ -9,12 +9,12 @@ const SectionWrap = <T extends {}>(
 ) =>
   function HOC(props: T) {
     return idName === "footer" ? (
-      <footer id={idName} className={`relative ${classsName}`}>
+      <footer id={idName} className={`relative pt-12 ${classsName}`}>
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
         <Component {...props} />
       </footer>
     ) : (
-      <section id={idName} className={`relative ${classsName}`}>
+      <section id={idName} className={`relative pt-12 ${classsName}`}>
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
         <Component {...props} />
       </section>
