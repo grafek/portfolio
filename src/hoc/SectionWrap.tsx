@@ -8,12 +8,15 @@ const SectionWrap = <T extends {}>(
   classsName?: string,
 ) =>
   function HOC(props: T) {
-    return (
-      <section id={idName} className={`relative ${classsName}`}>
+    return idName === "footer" ? (
+      <footer id={idName} className={`relative pt-12 ${classsName}`}>
         {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
-        <div className="flex h-full flex-col justify-center">
-          <Component {...props} />
-        </div>
+        <Component {...props} />
+      </footer>
+    ) : (
+      <section id={idName} className={`relative pt-12 ${classsName}`}>
+        {sectionName ? <SectionHeading>{sectionName}</SectionHeading> : null}
+        <Component {...props} />
       </section>
     );
   };

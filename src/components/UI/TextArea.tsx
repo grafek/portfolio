@@ -61,7 +61,7 @@ const TextArea = <T extends FieldValues>({
             setLabelClasses(WITHIN);
           }
         }}
-        className={`${className} ${errorClassses} mt-1 max-h-[60px] min-h-[40px] w-full rounded-md bg-transparent px-3 pb-2 pt-4 outline outline-1 focus:outline-indigo-800 dark:focus:outline-indigo-600 sm:h-[250px] sm:max-h-[150px] md:max-h-[420px]`}
+        className={`${className} ${errorClassses} mt-1 max-h-[160px] min-h-[120px] w-full rounded-md bg-transparent px-3 pb-2 pt-4 outline outline-1 focus:outline-indigo-800 dark:focus:outline-indigo-600 sm:h-[250px] sm:max-h-[150px] md:max-h-[420px]`}
         {...props}
       />
       {error ? (

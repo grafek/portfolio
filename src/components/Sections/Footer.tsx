@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer>
+    <>
       <div className="mx-auto flex w-3/4 items-center">
         <m.form
           variants={formVariants}
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
       <p className={`mt-4 text-center font-medium`}>
         ©{new Date().getFullYear()} Jacek Grafender
       </p>
-    </footer>
+    </>
   );
 };
-export default SectionWrap(Footer, "footer", "Let's talk", "pt-12");
+export default SectionWrap(Footer, "footer", "Let's talk", "");
