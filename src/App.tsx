@@ -65,31 +65,28 @@ const App = () => {
   const debouncedHandleScroll = debounce(handleScroll, 200);
 
   return (
-    <>
-      <div
-        onScroll={debouncedHandleScroll}
-        ref={containerRef}
-        className="relative h-screen overflow-x-hidden scroll-smooth bg-gradient-to-b from-[#9693eb] to-[#dfdef8] px-4 font-gt-walsheim text-slate-700 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-indigo-600 dark:from-[#110c3b] dark:to-darkBg dark:text-slate-400 dark:scrollbar-track-gray-800 dark:scrollbar-thumb-indigo-600 md:px-16"
-      >
-        <Header socials={pageData.socials} phoneNumber={phoneNumber} />
+    <div
+      onScroll={debouncedHandleScroll}
+      ref={containerRef}
+      className="h-screen overflow-x-hidden scroll-smooth bg-gradient-to-b from-[#9693eb] to-[#dfdef8] px-4 font-gt-walsheim text-slate-700 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-indigo-600 dark:from-[#110c3b] dark:to-darkBg dark:text-slate-400 dark:scrollbar-track-gray-800 dark:scrollbar-thumb-indigo-600 md:px-16"
+    >
+      <Header socials={pageData.socials} phoneNumber={phoneNumber} />
 
-        <div className="container relative z-0 mx-auto" id="container">
-          <main id={"home"}>
-            <Hero firstName={firstName} role={role} />
-            <Projects projects={pageData.projects} />
-            <Skills skills={pageData.skills} />
-            <StarsCanvas />
-            <About
-              timelineInfo={pageData.timeline}
-              pageInfo={pageData.pageInfo}
-            />
-          </main>
-          <ScrollTopButton isVisible={isVisible} containerRef={containerRef} />
-          <Footer />
-        </div>
+      <div className="container relative z-0 mx-auto" id="container">
+        <main id={"home"}>
+          <Hero firstName={firstName} role={role} />
+          <Projects projects={pageData.projects} />
+          <Skills skills={pageData.skills} />
+          <About
+            timelineInfo={pageData.timeline}
+            pageInfo={pageData.pageInfo}
+          />
+          <StarsCanvas />
+        </main>
+        <ScrollTopButton isVisible={isVisible} containerRef={containerRef} />
+        <Footer />
       </div>
-      <StarsCanvas />
-    </>
+    </div>
   );
 };
 
