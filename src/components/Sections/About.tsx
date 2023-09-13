@@ -51,13 +51,17 @@ const About: React.FC<AboutProps> = ({ timelineInfo, pageInfo }) => {
                 className="rounded-full"
               />
             </div>
-            <div className="w-[calc(100%-4rem)] rounded border border-slate-200 bg-[#dfdef8] p-4 shadow dark:border-indigo-600 dark:bg-indigo-950 md:w-[calc(50%-2.5rem)]">
-              <div className="mb-1 flex items-center justify-between space-x-2">
+            <div className="w-[calc(100%-4rem)] rounded border border-[#9693eb] bg-[#dfdef8] p-4 pb-10 shadow dark:border-indigo-600 dark:bg-indigo-950 md:w-[calc(50%-2.5rem)] md:pb-4">
+              <div className="mb-1 flex items-center justify-between">
                 <div className="flex flex-col">
-                  <span className="font-bold text-gray-900 dark:text-gray-200">{item.role}</span>
-                  <span className="font-thin text-gray-500">{item.companyName}</span>
+                  <span className="font-bold text-gray-900 dark:text-gray-200">
+                    {item.role}
+                  </span>
+                  <span className="font-thin text-gray-500">
+                    {item.companyName}
+                  </span>
                 </div>
-                <time className="font-caveat font-medium text-indigo-500 dark:text-indigo-300">
+                <time className="font-caveat absolute bottom-2 right-2 font-medium text-indigo-500 dark:text-indigo-300 md:static">
                   {item.date}
                 </time>
               </div>

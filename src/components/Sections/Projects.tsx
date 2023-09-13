@@ -86,9 +86,9 @@ const Project: React.FC<ProjectItemProps> = ({
       >
         {desc}
         <div className="flex flex-row flex-wrap items-center gap-2 pt-4 md:justify-between">
-          <div>
+          <div className="flex flex-wrap gap-2 pb-2">
             {tags?.map((tag, i) => (
-              <Pill className="my-1" key={i}>
+              <Pill key={i}>
                 #{tag}
               </Pill>
             ))}
